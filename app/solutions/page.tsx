@@ -1,0 +1,170 @@
+"use client";
+
+import React from "react";
+import Link from "next/link";
+import { Cpu, CloudLightning, LineChart, Shield, Terminal, ArrowRight, Check } from "lucide-react";
+import { FadeIn, StaggerContainer, StaggerItem } from "../../components/Animations";
+
+const solutions = [
+  {
+    icon: Cpu,
+    title: "AI Automation Ecosystems",
+    tagline: "Automate complex logical operations with cognitive agents",
+    challenge: "Companies spend thousands of hours on repetitive data entry, email filtering, and customer support triage, leading to high operational costs and slow response cycles.",
+    approach: "We build custom LLM-powered pipelines that read pages, files, and incoming data streams, handling transactions autonomously with human-in-the-loop validation.",
+    benefits: ["98% efficiency gain in transactional tasks", "Sub-second response speeds", "Scale handling up to 1M+ requests daily"],
+    color: "from-blue-600 to-sky-400"
+  },
+  {
+    icon: CloudLightning,
+    title: "Edge E-commerce Storefronts",
+    tagline: "Ultra-fast headless architectures built to maximize conversion rates",
+    challenge: "Physical/SaaS stores suffer checkout drops due to high latency, sluggish dashboard updates, and server downtime during seasonal flash sales.",
+    approach: "We design decentralized headless frontend layers deployed on edge hosting structures, integrating serverless database caches and direct payments gates.",
+    benefits: [" checkout conversions increased by 140%", "Global load times under 200ms", "Zero host downtime during high traffic spikes"],
+    color: "from-indigo-600 to-blue-500"
+  },
+  {
+    icon: Shield,
+    title: "Enterprise System Management",
+    tagline: "Highly secure HIPAA & ISO-compliant internal software frameworks",
+    challenge: "Corporate sectors face communication barriers, siloed database records, and data leakage risks from outdated legacy applications.",
+    approach: "We engineer multi-tenant secure dashboards utilizing advanced encryption layers, offering real-time queues, custom CRM ledgers, and secure role boundaries.",
+    benefits: ["Consolidated database synchronization", "Reduced patient/client onboarding times by 35%", "Total HIPAA compliance & encryption"],
+    color: "from-blue-500 to-sky-500"
+  },
+  {
+    icon: Terminal,
+    title: "Multi-Cloud DevOps & Orchestration",
+    tagline: "Eliminate idle resources and automate serverless software pipelines",
+    challenge: "Inefficient cloud VM allocations lead to massive resource waste, manual rollbacks, and security vulnerabilities.",
+    approach: "We deploy automated CI/CD infrastructures, real-time alert modules, and server autoscaling configs using Kubernetes and terraform structures.",
+    benefits: ["Average cloud hosting cost reduction of 42%", "Fully automated pipeline rollbacks", "Unified security and cost monitors"],
+    color: "from-sky-500 to-indigo-600"
+  },
+  {
+    icon: LineChart,
+    title: "AI-Powered Business Intelligence",
+    tagline: "Turn unstructured financial datasets into predictive cash forecasts",
+    challenge: "Finance executives struggle to aggregate disparate multi-subsidiary ledgers and generate reliable future projections.",
+    approach: "We integrate vector analytical databases and predictive machine learning models that generate automated cash flow forecasts in real-time.",
+    benefits: ["95% cash flow forecasting precision", "Reduced bookkeeping cycles from 10 days to 2 days", "Interactive real-time currency converters"],
+    color: "from-blue-600 to-indigo-600"
+  }
+];
+
+import SubpageContainer from "../../components/SubpageContainer";
+
+export default function SolutionsPage() {
+  return (
+    <SubpageContainer>
+      {/* Hero Section */}
+      <section className="py-12 relative">
+        <div className="max-w-4xl mx-auto text-center">
+          <FadeIn direction="up" delay={0.1}>
+            <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block mb-4">
+              Focus Areas
+            </span>
+          </FadeIn>
+          <FadeIn direction="up" delay={0.2}>
+            <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-dark tracking-tight leading-tight">
+              Transformative Tech Solutions <br />
+              <span className="bg-gradient-to-r from-primary to-sky-custom bg-clip-text text-transparent">
+                Engineered for Global Industries
+              </span>
+            </h1>
+          </FadeIn>
+          <FadeIn direction="up" delay={0.3}>
+            <p className="text-slate-650 text-sm sm:text-base mt-6 max-w-2xl mx-auto leading-relaxed">
+              Explore how our tailor-made architectures solve complex organizational bottlenecks, increase security, and maximize operational profitability.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Solutions list */}
+      <section className="py-16">
+        <div className="w-full">
+          <StaggerContainer className="flex flex-col gap-12">
+            {solutions.map((solution, idx) => {
+              const Icon = solution.icon;
+              return (
+                <StaggerItem key={solution.title}>
+                  <div className="rounded-2xl border border-white/30 p-8 hover:border-primary/20 hover:shadow-xl hover:shadow-blue-500/5 transition-all bg-white/40 backdrop-blur-md grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    
+                    {/* Solution Header Icon */}
+                    <div className="lg:col-span-4 flex items-center lg:flex-col lg:items-start gap-4">
+                      <div className={`p-4 rounded-2xl bg-gradient-to-tr ${solution.color} text-white shadow-md shadow-blue-500/10`}>
+                        <Icon className="w-6 h-6 animate-pulse" />
+                      </div>
+                      <div>
+                        <h2 className="font-display font-extrabold text-xl text-dark leading-tight mt-2">
+                          {solution.title}
+                        </h2>
+                        <p className="text-xs text-primary font-semibold mt-1">
+                          {solution.tagline}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Solution Details */}
+                    <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-8 border-t lg:border-t-0 lg:border-l border-white/30 pt-6 lg:pt-0 lg:pl-8">
+                      
+                      {/* Left: Challenge and Approach */}
+                      <div className="flex flex-col gap-4">
+                        <div>
+                          <span className="text-[10px] font-extrabold uppercase text-slate-400 tracking-wider">The Challenge</span>
+                          <p className="text-xs text-slate-650 mt-1.5 leading-relaxed">{solution.challenge}</p>
+                        </div>
+                        <div>
+                          <span className="text-[10px] font-extrabold uppercase text-slate-400 tracking-wider">Our Approach</span>
+                          <p className="text-xs text-slate-800 font-semibold mt-1.5 leading-relaxed">{solution.approach}</p>
+                        </div>
+                      </div>
+
+                      {/* Right: Key Benefits */}
+                      <div className="flex flex-col gap-4 bg-white/50 border border-white/30 backdrop-blur-md rounded-xl p-5 shadow-sm">
+                        <span className="text-[10px] font-extrabold uppercase text-primary tracking-wider">Key Benefits</span>
+                        <ul className="flex flex-col gap-2.5 mt-1">
+                          {solution.benefits.map((benefit) => (
+                            <li key={benefit} className="flex items-start gap-2 text-xs font-semibold text-slate-700">
+                              <span className="p-0.5 rounded-full bg-green-50 text-green-500 shrink-0 mt-0.5 border border-green-100">
+                                <Check className="w-3 h-3" />
+                              </span>
+                              <span>{benefit}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </StaggerItem>
+              );
+            })}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* final CTA */}
+      <section className="py-12">
+        <div className="max-w-4xl mx-auto text-center flex flex-col items-center gap-6">
+          <h2 className="font-display font-extrabold text-3xl text-dark">
+            Solve your industry challenge today
+          </h2>
+          <p className="text-slate-500 text-sm max-w-lg leading-relaxed">
+            Get in touch with an Xcode Tech systems architect to outline your software objectives and schedule a technical discovery workshop.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 bg-primary hover:bg-blue-700 text-white font-semibold text-xs px-6 py-3.5 rounded-full shadow-lg shadow-blue-500/10 transition-all group mt-2"
+          >
+            Start Your Solution
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+          </Link>
+        </div>
+      </section>
+    </SubpageContainer>
+  );
+}
