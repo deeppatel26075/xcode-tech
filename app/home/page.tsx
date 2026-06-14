@@ -52,35 +52,36 @@ export default function Home() {
     }
   ];
 
-  const capabilities = [
+  const engineeringExcellence = [
     {
-      title: "Strategy",
-      desc: "We understand business goals before engineering solutions, defining exact timelines and technical specifications.",
+      title: "Architecture First",
+      desc: "Products designed thoroughly before any code is written, ensuring robust schemas and integrations.",
       icon: Compass
     },
     {
-      title: "Design",
-      desc: "Premium, user-centered digital interfaces built to maximize user engagement and system conversion rates.",
-      icon: Layers
-    },
-    {
-      title: "Engineering",
-      desc: "Reliable, high-performance backend, database, and edge systems built with clean, maintainable code.",
-      icon: Code
-    },
-    {
-      title: "Scale",
-      desc: "Autoscaling cloud architectures designed to handle growth spikes, traffic surges, and future expansions.",
+      title: "Scalable Systems",
+      desc: "Every system is built for future traffic growth and data load expansion from day one.",
       icon: Server
+    },
+    {
+      title: "Secure Development",
+      desc: "Application security and data encryption layers are integrated throughout our engineering cycles.",
+      icon: ShieldCheck
+    },
+    {
+      title: "Product Thinking",
+      desc: "Every technical decision connects technology directly with measurable business outcomes and customer value.",
+      icon: Code
     }
   ];
 
   const processSteps = [
-    { step: "01", name: "Concept", desc: "Consultation, system audit, and mapping specifications." },
-    { step: "02", name: "Prototype", desc: "High-fidelity wireframes and functional flow mappings." },
-    { step: "03", name: "MVP", desc: "Engineering the core features for initial launch validation." },
-    { step: "04", name: "Launch", desc: "Production cloud deployment, search indexing, and verification." },
-    { step: "05", name: "Scale", desc: "Continuous performance audits and cloud-resource scaling." }
+    { step: "01", name: "Discover", desc: "System audits, detailing requirements, and outlining project scope bounds." },
+    { step: "02", name: "Strategy", desc: "Technical blueprints, architecture selection, and sprint mapping." },
+    { step: "03", name: "Design", desc: "High-fidelity interactive visual frames and user journey mappings." },
+    { step: "04", name: "Engineer", desc: "Production-grade backend engineering, API wiring, and database setups." },
+    { step: "05", name: "Deploy", desc: "Secure multi-environment deployment, search configuration, and logging pipelines." },
+    { step: "06", name: "Scale", desc: "Continuous code audits, database tuning, and infrastructure autoscaling." }
   ];
 
   const engagementModels = [
@@ -185,7 +186,7 @@ export default function Home() {
               </h2>
             </FadeIn>
             <FadeIn direction="up" delay={0.3}>
-              <p className="text-slate-500 text-sm mt-3 leading-relaxed">
+              <p className="text-slate-550 text-sm mt-3 leading-relaxed font-semibold">
                 We design, build, and scale digital products and systems structured around your exact growth stage.
               </p>
             </FadeIn>
@@ -214,7 +215,7 @@ export default function Home() {
                       </div>
                     </div>
                     
-                    <ul className="flex flex-col gap-2 mt-5 pt-4 border-t border-slate-100 text-[11px] font-semibold text-slate-600">
+                    <ul className="flex flex-col gap-2 mt-5 pt-4 border-t border-slate-100 text-[11px] font-semibold text-slate-655">
                       {sol.items.map((item) => (
                         <li key={item} className="flex items-center gap-1.5">
                           <Check className="w-3.5 h-3.5 text-green-500 shrink-0" />
@@ -230,28 +231,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. Built Beyond Code (Capabilities) */}
+      {/* 3. Engineering Excellence (Enterprise Confidence) */}
       <section className="py-28 bg-transparent border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-20">
             <FadeIn direction="up" delay={0.1}>
               <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
-                Capabilities
+                Trust &amp; Scale
               </span>
             </FadeIn>
             <FadeIn direction="up" delay={0.2}>
               <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-dark tracking-tight leading-tight mt-4">
-                Built Beyond Code
+                Engineering Excellence
               </h2>
             </FadeIn>
           </div>
 
           <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {capabilities.map((cap) => {
+            {engineeringExcellence.map((cap) => {
               const Icon = cap.icon;
               return (
                 <StaggerItem key={cap.title}>
-                  <div className="rounded-2xl border border-white/30 p-6 bg-white/45 backdrop-blur-md shadow-sm hover:shadow-md hover:border-primary/10 transition-all h-full">
+                  <div className="rounded-2xl border border-white/35 p-6 bg-white/45 backdrop-blur-md shadow-sm hover:shadow-md hover:border-primary/10 transition-all h-full">
                     <div className="p-3 w-fit rounded-xl bg-blue-50/60 text-primary border border-blue-100/40 mb-4 shadow-sm">
                       <Icon className="w-5 h-5" />
                     </div>
@@ -269,19 +270,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. Idea to Global Product (Startup Funnel) */}
+      {/* 4. How We Work (Startup/Founder Funnel) */}
       <section className="py-28 bg-slate-50/50 border-b border-slate-100 relative">
         <div className="absolute inset-0 bg-dot-grid opacity-20 -z-10" />
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-20">
             <FadeIn direction="up" delay={0.1}>
               <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
-                Funnel Path
+                Our Process
               </span>
             </FadeIn>
             <FadeIn direction="up" delay={0.2}>
               <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-dark tracking-tight leading-tight mt-4">
-                From Idea &rarr; Global Product
+                How We Work
               </h2>
             </FadeIn>
             <FadeIn direction="up" delay={0.3}>
@@ -291,7 +292,7 @@ export default function Home() {
             </FadeIn>
           </div>
 
-          <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 relative">
+          <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 relative">
             <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-slate-100 -z-10 hidden lg:block" />
             
             {processSteps.map((step) => (
@@ -424,7 +425,7 @@ export default function Home() {
                     <h4 className="font-display font-bold text-xs text-dark leading-tight">
                       {ind.name}
                     </h4>
-                    <p className="text-[9px] text-slate-400 mt-1 leading-tight max-w-[100px] mx-auto">
+                    <p className="text-[9px] text-slate-400 mt-1 leading-tight max-w-[120px] mx-auto">
                       {ind.desc}
                     </p>
                   </div>
@@ -465,7 +466,7 @@ export default function Home() {
                           {item.outcome}
                         </span>
                       </h4>
-                      <p className="text-[11px] text-slate-500 mt-1.5 leading-relaxed">{item.desc}</p>
+                      <p className="text-[11px] text-slate-550 mt-1.5 leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -509,7 +510,7 @@ export default function Home() {
                     <h4 className="font-display font-bold text-xs text-dark mt-2 leading-tight">
                       {std.title}
                     </h4>
-                    <p className="text-[10px] text-slate-555 leading-normal">
+                    <p className="text-[10px] text-slate-500 leading-normal">
                       {std.desc}
                     </p>
                   </div>
@@ -580,10 +581,10 @@ export default function Home() {
 
           <FadeIn direction="up" delay={0.3}>
             <h3 className="font-display font-bold text-xl sm:text-2xl text-dark mb-4 max-w-xl leading-snug">
-              "Building Xcode Tech as a global engineering partner where businesses transform ambitious ideas into reliable technology."
+              "My vision with Xcode Tech is to build an engineering company where businesses transform complex ideas into reliable, scalable technology."
             </h3>
             <p className="text-xs text-slate-500 leading-relaxed max-w-md mx-auto">
-              We stand as your long-term technology partner, assisting local businesses and international startup teams in building secure, high-performance platforms.
+              We stand as your long-term technology partner, assisting startups and companies worldwide in designing, engineering, and launching secure systems.
             </p>
           </FadeIn>
         </div>

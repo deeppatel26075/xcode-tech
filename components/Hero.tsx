@@ -114,15 +114,15 @@ export default function Hero() {
             <div className="lg:col-span-6 flex flex-col items-start gap-6 relative z-10">
               <FadeIn direction="up" delay={0.1}>
                 <h1 className="font-display font-semibold text-[40px] lg:text-[52px] leading-[1.1] text-dark tracking-tight text-glow">
-                  We Engineer <br />
-                  Software That Powers <br />
+                  Engineering Intelligent <br />
+                  Software for <br />
                   Ambitious Businesses
                 </h1>
               </FadeIn>
 
               <FadeIn direction="up" delay={0.2}>
                 <p className="text-sm text-slate-800/90 leading-relaxed max-w-lg">
-                  From startup ideas to enterprise platforms, Xcode Tech designs, develops, and scales intelligent software solutions built for performance, security, and growth.
+                  Xcode Tech partners with startups and businesses worldwide to design, build, and scale high-performance software, AI systems, and digital platforms.
                 </p>
               </FadeIn>
 
@@ -133,7 +133,7 @@ export default function Hero() {
                       href="/contact"
                       className="inline-flex items-center justify-center gap-2 bg-slate-950 hover:bg-slate-900 text-white font-semibold text-xs px-8 py-3.5 rounded-full shadow-xl shadow-slate-900/10 transition-all group"
                     >
-                      🚀 Start Your Project
+                      Start Your Project &rarr;
                     </Link>
                   </Magnetic>
                   <Magnetic>
@@ -141,7 +141,7 @@ export default function Hero() {
                       href="/work"
                       className="inline-flex items-center justify-center gap-2 bg-white/80 hover:bg-white text-dark font-semibold text-xs px-8 py-3.5 rounded-full shadow-lg border border-slate-200/50 hover:shadow-xl transition-all"
                     >
-                      📂 Explore Our Work
+                      View Our Work
                     </Link>
                   </Magnetic>
                 </div>
@@ -231,23 +231,23 @@ export default function Hero() {
 
         </div>
 
-        {/* 3. Bottom Stats Grid (sitting directly on sky background image) */}
+        {/* 3. Bottom Capability Grid (sitting directly on sky background image) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
           {[
-            { value: "10.5%", desc: "Positive impact on business" },
-            { value: "2k+", desc: "Client satisfaction is top priority" },
-            { value: "26%", desc: "Leadership position in our markets" },
-            { value: "10k+", desc: "Successful projects completed" }
-          ].map((stat, i) => (
+            { title: "Modern Stack", desc: "Decoupled Next.js edge storefronts and high-performance serverless backends." },
+            { title: "Global-Ready", desc: "Engineered to comply with international security benchmarks and server speed bounds." },
+            { title: "Security-First", desc: "Role-based access controls, advanced encryption standards, and threat auditing." },
+            { title: "End-to-End", desc: "Covers discovery, product UI/UX design, custom engineering, cloud staging, and scaling." }
+          ].map((cap, i) => (
             <div
               key={i}
               className="rounded-2xl border border-white/30 bg-white/80 backdrop-blur-md shadow-lg p-6 flex flex-col justify-between hover:shadow-lg hover:scale-102 transition-all duration-300"
             >
-              <h4 className="text-3xl font-display font-extrabold text-slate-800 tracking-tight leading-none">
-                {stat.value}
+              <h4 className="text-sm font-display font-extrabold text-slate-800 tracking-tight leading-none uppercase">
+                {cap.title}
               </h4>
-              <p className="text-[11px] text-slate-600 leading-relaxed font-semibold mt-3">
-                {stat.desc}
+              <p className="text-[11px] text-slate-500 leading-relaxed mt-3">
+                {cap.desc}
               </p>
             </div>
           ))}

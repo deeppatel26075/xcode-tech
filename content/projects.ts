@@ -18,78 +18,78 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "smart-restaurant-platform",
-    title: "Smart Restaurant Platform",
+    id: "xcommerce-engine",
+    title: "XCommerce Engine",
     category: "Web & Commerce",
-    description: "Custom digital ordering platform with real-time administration boards, Stripe payments, and analytics.",
-    longDescription: "Challenge:\nRestaurants need faster digital ordering solutions to handle high peak volumes without operational errors.\n\nSolution:\nWe built a custom ordering platform with integrated payments, real-time dashboard analytics, and an intuitive customer checkout experience.",
+    description: "Scalable commerce infrastructure for modern businesses.",
+    longDescription: "Challenge:\nStandard storefront builders suffer latency spikes, checkout drop-offs, and inflexible custom logic frameworks.\n\nSolution:\nWe built a headless commerce system featuring a complete management dashboard, fast checkout pipelines, and real-time inventory synchronizations.",
     client: "Gastronomy Group",
     duration: "3 Months",
-    services: ["E-commerce", "Web Applications", "Booking Systems"],
-    features: ["Next.js", "Node.js", "PostgreSQL", "Cloud Hosting"],
+    services: ["Commerce Infrastructure", "API Integrations", "Database Performance"],
+    features: ["Next.js", "Node.js", "PostgreSQL", "Edge Hosting"],
     results: [
-      "Designed to improve ordering speed and reduce manual operations.",
-      "Built with a highly scalable database schema prepared for multi-terminal sync.",
-      "Optimized for core web vitals and instantaneous page loads."
+      "Designed to support seamless peak order loads.",
+      "Integrates modern headless pipelines minimizing latency.",
+      "Robust inventory sync dashboards keeping data aligned."
     ],
     dashboardStats: [
-      { label: "Load Time", value: "Sub-1s", change: "Edge deployed" },
-      { label: "Payments", value: "Secure", change: "Stripe integrated" },
-      { label: "Architecture", value: "Scalable", change: "Tested infrastructure" }
+      { label: "Checkouts", value: "Optimized", change: "Latency under 200ms" },
+      { label: "Security", value: "Secure", change: "Stripe & API guards" },
+      { label: "Sync Engine", value: "Real-time", change: "Automated inventory" }
     ],
     image: "/projects/restaurant-platform.jpg",
-    challengeDetail: "The restaurant group experienced bottlenecks during peak dining hours with slow order execution and high payment processing failure rates.",
-    solutionDetail: "We built a customized cloud order-execution engine with direct Stripe checkout gateways and low-latency status boards.",
-    businessImpact: "Designed to support conflict-free payment processing and continuous order handling during massive traffic surges."
+    challengeDetail: "Standard e-commerce software fails to handle scale and requires slow, expensive custom work for checkout integrations.",
+    solutionDetail: "We engineered a decoupled commerce layer featuring an interactive analytics dashboard, direct payment gates, and real-time inventory.",
+    businessImpact: "Designed to process massive transactional volumes under peak load without database lag."
   },
   {
-    id: "healthcare-management-system",
-    title: "Healthcare Management System",
-    category: "Software Engineering",
-    description: "Secure patient care portal, real-time scheduler, and encrypted health records system.",
-    longDescription: "Challenge:\nClinic networks struggle to manage schedules, track doctor availabilities, and keep patient records secure and accessible.\n\nSolution:\nWe designed an appointment booking engine, patient portal, and secure databases engineered with encryption-at-rest to protect private records.",
-    client: "Aegis Healthcare Network",
-    duration: "5 Months",
-    services: ["Custom Software", "SaaS Platforms", "APIs"],
-    features: ["React.js", "Node.js", "PostgreSQL", "AWS Encrypted Cloud"],
-    results: [
-      "Designed to encrypt medical logs and streamline booking scheduling.",
-      "Configured with role-based access control and secure audit trails.",
-      "Created a unified dashboard showing real-time doctor availability calendars."
-    ],
-    dashboardStats: [
-      { label: "Data Security", value: "Encrypted", change: "At-rest & In-transit" },
-      { label: "Scheduling", value: "Streamlined", change: "Conflict-free calendars" },
-      { label: "Database", value: "Robust", change: "PostgreSQL backed" }
-    ],
-    image: "/projects/healthcare-system.jpg",
-    challengeDetail: "Clinic networks faced data siloing, high administrative booking delays, and potential leakage risks of patient healthcare logs.",
-    solutionDetail: "We engineered an encrypted patient dashboard featuring role-based secure logs and automated scheduling engines.",
-    businessImpact: "Built to streamline patient scheduling throughput and establish highly secure, compliant record access boundaries."
-  },
-  {
-    id: "ai-business-assistant",
-    title: "AI Business Assistant",
+    id: "xai-operations-platform",
+    title: "XAI Operations Platform",
     category: "Artificial Intelligence",
-    description: "Cognitive workflow pipeline handling automatic document parsing and email classification.",
-    longDescription: "Challenge:\nBusinesses waste hundreds of hours manually parsing invoices, reading documents, and classifying customer emails.\n\nSolution:\nWe deployed intelligent workflow pipelines that parse structured/unstructured files and route them automatically using customized large language models.",
+    description: "AI-powered workflow automation system.",
+    longDescription: "Challenge:\nTeams lose hundreds of hours parsing documents, classifying requests, and typing entries into legacy databases.\n\nSolution:\nWe deployed customized cognitive AI pipelines that ingest unstructured invoices and route them with automated validations.",
     client: "Logix Enterprise Solutions",
     duration: "4 Months",
-    services: ["AI Chatbots", "AI Automation", "AI Integration"],
-    features: ["Python", "FastAPI", "OpenAI API", "Docker Containerization"],
+    services: ["AI Integrations", "Workflow Automation", "Machine Learning"],
+    features: ["Python", "FastAPI", "AI Models", "Docker Containers"],
     results: [
-      "Created to automate document routing and eliminate repetitive indexing.",
-      "Integrated with customized logical classification models to prevent routing errors.",
-      "Designed with a simple admin interface for human-in-the-loop validation."
+      "Automates document classification workflows.",
+      "Reduces manual entry errors by utilizing smart validations.",
+      "Secure role-based controls protecting document access."
     ],
     dashboardStats: [
-      { label: "Workflows", value: "Automated", change: "Zero manual intervention" },
-      { label: "AI Engine", value: "Tuned", change: "Custom prompts" },
-      { label: "Integration", value: "APIs", change: "Fits legacy structures" }
+      { label: "AI Pipeline", value: "Cognitive", change: "Automated parsing" },
+      { label: "Data Accuracy", value: "Tuned", change: "Custom prompts" },
+      { label: "Integration", value: "APIs", change: "Seamless data routing" }
     ],
     image: "/projects/ai-assistant.jpg",
-    challengeDetail: "Operations teams spent hours manually categorizing, indexing, and entering database records from unstructured invoice streams.",
-    solutionDetail: "We deployed cognitive parsing pipelines combining machine learning classification and human-in-the-loop validation dashboards.",
-    businessImpact: "Developed to automate document ingestion pipeline workloads while preserving routing precision."
+    challengeDetail: "Businesses lose hundreds of hours processing document data manually, causing bottlenecks in database indexing.",
+    solutionDetail: "We deployed cognitive AI models, smart document parsers, and custom API pipelines with human-in-the-loop validation dashboards.",
+    businessImpact: "Built to automate operations workflow pipelines while maintaining total accuracy."
+  },
+  {
+    id: "xbusiness-cloud",
+    title: "XBusiness Cloud",
+    category: "Software Engineering",
+    description: "Complete business management platform.",
+    longDescription: "Challenge:\nGrowing companies suffer from database silos, scattered legacy portals, and slow manual reporting cycles.\n\nSolution:\nWe designed a unified internal operations platform featuring a secure CRM, custom user roles, dashboard reports, and data pipelines.",
+    client: "Aegis Healthcare Network",
+    duration: "5 Months",
+    services: ["Internal Platforms", "Custom CRMs", "Database Security"],
+    features: ["React.js", "Node.js", "PostgreSQL", "AWS Encrypted Cloud"],
+    results: [
+      "Consolidates operations databases into one dashboard.",
+      "Implements role-based access safety configurations.",
+      "Speeds up internal reporting metrics generation."
+    ],
+    dashboardStats: [
+      { label: "Operations CRM", value: "Unified", change: "Single source of truth" },
+      { label: "Access Security", value: "Encrypted", change: "Role boundaries" },
+      { label: "Custom Reports", value: "Automated", change: "Generates in seconds" }
+    ],
+    image: "/projects/healthcare-system.jpg",
+    challengeDetail: "Growing organizations suffer database fragmentation, poor role auditing, and slow custom reporting from disconnected tools.",
+    solutionDetail: "We designed a secure, unified platform featuring a complete CRM, user access controls, real-time analytics, and automated reporting.",
+    businessImpact: "Engineered to eliminate administrative lag and secure company datasets in one platform."
   }
 ];
