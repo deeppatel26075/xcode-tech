@@ -14,7 +14,7 @@ import { projects } from "../../content/projects";
 import { FadeIn, StaggerContainer, StaggerItem } from "../../components/Animations";
 
 export default function Home() {
-  const featuredProjects = projects.slice(0, 3);
+  const featuredProjects = projects.slice(0, 2);
 
   const solutions = [
     {
@@ -36,7 +36,7 @@ export default function Home() {
     {
       title: "🤖 Integrate AI",
       subtitle: "Cognitive automation",
-      desc: "Integrating machine learning pipelines and custom AI models to automate manual triaging, indexing, and analysis.",
+      desc: "Integrating machine learning pipelines and custom AI models to automate manual triaging, indexing, and data mapping.",
       items: ["AI Integration", "Smart Workflows", "Data Solutions"],
       icon: Sparkles,
       color: "from-blue-500 to-sky-500"
@@ -49,6 +49,13 @@ export default function Home() {
       icon: Server,
       color: "from-sky-500 to-indigo-600"
     }
+  ];
+
+  const commitment = [
+    { title: "Architecture First", desc: "Every product begins with planning." },
+    { title: "Quality Engineering", desc: "Clean, maintainable systems." },
+    { title: "Transparent Delivery", desc: "Clear milestones and communication." },
+    { title: "Long-Term Thinking", desc: "Technology built for evolution." }
   ];
 
   const challenges = [
@@ -125,35 +132,27 @@ export default function Home() {
     }
   ];
 
-  const techDecisions = [
+  const labExperiments = [
     {
-      tech: "React / Next.js",
-      outcome: "High-performance experiences",
-      desc: "We utilize serverless edge deployments to achieve sub-second global page loads and boost SEO crawl indexing."
+      title: "AI Automation",
+      desc: "Developing specialized cognitive LLM parsers and validation tools for workflow acceleration.",
+      tag: "Active Research"
     },
     {
-      tech: "Cloud Infrastructure",
-      outcome: "Reliability & scalability",
-      desc: "AWS, Kubernetes, and serverless containers engineered to auto-scale under load, minimizing idle resource hosting costs."
+      title: "Scalable Software",
+      desc: "Testing high-concurrency edge database caches and sub-100ms API routers.",
+      tag: "Prototyping"
     },
     {
-      tech: "AI Systems & Integrations",
-      outcome: "Intelligent automation",
-      desc: "Integrating machine learning pipelines and custom AI configurations to automate operational bookkeeping and triage loops."
+      title: "Cloud Systems",
+      desc: "Configuring automated Kubernetes clusters and real-time cost-alert engines.",
+      tag: "Frameworks"
     },
     {
-      tech: "Security Practices",
-      outcome: "Protected systems",
-      desc: "Standard application shielding, data encryption layers, secure role access protocols, and proactive code auditing."
+      title: "Developer Tools",
+      desc: "Building internal CLI utilities to optimize compilation speeds and test automation.",
+      tag: "Tooling"
     }
-  ];
-
-  const standards = [
-    { title: "Architecture Reviews", desc: "Dual-developer peer review gates ensuring clean patterns." },
-    { title: "Performance Optimization", desc: "Sub-200ms database response loops and compressed code bundles." },
-    { title: "Secure Development", desc: "Integrated role authorization boundaries and encrypted token databases." },
-    { title: "Documentation", desc: "Complete Swagger/Postman API maps and developer set-up manuals." },
-    { title: "Maintainable Code", desc: "Decoupled logic modules allowing easy future feature upgrades." }
   ];
 
   return (
@@ -161,22 +160,31 @@ export default function Home() {
       {/* 1. Hero Landing */}
       <Hero />
 
-      {/* 2. Trust Banner */}
-      <section className="py-8 bg-slate-50 border-b border-slate-100 relative">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-            Built for companies that need:
-          </span>
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 text-xs font-bold text-slate-700 uppercase tracking-wider">
-            <span className="flex items-center gap-2">
-              <span className="text-primary font-extrabold text-sm">✓</span> Reliable Systems
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="text-primary font-extrabold text-sm">✓</span> Modern Engineering
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="text-primary font-extrabold text-sm">✓</span> Long-term Technology Partner
-            </span>
+      {/* 2. Our Engineering Commitment */}
+      <section className="py-12 bg-slate-50 border-b border-slate-100 relative">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center max-w-xl mx-auto mb-10">
+            <FadeIn direction="up" delay={0.1}>
+              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest bg-white border border-slate-200/50 px-3 py-1 rounded-full inline-block">
+                Trust &amp; Execution
+              </span>
+            </FadeIn>
+            <FadeIn direction="up" delay={0.15}>
+              <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-dark tracking-tight mt-3">
+                Our Engineering Commitment
+              </h2>
+            </FadeIn>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {commitment.map((item) => (
+              <div key={item.title} className="rounded-xl border border-slate-200/40 p-5 bg-white shadow-sm flex flex-col gap-2">
+                <span className="text-xs font-extrabold text-primary uppercase tracking-wide flex items-center gap-1.5">
+                  <Check className="w-4 h-4 text-primary shrink-0" />
+                  {item.title}
+                </span>
+                <p className="text-xs text-slate-500 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -213,7 +221,7 @@ export default function Home() {
                   <h3 className="font-display font-extrabold text-base text-dark group-hover:text-primary transition-colors">
                     {journey.title}
                   </h3>
-                  <p className="text-xs text-slate-500 mt-2.5 leading-relaxed">
+                  <p className="text-xs text-slate-505 mt-2.5 leading-relaxed">
                     {journey.desc}
                   </p>
                 </div>
@@ -267,7 +275,7 @@ export default function Home() {
                       </span>
                     </div>
                   </div>
-                  <ArrowRight className="w-4 h-4 text-slate-450" />
+                  <ArrowRight className="w-4 h-4 text-slate-455" />
                 </Link>
               );
             })}
@@ -319,7 +327,7 @@ export default function Home() {
           <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
             <FadeIn direction="up" delay={0.1}>
               <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
-                Problem Solved
+                Problem Solver
               </span>
             </FadeIn>
             <FadeIn direction="up" delay={0.2}>
@@ -329,7 +337,7 @@ export default function Home() {
             </FadeIn>
             <FadeIn direction="up" delay={0.3}>
               <p className="text-slate-500 text-sm mt-3 leading-relaxed">
-                Elite engineering centers solve core business pain points. Here is how we engineer solutions to your problems.
+                Elite engineering partners solve core business pain points. Here is how we engineer solutions to your problems.
               </p>
             </FadeIn>
           </div>
@@ -365,20 +373,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. Selected Work */}
+      {/* 6. Selected Engineering Work (Engineering Showcase) */}
       <section className="py-20 md:py-28 bg-transparent border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 md:mb-20">
             <div className="max-w-xl">
               <FadeIn direction="up" delay={0.1}>
                 <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
-                  Case Studies
+                  Showcase
                 </span>
               </FadeIn>
               <FadeIn direction="up" delay={0.2}>
                 <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-dark tracking-tight leading-tight mt-4">
-                  Selected Engineering Work
+                  Engineering Showcase
                 </h2>
+                <p className="text-slate-505 text-sm mt-3 leading-relaxed">
+                  Systems designed around real-world business challenges.
+                </p>
               </FadeIn>
             </div>
             <FadeIn direction="up" delay={0.3} className="shrink-0">
@@ -470,7 +481,7 @@ export default function Home() {
                     <h4 className="font-display font-extrabold text-base text-dark mb-3">
                       {item.title}
                     </h4>
-                    <p className="text-xs text-slate-505 leading-relaxed">
+                    <p className="text-xs text-slate-550 leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
@@ -481,76 +492,49 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 9. Technology & Standards */}
-      <section className="py-20 md:py-28 bg-slate-50/50 relative border-b border-slate-100">
+      {/* 9. Xcode Tech Standards */}
+      <section className="py-20 md:py-28 bg-slate-50/50 border-b border-slate-100 relative">
         <div className="absolute inset-0 bg-dot-grid opacity-30 -z-10" />
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          <div className="lg:col-span-5 flex flex-col gap-6">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
             <FadeIn direction="up" delay={0.1}>
               <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
-                Our Stack
+                Our Process
               </span>
             </FadeIn>
             <FadeIn direction="up" delay={0.2}>
-              <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-dark tracking-tight leading-tight">
-                Technology Decisions <br />
-                <span className="bg-gradient-to-r from-primary to-sky-custom bg-clip-text text-transparent">
-                  Made for Scale
-                </span>
+              <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-dark tracking-tight leading-tight mt-4">
+                Xcode Tech Standards
               </h2>
             </FadeIn>
             <FadeIn direction="up" delay={0.3}>
-              <div className="flex flex-col gap-4 mt-2">
-                {techDecisions.map((item) => (
-                  <div key={item.tech} className="flex gap-3.5 items-start border-l-2 border-primary/20 pl-4 py-1">
-                    <div>
-                      <h4 className="text-xs font-bold text-slate-800 flex items-center gap-1.5">
-                        {item.tech}
-                        <span className="text-[9px] text-primary bg-blue-50 border border-blue-100/50 px-2 py-0.5 rounded-full font-semibold">
-                          {item.outcome}
-                        </span>
-                      </h4>
-                      <p className="text-[11px] text-slate-505 mt-1.5 leading-relaxed">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <p className="text-slate-500 text-sm mt-3 leading-relaxed">
+                Every project we engineer follows a disciplined, lifecycle-oriented execution roadmap:
+              </p>
             </FadeIn>
           </div>
 
-          <div className="lg:col-span-7 flex justify-center items-center">
-            <FadeIn direction="none" delay={0.2} duration={1.2}>
-              <TechnologyOrbit />
-            </FadeIn>
-          </div>
-
-        </div>
-
-        {/* Engineering Standards Checklist inside Technology & Standards */}
-        <div className="max-w-7xl mx-auto px-6 mt-20 pt-16 border-t border-slate-200/50">
-          <div className="text-center mb-12">
-            <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
-              Quality Gates
-            </span>
-            <h3 className="font-display font-extrabold text-2xl text-dark mt-3">
-              Engineering Standards
-            </h3>
-          </div>
-
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {standards.map((std) => (
-              <StaggerItem key={std.title}>
-                <div className="rounded-2xl border border-white/40 p-5 bg-white/40 backdrop-blur-md shadow-sm hover:shadow-md hover:border-primary/10 transition-all h-full flex flex-col justify-between">
-                  <div className="flex flex-col gap-3">
-                    <span className="p-1.5 w-fit rounded-lg bg-green-50 text-green-500 border border-green-100">
-                      <Check className="w-4 h-4" />
-                    </span>
-                    <h4 className="font-display font-bold text-xs text-dark mt-2 leading-tight">
-                      {std.title}
+          <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 relative">
+            {[
+              { step: "01", name: "Discovery", desc: "Understanding the problem, defining business outcomes, and outlining scope parameters." },
+              { step: "02", name: "Technical Architecture", desc: "Designing database schemas, deciding tech stacks, and modeling API endpoints." },
+              { step: "03", name: "Experience Design", desc: "High-fidelity layouts and responsive, intuitive user journey flows." },
+              { step: "04", name: "Development", desc: "Clean backend coding, secure database setups, and frontend component building." },
+              { step: "05", name: "Quality Review", desc: "Dual-developer peer reviews, automated unit tests, and performance gate audits." },
+              { step: "06", name: "Deployment", desc: "Continuous integration pipelines, cloud multi-region staging, and validation tests." },
+              { step: "07", name: "Evolution", desc: "Database query tuning, serverless scale management, and continuous updates." }
+            ].map((step) => (
+              <StaggerItem key={step.name}>
+                <div className="rounded-xl border border-slate-200/30 p-4 bg-slate-50/30 shadow-sm flex flex-col justify-between min-h-[180px] h-full relative group hover:border-primary/20 hover:shadow-md transition-all duration-300">
+                  <span className="absolute top-4 right-4 text-[10px] font-extrabold text-slate-450">
+                    {step.step}
+                  </span>
+                  <div>
+                    <h4 className="font-display font-extrabold text-xs text-dark mb-1.5 mt-4">
+                      {step.name}
                     </h4>
-                    <p className="text-[10px] text-slate-500 leading-normal">
-                      {std.desc}
+                    <p className="text-[10px] text-slate-500 leading-relaxed">
+                      {step.desc}
                     </p>
                   </div>
                 </div>
@@ -560,53 +544,43 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 10. Beyond Development Journey */}
+      {/* 10. Xcode Tech Lab */}
       <section className="py-20 md:py-28 bg-white border-b border-slate-100 relative">
-        <div className="absolute inset-0 bg-dot-grid opacity-20 -z-10" />
+        <div className="absolute inset-0 bg-dot-grid opacity-10 -z-10" />
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
-            <FadeIn direction="up" delay={0.1}>
-              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
-                Technology Lifecycle
-              </span>
-            </FadeIn>
-            <FadeIn direction="up" delay={0.2}>
-              <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-dark tracking-tight leading-tight mt-4">
-                Beyond Development
-              </h2>
-            </FadeIn>
-            <FadeIn direction="up" delay={0.3}>
-              <p className="text-slate-500 text-sm mt-3 leading-relaxed">
-                We partner through the entire technology journey, ensuring continuity and growth.
-              </p>
-            </FadeIn>
-          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div className="lg:col-span-5 flex flex-col gap-6">
+              <FadeIn direction="up" delay={0.1}>
+                <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block w-fit">
+                  Innovation
+                </span>
+              </FadeIn>
+              <FadeIn direction="up" delay={0.2}>
+                <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-dark tracking-tight leading-tight">
+                  Xcode Tech Lab
+                </h2>
+              </FadeIn>
+              <FadeIn direction="up" delay={0.3}>
+                <p className="text-slate-500 text-sm leading-relaxed">
+                  We run a dedicated research environment exploring next-generation developer tooling, automation frameworks, and cloud optimizations. Our experiments help us build better production software.
+                </p>
+              </FadeIn>
+            </div>
 
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-5 gap-6 relative">
-            {[
-              { step: "01", name: "Strategy", desc: "Discovering outcomes, defining database scopes, and system mapping." },
-              { step: "02", name: "Experience Design", desc: "High-fidelity clickable interface layouts and journey mappings." },
-              { step: "03", name: "Engineering", desc: "Backend API coding, server scripting, and database architecture." },
-              { step: "04", name: "Launch", desc: "Deployment orchestration, multi-environment setups, and validation testing." },
-              { step: "05", name: "Evolution", desc: "Auto-scaling configuration, continuous code reviews, and roadmap updates." }
-            ].map((step) => (
-              <StaggerItem key={step.name}>
-                <div className="rounded-2xl border border-slate-200/30 p-5 bg-slate-50/30 shadow-sm flex flex-col justify-between min-h-[160px] h-full relative group hover:border-primary/20 hover:shadow-md transition-all duration-300">
-                  <span className="absolute top-4 right-4 text-xs font-bold text-slate-400 group-hover:text-primary/20 transition-colors">
-                    {step.step}
-                  </span>
-                  <div>
-                    <h4 className="font-display font-bold text-sm text-dark mb-2 mt-4">
-                      {step.name}
-                    </h4>
-                    <p className="text-[10px] text-slate-500 leading-normal">
-                      {step.desc}
-                    </p>
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {labExperiments.map((lab, i) => (
+                <div key={lab.title} className="rounded-2xl border border-slate-200/40 p-6 bg-slate-50/25 hover:bg-white hover:shadow-lg hover:border-primary/10 transition-all duration-300">
+                  <div className="flex justify-between items-center mb-3">
+                    <h4 className="font-display font-extrabold text-sm text-dark">{lab.title}</h4>
+                    <span className="text-[8px] font-extrabold text-primary bg-blue-50 border border-blue-100 px-2 py-0.5 rounded-full uppercase tracking-wider">{lab.tag}</span>
                   </div>
+                  <p className="text-[11px] text-slate-505 leading-relaxed">{lab.desc}</p>
                 </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
+              ))}
+            </div>
+
+          </div>
         </div>
       </section>
 
@@ -635,13 +609,19 @@ export default function Home() {
                 <div className="mt-4 flex flex-col">
                   <span className="font-display font-extrabold text-sm text-dark">Deep Patel</span>
                   <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider mt-0.5">Founder &amp; Technology Lead</span>
+                  <div className="mt-3 flex flex-wrap gap-2 justify-center md:justify-start text-[8px] font-bold text-slate-500 uppercase">
+                    <span className="bg-slate-100 px-2 py-1 rounded-full border border-slate-200/40">Engineering Vision</span>
+                    <span className="bg-slate-100 px-2 py-1 rounded-full border border-slate-200/40">Curiosity</span>
+                    <span className="bg-slate-100 px-2 py-1 rounded-full border border-slate-200/40">Problem Solving</span>
+                    <span className="bg-slate-100 px-2 py-1 rounded-full border border-slate-200/40">Technology Passion</span>
+                  </div>
                 </div>
               </div>
             </div>
           </FadeIn>
           
           <FadeIn direction="up" delay={0.3}>
-            <p className="text-[11px] text-slate-400 mt-8 text-center max-w-sm">
+            <p className="text-[11px] text-slate-450 mt-8 text-center max-w-sm font-semibold uppercase tracking-wider">
               Remote-first engineering partner working with businesses beyond borders.
             </p>
           </FadeIn>
