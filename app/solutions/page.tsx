@@ -2,64 +2,46 @@
 
 import React from "react";
 import Link from "next/link";
-import { Compass, ShoppingCart, Rocket, ClipboardList, Sparkles, Server, ArrowRight, Check } from "lucide-react";
+import { Rocket, Compass, Sparkles, Server, ArrowRight, Check } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "../../components/Animations";
 import SubpageContainer from "../../components/SubpageContainer";
 
 const solutions = [
   {
-    icon: Compass,
-    title: "Business Websites & Digital Presence",
-    tagline: "Highly credible online identities that load instantly",
-    challenge: "Local businesses and professional firms lose potential clients due to slow-loading, outdated websites that fail to establish trust or capture inquiries.",
-    approach: "We design lightweight, SEO-optimized static sites deployed on global edge servers with custom content management integrations.",
-    benefits: ["Sub-second page load times", "High Search Engine Visibility", "Built-in lead capture automation"],
+    icon: Rocket,
+    title: "Product Engineering",
+    tagline: "Custom software and mobile apps built to scale from day one",
+    challenge: "Startups and innovators face high developer costs, launch delays, and initial database scaling blocks when validating product-market fit.",
+    approach: "We design modular architectures, rapid MVPs, and robust SaaS frameworks that allow quick iterations and secure multi-tenant usage.",
+    benefits: ["Reduced time-to-market for MVP launch", "Modular, scalable codebase layouts", "Highly secure API and database designs"],
     color: "from-blue-600 to-sky-custom"
   },
   {
-    icon: ShoppingCart,
-    title: "Ecommerce Platforms",
-    tagline: "High-performance headless online storefronts",
-    challenge: "Standard store builders suffer checkout drops during flash sales due to database lag, and offer limited flexibility for custom integrations.",
-    approach: "We build modern, headless storefronts integrated with robust payment gateways, fast inventory APIs, and responsive management panels.",
-    benefits: ["Optimized checkout conversion rates", "Real-time inventory synchronization", "Highly responsive checkout flows"],
+    icon: Compass,
+    title: "Business Transformation",
+    tagline: "High-performance websites, commerce storefronts, and internal dashboards",
+    challenge: "Growing companies lose potential leads due to slow-loading sites, laggy inventory syncs, and manual operational spreadsheets.",
+    approach: "We engineer fast static storefronts, headless commerce API panels, custom internal CRMs, and automated workflow triggers.",
+    benefits: ["Edge-rendered global page loads under 200ms", "Synchronized real-time inventory management", "Centralized, secure dashboard metrics"],
     color: "from-indigo-600 to-blue-500"
   },
   {
-    icon: Rocket,
-    title: "Startup Development",
-    tagline: "Rapid MVP validation and scalable SaaS products",
-    challenge: "Founders waste valuable budget on agency delays or scaling blocks that fail to pivot when market demands change.",
-    approach: "We engineer flexible MVPs and modular SaaS frameworks that allow quick feature iterations and handle growth spikes seamlessly.",
-    benefits: ["Reduced time-to-market for MVPs", "Modular, scalable codebase architecture", "Secure multi-tenant database designs"],
+    icon: Sparkles,
+    title: "Intelligent Systems",
+    tagline: "AI systems and automated operational integrations",
+    challenge: "Organizations waste hundreds of hours on repetitive data categorization, unstructured document parsing, and invoice routing loops.",
+    approach: "We deploy cognitive processing pipelines combining customized machine learning, document parsers, and validation dashboards.",
+    benefits: ["Automated document processing pipelines", "AI-driven customer support categorization", "Seamless legacy system API wiring"],
     color: "from-blue-500 to-sky-500"
   },
   {
-    icon: ClipboardList,
-    title: "Business Management Systems",
-    tagline: "Secure internal tools, dashboards, and automated workflows",
-    challenge: "Organizations lose hours to disconnected spreadsheets, manual data entry errors, and fragmented legacy systems.",
-    approach: "We create secure employee portals, custom CRMs, inventory tracking dashboards, and automated workflow systems.",
-    benefits: ["Unified operational data view", "Automated email/notification loops", "Role-based access security controls"],
-    color: "from-sky-500 to-indigo-600"
-  },
-  {
-    icon: Sparkles,
-    title: "AI Business Automation",
-    tagline: "Cognitive workflows and LLM agent integrations",
-    challenge: "Teams spend hours filtering files, categorizing support tickets, and manually writing status updates.",
-    approach: "We implement custom LLM agents and data extraction pipelines that automate document parsing and routine customer triage.",
-    benefits: ["Significant reduction in manual data processing", "Autonomous support triage with human-in-the-loop validation", "Seamless custom API pipeline integrations"],
-    color: "from-blue-600 to-indigo-600"
-  },
-  {
     icon: Server,
-    title: "Enterprise Engineering",
-    tagline: "Secure cloud migrations and automated server operations",
-    challenge: "Growing companies face database latency, deployment bottlenecks, and server downtime from unoptimized infrastructure configurations.",
-    approach: "We deploy automated CI/CD pipelines, container orchestration, and real-time system monitoring structures.",
-    benefits: ["Automated scaling under high traffic", "Continuous uptime with rollback safety", "Security-focused cloud permission boundaries"],
-    color: "from-sky-600 to-blue-600"
+    title: "Digital Infrastructure",
+    tagline: "Secure cloud migrations and performance engineering",
+    challenge: "Growing digital systems face performance bottlenecks, database latency spikes, and cloud hosting cost leaks.",
+    approach: "We deploy automated CI/CD pipelines, container configurations, and real-time cost-resource optimization maps.",
+    benefits: ["Optimized server hosting expenses", "Automated pipelines with rollback safety", "Security-focused cloud permission gates"],
+    color: "from-sky-500 to-indigo-600"
   }
 ];
 
@@ -83,8 +65,8 @@ export default function SolutionsPage() {
             </h1>
           </FadeIn>
           <FadeIn direction="up" delay={0.3}>
-            <p className="text-slate-650 text-sm sm:text-base mt-6 max-w-2xl mx-auto leading-relaxed">
-              Explore how our tailor-made architectures solve complex organizational bottlenecks, increase security, and maximize operational profitability.
+            <p className="text-slate-500 text-sm sm:text-base mt-6 max-w-2xl mx-auto leading-relaxed">
+              Explore how our core engineering divisions solve operational bottlenecks, increase data security, and maximize system profitability.
             </p>
           </FadeIn>
         </div>
@@ -94,7 +76,7 @@ export default function SolutionsPage() {
       <section className="py-16">
         <div className="w-full">
           <StaggerContainer className="flex flex-col gap-12">
-            {solutions.map((solution, idx) => {
+            {solutions.map((solution) => {
               const Icon = solution.icon;
               return (
                 <StaggerItem key={solution.title}>
@@ -122,7 +104,7 @@ export default function SolutionsPage() {
                       <div className="flex flex-col gap-4">
                         <div>
                           <span className="text-[10px] font-extrabold uppercase text-slate-400 tracking-wider">The Challenge</span>
-                          <p className="text-xs text-slate-650 mt-1.5 leading-relaxed">{solution.challenge}</p>
+                          <p className="text-xs text-slate-500 mt-1.5 leading-relaxed">{solution.challenge}</p>
                         </div>
                         <div>
                           <span className="text-[10px] font-extrabold uppercase text-slate-400 tracking-wider">Our Approach</span>
@@ -137,7 +119,7 @@ export default function SolutionsPage() {
                           {solution.benefits.map((benefit) => (
                             <li key={benefit} className="flex items-start gap-2 text-xs font-semibold text-slate-700">
                               <span className="p-0.5 rounded-full bg-green-50 text-green-500 shrink-0 mt-0.5 border border-green-100">
-                                <Check className="w-3 h-3" />
+                                <Check className="w-3.5 h-3.5" />
                               </span>
                               <span>{benefit}</span>
                             </li>

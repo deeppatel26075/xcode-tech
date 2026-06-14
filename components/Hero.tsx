@@ -7,9 +7,10 @@ import { FadeIn, Magnetic } from "./Animations";
 import { AnimatePresence, motion } from "framer-motion";
 
 const navLinks = [
+  { label: "Home", href: "/" },
   { label: "Solutions", href: "/solutions" },
   { label: "Work", href: "/work" },
-  { label: "About", href: "/about" },
+  { label: "Company", href: "/about" },
   { label: "Contact", href: "/contact" }
 ];
 
@@ -113,15 +114,15 @@ export default function Hero() {
             <div className="lg:col-span-6 flex flex-col items-start gap-6 relative z-10">
               <FadeIn direction="up" delay={0.1}>
                 <h1 className="font-display font-semibold text-[40px] lg:text-[52px] leading-[1.1] text-dark tracking-tight text-glow">
-                  Engineering Scalable <br />
-                  Software Solutions for <br />
-                  Modern Businesses.
+                  We Engineer <br />
+                  Software That Powers <br />
+                  Ambitious Businesses
                 </h1>
               </FadeIn>
 
               <FadeIn direction="up" delay={0.2}>
                 <p className="text-sm text-slate-800/90 leading-relaxed max-w-lg">
-                  Xcode Tech helps businesses and startups design, build, and scale custom software, AI-powered systems, and high-performance digital platforms.
+                  From startup ideas to enterprise platforms, Xcode Tech designs, develops, and scales intelligent software solutions built for performance, security, and growth.
                 </p>
               </FadeIn>
 
@@ -132,15 +133,15 @@ export default function Hero() {
                       href="/contact"
                       className="inline-flex items-center justify-center gap-2 bg-slate-950 hover:bg-slate-900 text-white font-semibold text-xs px-8 py-3.5 rounded-full shadow-xl shadow-slate-900/10 transition-all group"
                     >
-                      Build Your Project
+                      🚀 Start Your Project
                     </Link>
                   </Magnetic>
                   <Magnetic>
                     <Link
-                      href="/solutions"
+                      href="/work"
                       className="inline-flex items-center justify-center gap-2 bg-white/80 hover:bg-white text-dark font-semibold text-xs px-8 py-3.5 rounded-full shadow-lg border border-slate-200/50 hover:shadow-xl transition-all"
                     >
-                      View Solutions
+                      📂 Explore Our Work
                     </Link>
                   </Magnetic>
                 </div>
@@ -149,7 +150,7 @@ export default function Hero() {
               {/* Trust Tagline & Partners row */}
               <FadeIn direction="up" delay={0.4} className="w-full mt-12">
                 <p className="text-[10px] font-bold text-slate-500/80 uppercase tracking-widest mb-4">
-                  1000K+ trusted partner of leading companies worldwide.
+                  Software • AI • Cloud • Digital Products
                 </p>
                 <div className="flex flex-wrap items-center gap-x-8 gap-y-3 opacity-70 text-slate-800 font-display font-bold text-[11px]">
                   <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-primary" /> Lightbox</span>

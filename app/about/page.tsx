@@ -23,7 +23,7 @@ export default function AboutPage() {
           
           <FadeIn direction="up" delay={0.1}>
             <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block mb-4">
-              About Xcode Tech
+              Xcode Tech Company
             </span>
           </FadeIn>
 
@@ -36,8 +36,8 @@ export default function AboutPage() {
               <span className="font-display font-extrabold text-xl text-dark tracking-tight leading-none">
                 Xcode Tech
               </span>
-              <span className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-1">
-                Software Engineering Studio
+              <span className="text-[10px] text-slate-550 font-bold uppercase tracking-widest mt-1">
+                Software Engineering Partner
               </span>
             </div>
           </FadeIn>
@@ -52,8 +52,8 @@ export default function AboutPage() {
           </FadeIn>
           
           <FadeIn direction="up" delay={0.4}>
-            <p className="text-slate-600 text-sm sm:text-base mt-6 max-w-2xl mx-auto leading-relaxed">
-              Xcode Tech is a software company focused on creating reliable digital products using modern engineering, AI, and cloud technologies. We stand as your long-term technology partner, assisting local businesses and international startup teams in building secure, high-performance platforms.
+            <p className="text-slate-655 text-sm sm:text-base mt-6 max-w-2xl mx-auto leading-relaxed">
+              Xcode Tech is a software company focused on creating reliable digital products using modern engineering, AI, and cloud technologies. We act as a global engineering partner, helping ambitious businesses transform ambitious ideas into reliable technology.
             </p>
           </FadeIn>
 
@@ -81,7 +81,7 @@ export default function AboutPage() {
                 <Eye className="w-4 h-4 inline mr-1 text-primary" /> Vision
               </span>
               <p className="text-sm font-semibold text-slate-700 leading-relaxed">
-                "Become a global technology leader creating innovations that shape future digital experiences."
+                "Building Xcode Tech as a global engineering partner where businesses transform ambitious ideas into reliable technology."
               </p>
             </div>
           </div>

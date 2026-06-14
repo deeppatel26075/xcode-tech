@@ -11,6 +11,9 @@ export interface Project {
   results: string[];
   dashboardStats: { label: string; value: string; change: string }[];
   image: string;
+  challengeDetail: string;
+  solutionDetail: string;
+  businessImpact: string;
 }
 
 export const projects: Project[] = [
@@ -34,7 +37,10 @@ export const projects: Project[] = [
       { label: "Payments", value: "Secure", change: "Stripe integrated" },
       { label: "Architecture", value: "Scalable", change: "Tested infrastructure" }
     ],
-    image: "/projects/restaurant-platform.jpg"
+    image: "/projects/restaurant-platform.jpg",
+    challengeDetail: "The restaurant group experienced bottlenecks during peak dining hours with slow order execution and high payment processing failure rates.",
+    solutionDetail: "We built a customized cloud order-execution engine with direct Stripe checkout gateways and low-latency status boards.",
+    businessImpact: "Designed to support conflict-free payment processing and continuous order handling during massive traffic surges."
   },
   {
     id: "healthcare-management-system",
@@ -56,7 +62,10 @@ export const projects: Project[] = [
       { label: "Scheduling", value: "Streamlined", change: "Conflict-free calendars" },
       { label: "Database", value: "Robust", change: "PostgreSQL backed" }
     ],
-    image: "/projects/healthcare-system.jpg"
+    image: "/projects/healthcare-system.jpg",
+    challengeDetail: "Clinic networks faced data siloing, high administrative booking delays, and potential leakage risks of patient healthcare logs.",
+    solutionDetail: "We engineered an encrypted patient dashboard featuring role-based secure logs and automated scheduling engines.",
+    businessImpact: "Built to streamline patient scheduling throughput and establish highly secure, compliant record access boundaries."
   },
   {
     id: "ai-business-assistant",
@@ -78,6 +87,9 @@ export const projects: Project[] = [
       { label: "AI Engine", value: "Tuned", change: "Custom prompts" },
       { label: "Integration", value: "APIs", change: "Fits legacy structures" }
     ],
-    image: "/projects/ai-assistant.jpg"
+    image: "/projects/ai-assistant.jpg",
+    challengeDetail: "Operations teams spent hours manually categorizing, indexing, and entering database records from unstructured invoice streams.",
+    solutionDetail: "We deployed cognitive parsing pipelines combining machine learning classification and human-in-the-loop validation dashboards.",
+    businessImpact: "Developed to automate document ingestion pipeline workloads while preserving routing precision."
   }
 ];

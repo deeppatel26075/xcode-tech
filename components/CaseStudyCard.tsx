@@ -45,16 +45,28 @@ export default function CaseStudyCard({ project }: CaseStudyCardProps) {
             </span>
           </div>
 
-          <h3 className="font-display font-extrabold text-2xl text-dark mb-3 leading-tight group-hover:text-primary transition-colors">
+          <h3 className="font-display font-extrabold text-2xl text-dark mb-4 leading-tight group-hover:text-primary transition-colors">
             {project.title}
           </h3>
 
-          <p className="text-sm text-slate-500 leading-relaxed max-w-md mb-6">
-            {project.description}
-          </p>
+          <div className="flex flex-col gap-3 text-xs text-slate-655 mb-5 max-w-md">
+            <div>
+              <span className="font-bold text-[9px] uppercase tracking-wider text-slate-400 block mb-0.5">Challenge</span>
+              <p className="text-slate-600 leading-relaxed">{project.challengeDetail}</p>
+            </div>
+            <div>
+              <span className="font-bold text-[9px] uppercase tracking-wider text-slate-400 block mb-0.5">Engineering Solution</span>
+              <p className="text-slate-800 font-semibold leading-relaxed">{project.solutionDetail}</p>
+            </div>
+            <div>
+              <span className="font-bold text-[9px] uppercase tracking-wider text-slate-400 block mb-0.5">Business Impact</span>
+              <p className="text-slate-600 italic leading-relaxed">{project.businessImpact}</p>
+            </div>
+          </div>
 
           {/* Features */}
-          <div className="flex flex-wrap gap-2 mb-4">
+          <div className="flex flex-wrap gap-1.5 mb-4">
+            <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider self-center mr-1">Technology:</span>
             {project.features.map((feature) => (
               <span key={feature} className="text-[10px] font-semibold text-slate-600 bg-slate-100/60 border border-slate-200/50 px-2.5 py-1 rounded-full">
                 {feature}

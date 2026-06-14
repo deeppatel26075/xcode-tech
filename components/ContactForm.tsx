@@ -136,7 +136,7 @@ export default function ContactForm() {
                 />
               </div>
 
-              {/* Service Required */}
+              {/* Project Type */}
               <div className="flex flex-col gap-2">
                 <label className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Project Type *</label>
                 <select
@@ -147,18 +147,17 @@ export default function ContactForm() {
                   className="w-full text-sm bg-slate-50/50 border border-slate-200 focus:border-primary focus:bg-white px-4 py-3 rounded-xl outline-none transition-all appearance-none cursor-pointer"
                 >
                   <option value="">Select Project Type...</option>
-                  <option value="website">Business Website</option>
-                  <option value="ecommerce">Ecommerce Platform</option>
-                  <option value="software">Custom Software</option>
-                  <option value="ai">AI Solution</option>
-                  <option value="mobile">Mobile App</option>
-                  <option value="other">Other</option>
+                  <option value="startup_product">Startup Product</option>
+                  <option value="business_software">Business Software</option>
+                  <option value="ai_solution">AI Solution</option>
+                  <option value="ecommerce_platform">Ecommerce Platform</option>
+                  <option value="enterprise_system">Enterprise System</option>
                 </select>
               </div>
 
-              {/* Budget Range */}
+              {/* Investment Level */}
               <div className="col-span-1 sm:col-span-2 flex flex-col gap-2">
-                <label className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Budget *</label>
+                <label className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Investment Level *</label>
                 <select
                   name="budget"
                   required
@@ -166,11 +165,11 @@ export default function ContactForm() {
                   onChange={handleInputChange}
                   className="w-full text-sm bg-slate-50/50 border border-slate-200 focus:border-primary focus:bg-white px-4 py-3 rounded-xl outline-none transition-all appearance-none cursor-pointer"
                 >
-                  <option value="">Select Budget Range...</option>
-                  <option value="small">Small Project (Under ₹50k / $1k)</option>
-                  <option value="growth">Growth Project (₹50k – ₹2L / $1k – $5k)</option>
-                  <option value="custom">Custom Product (₹2L+ / $5k+)</option>
-                  <option value="enterprise">Enterprise Solution (Custom Scope)</option>
+                  <option value="">Select Investment Level...</option>
+                  <option value="starter">Starter Solution</option>
+                  <option value="growth">Growth Solution</option>
+                  <option value="professional">Professional Build</option>
+                  <option value="enterprise">Enterprise Partnership</option>
                 </select>
               </div>
 
