@@ -174,7 +174,7 @@ export default function Hero() {
               </div>
 
               {/* Overlapping Glass Card 1: "Opportunity" (Left) */}
-              <div className="absolute left-[-15px] sm:left-[10px] lg:left-[-20px] top-[45%] rounded-[1.2rem] border border-white/20 bg-[#D2C5FB]/95 backdrop-blur-md p-4 shadow-xl max-w-[190px] select-none hover:scale-105 transition-transform duration-300">
+              <div className="hidden lg:absolute lg:block left-[-20px] top-[45%] rounded-[1.2rem] border border-white/20 bg-[#D2C5FB]/95 backdrop-blur-md p-4 shadow-xl max-w-[190px] select-none hover:scale-105 transition-transform duration-300">
                 <div className="flex items-center justify-between gap-2">
                   <span className="text-[8px] font-extrabold text-slate-800 uppercase tracking-widest">Opportunity</span>
                   <span className="text-[7px] font-bold bg-white/50 border border-white/20 px-2 py-0.5 rounded-full text-slate-800 leading-none">10 Seat</span>
@@ -189,7 +189,7 @@ export default function Hero() {
               </div>
 
               {/* Overlapping Glass Card 2: "Total Income" (Right) */}
-              <div className="absolute right-[-15px] sm:right-[15px] lg:right-[-25px] bottom-[15%] rounded-[1.2rem] border border-white/40 bg-white/85 backdrop-blur-md p-4 shadow-xl max-w-[200px] select-none hover:scale-105 transition-transform duration-300">
+              <div className="hidden lg:absolute lg:block right-[-25px] bottom-[15%] rounded-[1.2rem] border border-white/40 bg-white/85 backdrop-blur-md p-4 shadow-xl max-w-[200px] select-none hover:scale-105 transition-transform duration-300">
                 <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest leading-none">Total Income</p>
                 <div className="flex items-baseline gap-1 mt-1.5">
                   <span className="text-xl font-display font-extrabold text-slate-800">50.3 M</span>
@@ -213,7 +213,7 @@ export default function Hero() {
               </div>
 
               {/* Overlapping Glass Card 3: "Overview" (Top Right) */}
-              <div className="absolute right-[-5px] sm:right-[20px] lg:right-[-10px] top-[15%] rounded-xl border border-white/40 bg-white/85 backdrop-blur-md p-3 shadow-lg max-w-[130px] select-none hover:scale-105 transition-transform duration-300">
+              <div className="hidden lg:absolute lg:block right-[-10px] top-[15%] rounded-xl border border-white/40 bg-white/85 backdrop-blur-md p-3 shadow-lg max-w-[130px] select-none hover:scale-105 transition-transform duration-300">
                 <span className="text-[8px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
                   <Activity className="w-3 h-3 text-sky-500" />
                   Overview

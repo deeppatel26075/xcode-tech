@@ -171,10 +171,10 @@ export default function Home() {
       <Hero />
 
       {/* 2. Solutions We Engineer */}
-      <section className="py-28 bg-slate-50/50 border-b border-slate-100 relative">
+      <section className="py-20 md:py-28 bg-slate-50/50 border-b border-slate-100 relative">
         <div className="absolute inset-0 bg-dot-grid opacity-30 -z-10" />
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
             <FadeIn direction="up" delay={0.1}>
               <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
                 Core Divisions
@@ -186,13 +186,39 @@ export default function Home() {
               </h2>
             </FadeIn>
             <FadeIn direction="up" delay={0.3}>
-              <p className="text-slate-550 text-sm mt-3 leading-relaxed font-semibold">
+              <p className="text-slate-500 text-sm mt-3 leading-relaxed">
                 We design, build, and scale digital products and systems structured around your exact growth stage.
               </p>
             </FadeIn>
           </div>
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Mobile View: Horizontal App-style Cards */}
+          <div className="flex flex-col gap-4 md:hidden">
+            {solutions.map((sol) => {
+              const Icon = sol.icon;
+              return (
+                <Link href="/solutions" key={sol.title} className="rounded-xl border border-slate-200/40 p-4 bg-white/50 backdrop-blur-md flex items-center justify-between hover:bg-white transition-all shadow-sm min-h-[48px]">
+                  <div className="flex items-center gap-4">
+                    <div className={`p-2.5 rounded-xl bg-gradient-to-tr ${sol.color} text-white shrink-0`}>
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <div className="text-left">
+                      <h3 className="font-display font-bold text-sm text-dark leading-tight">
+                        {sol.title}
+                      </h3>
+                      <span className="text-[10px] text-slate-400 block mt-0.5 leading-none">
+                        {sol.subtitle}
+                      </span>
+                    </div>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-slate-400" />
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* Desktop View: Grid Layout */}
+          <StaggerContainer className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-8">
             {solutions.map((sol) => {
               const Icon = sol.icon;
               return (
@@ -232,9 +258,9 @@ export default function Home() {
       </section>
 
       {/* 3. Engineering Excellence (Enterprise Confidence) */}
-      <section className="py-28 bg-transparent border-b border-slate-100">
+      <section className="py-20 md:py-28 bg-transparent border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
             <FadeIn direction="up" delay={0.1}>
               <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
                 Trust &amp; Scale
@@ -247,19 +273,19 @@ export default function Home() {
             </FadeIn>
           </div>
 
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             {engineeringExcellence.map((cap) => {
               const Icon = cap.icon;
               return (
                 <StaggerItem key={cap.title}>
-                  <div className="rounded-2xl border border-white/35 p-6 bg-white/45 backdrop-blur-md shadow-sm hover:shadow-md hover:border-primary/10 transition-all h-full">
-                    <div className="p-3 w-fit rounded-xl bg-blue-50/60 text-primary border border-blue-100/40 mb-4 shadow-sm">
+                  <div className="rounded-2xl border border-white/35 p-5 md:p-6 bg-white/45 backdrop-blur-md shadow-sm hover:shadow-md hover:border-primary/10 transition-all h-full">
+                    <div className="p-2.5 md:p-3 w-fit rounded-xl bg-blue-50/60 text-primary border border-blue-100/40 mb-4 shadow-sm">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <h4 className="font-display font-bold text-base text-dark mb-2">
+                    <h4 className="font-display font-bold text-sm md:text-base text-dark mb-2">
                       {cap.title}
                     </h4>
-                    <p className="text-xs text-slate-550 leading-relaxed">
+                    <p className="text-[11px] md:text-xs text-slate-550 leading-relaxed">
                       {cap.desc}
                     </p>
                   </div>
@@ -271,10 +297,10 @@ export default function Home() {
       </section>
 
       {/* 4. How We Work (Startup/Founder Funnel) */}
-      <section className="py-28 bg-slate-50/50 border-b border-slate-100 relative">
+      <section className="py-20 md:py-28 bg-slate-50/50 border-b border-slate-100 relative">
         <div className="absolute inset-0 bg-dot-grid opacity-20 -z-10" />
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
             <FadeIn direction="up" delay={0.1}>
               <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
                 Our Process
@@ -317,9 +343,9 @@ export default function Home() {
       </section>
 
       {/* 5. Selected Work */}
-      <section className="py-28 bg-transparent border-b border-slate-100">
+      <section className="py-20 md:py-28 bg-transparent border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 md:mb-20">
             <div className="max-w-xl">
               <FadeIn direction="up" delay={0.1}>
                 <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
@@ -354,10 +380,10 @@ export default function Home() {
       </section>
 
       {/* 6. Engagement Models */}
-      <section className="py-28 bg-slate-50/50 border-b border-slate-100 relative">
+      <section className="py-20 md:py-28 bg-slate-50/50 border-b border-slate-100 relative">
         <div className="absolute inset-0 bg-dot-grid opacity-10 -z-10" />
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
             <FadeIn direction="up" delay={0.1}>
               <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
                 Partnership
@@ -398,9 +424,9 @@ export default function Home() {
       </section>
 
       {/* 7. Engineering Across Industries */}
-      <section className="py-28 bg-transparent border-b border-slate-100">
+      <section className="py-20 md:py-28 bg-transparent border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
             <FadeIn direction="up" delay={0.1}>
               <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
                 Sectors
@@ -437,7 +463,7 @@ export default function Home() {
       </section>
 
       {/* 8. Technology Decisions Made for Scale */}
-      <section className="py-28 bg-slate-50/50 relative border-b border-slate-100">
+      <section className="py-20 md:py-28 bg-slate-50/50 relative border-b border-slate-100">
         <div className="absolute inset-0 bg-dot-grid opacity-30 -z-10" />
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
@@ -484,9 +510,9 @@ export default function Home() {
       </section>
 
       {/* 9. Engineering Standards */}
-      <section className="py-28 bg-transparent border-b border-slate-100">
+      <section className="py-20 md:py-28 bg-transparent border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
             <FadeIn direction="up" delay={0.1}>
               <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
                 Quality Gates
@@ -499,10 +525,10 @@ export default function Home() {
             </FadeIn>
           </div>
 
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          <StaggerContainer className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
             {engineeringStandards.map((std) => (
               <StaggerItem key={std.title}>
-                <div className="rounded-2xl border border-white/30 p-6 bg-white/40 backdrop-blur-md shadow-sm hover:shadow-md hover:border-primary/10 transition-all h-full flex flex-col justify-between">
+                <div className="rounded-2xl border border-white/30 p-5 bg-white/40 backdrop-blur-md shadow-sm hover:shadow-md hover:border-primary/10 transition-all h-full flex flex-col justify-between">
                   <div className="flex flex-col gap-3">
                     <span className="p-1.5 w-fit rounded-lg bg-green-50 text-green-500 border border-green-100">
                       <Check className="w-4 h-4" />
@@ -522,9 +548,9 @@ export default function Home() {
       </section>
 
       {/* 10. Why Partner With Xcode Tech */}
-      <section className="py-28 bg-slate-50/50 border-b border-slate-100">
+      <section className="py-20 md:py-28 bg-slate-50/50 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
             <FadeIn direction="up" delay={0.1}>
               <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
                 Company Pillars
@@ -537,7 +563,7 @@ export default function Home() {
             </FadeIn>
           </div>
 
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
             {trustPillars.map((val) => {
               const Icon = val.icon;
               return (
@@ -561,7 +587,7 @@ export default function Home() {
       </section>
 
       {/* 11. Founder Vision Section */}
-      <section className="py-28 bg-transparent border-b border-slate-100">
+      <section className="py-20 md:py-28 bg-transparent border-b border-slate-100">
         <div className="max-w-4xl mx-auto px-6 text-center flex flex-col items-center">
           <FadeIn direction="up" delay={0.1}>
             <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block mb-4">
@@ -569,13 +595,13 @@ export default function Home() {
             </span>
           </FadeIn>
           
-          <FadeIn direction="up" delay={0.2} className="flex items-center gap-3.5 mb-6 bg-white/40 border border-white/30 backdrop-blur-md p-4 rounded-2xl">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-sky-custom flex items-center justify-center text-white font-display font-extrabold text-sm shadow-md">
+          <FadeIn direction="up" delay={0.2} className="flex flex-col sm:flex-row items-center gap-3.5 mb-6 bg-white/40 border border-white/30 backdrop-blur-md p-5 rounded-2xl">
+            <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-primary to-sky-custom flex items-center justify-center text-white font-display font-extrabold text-base shadow-md shrink-0">
               DP
             </div>
-            <div className="flex flex-col text-left">
-              <span className="font-display font-extrabold text-sm text-dark leading-none">Deep Patel</span>
-              <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mt-1">Founder &amp; Technology Lead</span>
+            <div className="flex flex-col text-center sm:text-left">
+              <span className="font-display font-extrabold text-base text-dark leading-none">Deep Patel</span>
+              <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mt-1.5">Founder &amp; Technology Lead</span>
             </div>
           </FadeIn>
 
@@ -591,7 +617,7 @@ export default function Home() {
       </section>
 
       {/* 12. Start Building CTA Form */}
-      <section id="contact" className="py-28 bg-slate-50/50 relative">
+      <section id="contact" className="py-20 md:py-28 bg-slate-50/50 relative">
         <div className="absolute inset-0 bg-dot-grid opacity-40 -z-10" />
         
         <div className="max-w-7xl mx-auto px-6">

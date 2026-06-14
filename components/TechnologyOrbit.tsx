@@ -29,7 +29,7 @@ const outerTechnologies: TechNode[] = [
 
 export default function TechnologyOrbit() {
   return (
-    <div className="relative w-full max-w-[650px] aspect-square mx-auto flex items-center justify-center overflow-hidden select-none">
+    <div className="relative w-full max-w-[650px] aspect-square mx-auto hidden md:flex items-center justify-center overflow-hidden select-none">
       
       {/* Background Tech Glows */}
       <div className="absolute w-[80%] aspect-square rounded-full bg-blue-500/5 blur-[80px] -z-10 animate-pulse-glow" />

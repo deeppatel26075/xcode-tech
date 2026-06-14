@@ -18,8 +18,20 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hideSticky, setHideSticky] = useState(false);
   const pathname = usePathname();
 
+  // Scroll lock when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
   // Manage glassmorphism state on scroll
   useEffect(() => {
@@ -30,6 +42,10 @@ export default function Navbar() {
       } else {
         setScrolled(false);
       }
+
+      // Hide sticky CTA near the bottom of the page (footer/contact section)
+      const isNearBottom = window.scrollY > document.documentElement.scrollHeight - window.innerHeight - 700;
+      setHideSticky(isNearBottom);
     };
     
     // Call handler immediately to set initial state
@@ -111,43 +127,84 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Nav Drawer */}
+      {/* Mobile Nav Drawer Fullscreen Overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:hidden border-t border-slate-100 bg-white/95 backdrop-blur-xl shadow-lg"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:hidden fixed inset-0 z-40 bg-white flex flex-col justify-between p-8 pt-24"
           >
-            <nav className="flex flex-col p-6 gap-4">
-              {navLinks.map((link) => {
-                const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className={`text-base font-semibold transition-colors py-1 ${
-                      isActive ? "text-primary border-l-2 border-primary pl-2" : "text-slate-600 hover:text-primary"
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                );
-              })}
+            {/* Navigation links */}
+            <div className="flex flex-col gap-8">
+              {/* Menu Branding Header */}
+              <div className="border-b border-slate-100 pb-6">
+                <span className="font-display font-bold text-xl text-dark tracking-tight">Xcode Tech</span>
+                <span className="text-[10px] text-primary font-bold uppercase tracking-wider block mt-1">
+                  Software Engineering Partner
+                </span>
+              </div>
+
+              <nav className="flex flex-col gap-6">
+                {navLinks.map((link, idx) => {
+                  const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
+                  return (
+                    <motion.div
+                      key={link.href}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: idx * 0.05 + 0.1 }}
+                    >
+                      <Link
+                        href={link.href}
+                        onClick={() => setIsOpen(false)}
+                        className={`text-3xl font-display font-extrabold transition-colors block ${
+                          isActive ? "text-primary" : "text-slate-800 hover:text-primary"
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
+                    </motion.div>
+                  );
+                })}
+              </nav>
+            </div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35 }}
+              className="flex flex-col gap-6 border-t border-slate-100 pt-6"
+            >
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className="mt-2 w-full text-center bg-primary hover:bg-blue-700 text-white text-sm font-semibold py-3 rounded-full shadow-lg shadow-blue-500/10 transition-all"
+                className="w-full text-center bg-primary hover:bg-blue-700 text-white text-sm font-semibold py-4 rounded-xl shadow-lg shadow-blue-500/10 transition-all flex items-center justify-center gap-2 min-h-[48px]"
               >
-                Start Project
+                Start Your Project &rarr;
               </Link>
-            </nav>
+              <div className="flex justify-between text-[10px] font-bold text-slate-450 uppercase tracking-wider">
+                <span>Software • AI • Cloud</span>
+                <span>Ahmedabad, India</span>
+              </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Sticky Mobile CTA (Glassmorphic conversion upgrade) */}
+      {showNavbar && pathname !== "/contact" && !isOpen && !hideSticky && (
+        <div className="lg:hidden fixed bottom-6 left-6 right-6 z-30">
+          <Link
+            href="/contact"
+            className="w-full bg-primary/95 hover:bg-primary text-white text-xs font-bold py-3.5 px-6 rounded-xl shadow-xl shadow-blue-500/10 flex items-center justify-center gap-2 border border-white/20 backdrop-blur-md min-h-[48px] transition-all"
+          >
+            Start Your Project &rarr;
+          </Link>
+        </div>
+      )}
     </header>
   );
 }
