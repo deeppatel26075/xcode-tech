@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Laptop, Cpu, Smartphone, Cloud, FileSpreadsheet, Palette, Layout, ArrowRight, Zap } from "lucide-react";
+import { Laptop, Cpu, Cloud, Layout, ArrowRight, Zap, Shield } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "../../components/Animations";
 
 import SubpageContainer from "../../components/SubpageContainer";
@@ -11,50 +11,36 @@ const serviceDetails = [
   {
     icon: Laptop,
     title: "Software Engineering",
-    description: "Tailored enterprise solutions built from the ground up, optimized for stability, interoperability, and high performance.",
-    items: ["Custom SaaS Platform Architectures", "Custom CRM & ERP Modules", "Legacy Software Modernization", "API Design & Integration"],
+    description: "Tailored digital products built from the ground up, optimized for reliability, scalability, and high performance.",
+    items: ["Custom SaaS Platforms", "Business Dashboards", "API Design & Integrations", "Internal Workflow Systems"],
     color: "text-blue-600 bg-blue-50/40 border-blue-100/50"
   },
   {
     icon: Layout,
-    title: "Website Development",
-    description: "Creating light, serverless edge-rendered websites that deliver sub-second response times and boost organic conversions.",
-    items: ["Interactive Web Applications", "Headless E-commerce Storefronts", "Next.js Production Development", "Administrative Portals & Dashboards"],
+    title: "Web & Commerce",
+    description: "Creating fast, edge-rendered corporate websites and commerce storefronts that capture customers and boost conversions.",
+    items: ["Corporate Websites", "Headless E-commerce Stores", "Integrated Booking Systems", "Custom Payment Integrations"],
     color: "text-sky-500 bg-sky-50/40 border-sky-100/50"
   },
   {
-    icon: Smartphone,
-    title: "Mobile App Development",
-    description: "Engaging, interactive iOS and Android apps utilizing high-performance frameworks like Flutter, React Native, and Swift.",
-    items: ["Native iOS App Development", "Native Android App Development", "Cross-Platform Codebases", "Mobile Wallet & API Integrations"],
+    icon: Cpu,
+    title: "Artificial Intelligence",
+    description: "Integrating cognitive tools and automated workflows that eliminate manual processing and boost operational productivity.",
+    items: ["AI Assistant Chatbots", "AI Automated Workflows", "Custom LLM Integrations", "Document Parsing Pipelines"],
     color: "text-indigo-600 bg-indigo-50/40 border-indigo-100/50"
   },
   {
-    icon: Cpu,
-    title: "AI & Workflow Automation",
-    description: "Streamlining overhead costs and manual workflows by deploying autonomous agents and custom-tuned language models.",
-    items: ["Cognitive AI Agents & Chatbots", "Custom LLM Integrations", "Database Process Automation", "Visual Analytics dashboards"],
-    color: "text-blue-500 bg-blue-50/40 border-blue-100/50"
-  },
-  {
     icon: Cloud,
-    title: "Cloud infrastructure & DevOps",
-    description: "Optimizing hosting expenditures and implementing fully automated CI/CD structures for zero-downtime releases.",
-    items: ["AWS & Google Cloud Setup", "Automated GitHub Actions CI/CD", "Serverless Infrastructure Patterns", "Real-time Monitoring & Alerting"],
-    color: "text-sky-600 bg-sky-50/40 border-sky-100/50"
+    title: "Cloud Engineering",
+    description: "Deploying robust, auto-scaling architectures designed to ensure 99.9% availability and optimize monthly resource costs.",
+    items: ["Cloud Infrastructure Design", "Automated CI/CD Pipelines", "Containerization & Docker", "Resource Cost Optimization"],
+    color: "text-sky-650 bg-sky-50/40 border-sky-100/50"
   },
   {
-    icon: FileSpreadsheet,
-    title: "Business Technology Solutions",
-    description: "Aligning digital architectures with corporate targets to eliminate inefficiencies and grow your market footprint.",
-    items: ["Operational Audits & Technical Discovery", "Business Intelligence Analytics", "Multi-system Database Consolidation", "Digital Transformation Roadmaps"],
-    color: "text-indigo-500 bg-indigo-50/40 border-indigo-100/50"
-  },
-  {
-    icon: Palette,
-    title: "Brand & Product Experience",
-    description: "Delivering world-class product interfaces, custom design tokens, and frictionless layouts that delight modern users.",
-    items: ["Interactive UX User Flow Mapping", "SaaS Interface UI Mockups", "Responsive Visual Design Systems", "High-fidelity Vector Asset Creation"],
+    icon: Shield,
+    title: "Security-Focused Development",
+    description: "Ensuring your digital systems are secure from day one through modern security practices, data encryption, and robust access controls.",
+    items: ["Vulnerability Scanning", "Role-Based Access Control", "Data Encryption Standards", "Secure Code Audits"],
     color: "text-blue-600 bg-blue-50/40 border-blue-100/50"
   }
 ];

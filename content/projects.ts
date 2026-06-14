@@ -10,118 +10,74 @@ export interface Project {
   features: string[];
   results: string[];
   dashboardStats: { label: string; value: string; change: string }[];
-  image: string; // Will generate or describe mockup layout
+  image: string;
 }
 
 export const projects: Project[] = [
   {
-    id: "nova-ai-platform",
-    title: "Nova AI Platform",
-    category: "AI Automation",
-    description: "An intelligent AI ecosystem helping companies automate workflows, communication, and business operations.",
-    longDescription: "Nova AI Platform was engineered for enterprise clients to streamline repetitive tasks and orchestrate dynamic workflows. By integrating custom LLMs with legacy APIs, we transformed operational bottlenecks into sleek automated pipelines, reducing manual processing times significantly.",
-    client: "Acme Enterprise Corp",
-    duration: "4 Months",
-    services: ["AI Chatbots", "AI Integration", "Workflow Automation"],
-    features: ["AI Assistant", "Automation Engine", "Analytics Dashboard"],
+    id: "smart-restaurant-platform",
+    title: "Smart Restaurant Platform",
+    category: "Web & Commerce",
+    description: "Custom digital ordering platform with real-time administration boards, Stripe payments, and analytics.",
+    longDescription: "Challenge:\nRestaurants need faster digital ordering solutions to handle high peak volumes without operational errors.\n\nSolution:\nWe built a custom ordering platform with integrated payments, real-time dashboard analytics, and an intuitive customer checkout experience.",
+    client: "Gastronomy Group",
+    duration: "3 Months",
+    services: ["E-commerce", "Web Applications", "Booking Systems"],
+    features: ["Next.js", "Node.js", "PostgreSQL", "Cloud Hosting"],
     results: [
-      "98% efficiency gain in daily operations",
-      "Saved 40+ hours per week per department",
-      "Successful handling of 500k+ monthly automated actions"
+      "Designed to improve ordering speed and reduce manual operations.",
+      "Built with a highly scalable database schema prepared for multi-terminal sync.",
+      "Optimized for core web vitals and instantaneous page loads."
     ],
     dashboardStats: [
-      { label: "Efficiency Boost", value: "+98%", change: "vs last quarter" },
-      { label: "Tasks Automated", value: "840K", change: "Active instances" },
-      { label: "Response Time", value: "0.2s", change: "Average speed" }
+      { label: "Load Time", value: "Sub-1s", change: "Edge deployed" },
+      { label: "Payments", value: "Secure", change: "Stripe integrated" },
+      { label: "Architecture", value: "Scalable", change: "Tested infrastructure" }
     ],
-    image: "/projects/nova-ai.jpg"
+    image: "/projects/restaurant-platform.jpg"
   },
   {
-    id: "arvik-commerce",
-    title: "Arvik Commerce",
-    category: "E-commerce Technology",
-    description: "Premium commerce ecosystem with store management, payments, inventory, and analytics.",
-    longDescription: "Arvik Commerce was designed for modern retailers seeking a headless, lighting-fast shopping experience. Built on a serverless edge architecture, it handles flash-sale traffic spikes with sub-second page loads globally while consolidating multiple legacy inventory channels.",
-    client: "Arvik Retail Ltd",
-    duration: "6 Months",
-    services: ["E-commerce", "Web Applications", "UI/UX Design"],
-    features: ["Store Management", "Unified Payments Gateway", "Real-time Inventory Sync", "Advanced Analytics Dashboard"],
-    results: [
-      "140% increase in checkout conversions",
-      "Sub-200ms server response times globally",
-      "Zero downtime during seasonal peak sales"
-    ],
-    dashboardStats: [
-      { label: "Conversion Rate", value: "4.8%", change: "+2.1% improvement" },
-      { label: "Load Time", value: "180ms", change: "Global average" },
-      { label: "Sales Growth", value: "+320%", change: "Year-over-year" }
-    ],
-    image: "/projects/arvik-commerce.jpg"
-  },
-  {
-    id: "medflow-healthcare",
-    title: "MedFlow Healthcare",
-    category: "Enterprise Software",
-    description: "Healthcare management platform improving operations and patient experiences.",
-    longDescription: "MedFlow is a secure, HIPAA-compliant patient care portal and facility manager. It leverages real-time queue-prediction algorithms and smart scheduling to optimize resource utilization and provide a frictionless interface for medical professionals and patients alike.",
-    client: "MedFlow Network Inc",
-    duration: "8 Months",
-    services: ["Custom Software", "SaaS Platforms", "Business Applications"],
-    features: ["Patient Portal", "Facility Operations Board", "Queue Analytics Engine"],
-    results: [
-      "35% reduction in patient wait times",
-      "Eliminated patient onboarding paperwork through digital signature automation",
-      "Highly secure medical records access with multi-tier encryption"
-    ],
-    dashboardStats: [
-      { label: "Wait Time", value: "-35%", change: "vs previous system" },
-      { label: "Patients Served", value: "12,000+", change: "Daily average" },
-      { label: "Patient Rating", value: "4.9/5.0", change: "Satisfaction score" }
-    ],
-    image: "/projects/medflow-health.jpg"
-  },
-  {
-    id: "cloudops-control",
-    title: "CloudOps Control",
-    category: "Cloud Platform",
-    description: "Cloud monitoring and deployment solution for modern infrastructure.",
-    longDescription: "CloudOps Control acts as a single pane of glass for multi-cloud deployments. It integrates seamlessly with AWS, Google Cloud, and Kubernetes, utilizing AI anomaly detection to flag security vulnerabilities and optimize resource sizing automatically.",
-    client: "Velo Technologies",
+    id: "healthcare-management-system",
+    title: "Healthcare Management System",
+    category: "Software Engineering",
+    description: "Secure patient care portal, real-time scheduler, and encrypted health records system.",
+    longDescription: "Challenge:\nClinic networks struggle to manage schedules, track doctor availabilities, and keep patient records secure and accessible.\n\nSolution:\nWe designed an appointment booking engine, patient portal, and secure databases engineered with encryption-at-rest to protect private records.",
+    client: "Aegis Healthcare Network",
     duration: "5 Months",
-    services: ["Cloud Deployment", "CI/CD & DevOps", "Monitoring & optimization"],
-    features: ["Multi-cloud Monitoring", "Automated CI/CD Pipelines", "Intelligent Cost Optimization Alerts"],
+    services: ["Custom Software", "SaaS Platforms", "APIs"],
+    features: ["React.js", "Node.js", "PostgreSQL", "AWS Encrypted Cloud"],
     results: [
-      "42% average reduction in monthly cloud costs",
-      "Automated deployment rollbacks for failed health checks",
-      "Unified compliance reporting across AWS and Google Cloud"
+      "Designed to encrypt medical logs and streamline booking scheduling.",
+      "Configured with role-based access control and secure audit trails.",
+      "Created a unified dashboard showing real-time doctor availability calendars."
     ],
     dashboardStats: [
-      { label: "Cloud Costs", value: "-42%", change: "Avg cost reduction" },
-      { label: "Uptime SLA", value: "99.99%", change: "Zero incidents" },
-      { label: "Deploy Time", value: "1.2m", change: "Build pipeline speed" }
+      { label: "Data Security", value: "Encrypted", change: "At-rest & In-transit" },
+      { label: "Scheduling", value: "Streamlined", change: "Conflict-free calendars" },
+      { label: "Database", value: "Robust", change: "PostgreSQL backed" }
     ],
-    image: "/projects/cloudops-control.jpg"
+    image: "/projects/healthcare-system.jpg"
   },
   {
-    id: "finsmart-analytics",
-    title: "FinSmart Analytics",
-    category: "Business Intelligence",
-    description: "AI-powered analytics platform helping companies make smarter decisions.",
-    longDescription: "FinSmart Analytics translates complex transactional data streams into actionable operational intelligence. Using predictive analytics models, financial departments can forecast cash flows, assess investment risks, and view unified multi-currency balances in real-time.",
-    client: "FinSmart Partners Group",
-    duration: "3.5 Months",
-    services: ["Business Analysis", "SaaS Platforms", "AI Integration"],
-    features: ["AI-powered Predictive Models", "Interactive Data Cubes", "Dynamic Financial Reports Builder"],
+    id: "ai-business-assistant",
+    title: "AI Business Assistant",
+    category: "Artificial Intelligence",
+    description: "Cognitive workflow pipeline handling automatic document parsing and email classification.",
+    longDescription: "Challenge:\nBusinesses waste hundreds of hours manually parsing invoices, reading documents, and classifying customer emails.\n\nSolution:\nWe deployed intelligent workflow pipelines that parse structured/unstructured files and route them automatically using customized large language models.",
+    client: "Logix Enterprise Solutions",
+    duration: "4 Months",
+    services: ["AI Chatbots", "AI Automation", "AI Integration"],
+    features: ["Python", "FastAPI", "OpenAI API", "Docker Containerization"],
     results: [
-      "Enabled real-time cash flow forecasting with 95% accuracy",
-      "Consolidated financial records of 6 global subsidiaries into a unified ledger",
-      "Reduced monthly bookkeeping close cycle from 10 days to 2 days"
+      "Created to automate document routing and eliminate repetitive indexing.",
+      "Integrated with customized logical classification models to prevent routing errors.",
+      "Designed with a simple admin interface for human-in-the-loop validation."
     ],
     dashboardStats: [
-      { label: "Forecast Accuracy", value: "95.4%", change: "Within +/- 0.5%" },
-      { label: "Close Cycle", value: "2 Days", change: "Down from 10 days" },
-      { label: "Assets Tracked", value: "$4.2B", change: "Real-time updates" }
+      { label: "Workflows", value: "Automated", change: "Zero manual intervention" },
+      { label: "AI Engine", value: "Tuned", change: "Custom prompts" },
+      { label: "Integration", value: "APIs", change: "Fits legacy structures" }
     ],
-    image: "/projects/finsmart-analytics.jpg"
+    image: "/projects/ai-assistant.jpg"
   }
 ];

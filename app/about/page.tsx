@@ -37,23 +37,23 @@ export default function AboutPage() {
                 Xcode Tech
               </span>
               <span className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-1">
-                Cloud Intelligence Studio
+                Software Engineering Studio
               </span>
             </div>
           </FadeIn>
 
           <FadeIn direction="up" delay={0.3}>
             <h1 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-dark tracking-tight leading-[1.1]">
-              We don't just build software. <br />
+              We don't just build websites. <br />
               <span className="bg-gradient-to-r from-primary to-sky-custom bg-clip-text text-transparent">
-                We engineer digital evolution.
+                We engineer digital systems.
               </span>
             </h1>
           </FadeIn>
           
           <FadeIn direction="up" delay={0.4}>
             <p className="text-slate-600 text-sm sm:text-base mt-6 max-w-2xl mx-auto leading-relaxed">
-              Xcode Tech is a modern technology company creating powerful, scalable, and intelligent digital solutions. We combine software engineering, artificial intelligence, automation, cloud technology, and creative design to transform ideas into world-class products.
+              Xcode Tech is a software company focused on creating reliable digital products using modern engineering, AI, and cloud technologies. We stand as your long-term technology partner, assisting local businesses and international startup teams in building secure, high-performance platforms.
             </p>
           </FadeIn>
 
@@ -193,13 +193,13 @@ export default function AboutPage() {
             Partner with Xcode Tech today
           </h2>
           <p className="text-slate-500 text-sm max-w-lg leading-relaxed">
-            Connect with our systems architects to design custom softwares, automation pipelines, and high-performance websites.
+            Connect with our technology directors to design custom software, business systems, and high-performance websites.
           </p>
           <Link
             href="/contact"
             className="inline-flex items-center gap-2 bg-primary hover:bg-blue-700 text-white font-semibold text-xs px-6 py-3.5 rounded-full shadow-lg shadow-blue-500/10 transition-all group mt-2"
           >
-            Start Project
+            Request Consultation
             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
           </Link>
         </div>

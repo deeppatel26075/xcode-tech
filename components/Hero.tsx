@@ -7,12 +7,10 @@ import { FadeIn, Magnetic } from "./Animations";
 import { AnimatePresence, motion } from "framer-motion";
 
 const navLinks = [
-  { label: "About us", href: "/about" },
-  { label: "Features", href: "/services" },
   { label: "Solutions", href: "/solutions" },
-  { label: "Technology", href: "/technology" },
-  { label: "Blogs", href: "/insights" },
-  { label: "Contacts", href: "/contact" }
+  { label: "Work", href: "/work" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" }
 ];
 
 export default function Hero() {
@@ -64,7 +62,7 @@ export default function Hero() {
                 href="/contact"
                 className="bg-white/95 hover:bg-white text-dark text-xs font-bold px-5 py-2.5 rounded-full shadow-md border border-slate-200/50 hover:shadow-lg transition-all"
               >
-                Sign Up
+                Consultation
               </Link>
             </div>
 
@@ -102,7 +100,7 @@ export default function Hero() {
                   onClick={() => setMobileMenuOpen(false)}
                   className="w-full text-center bg-primary text-white text-xs font-bold py-3 rounded-full mt-2"
                 >
-                  Sign Up
+                  Consultation
                 </Link>
               </motion.div>
             )}
@@ -114,26 +112,35 @@ export default function Hero() {
             {/* Left Side: Headline & Copy */}
             <div className="lg:col-span-6 flex flex-col items-start gap-6 relative z-10">
               <FadeIn direction="up" delay={0.1}>
-                <h1 className="font-display font-semibold text-[44px] lg:text-[56px] leading-[1.1] text-dark tracking-tight text-glow">
-                  We elevate your <br />
-                  business to new levels.
+                <h1 className="font-display font-semibold text-[40px] lg:text-[52px] leading-[1.1] text-dark tracking-tight text-glow">
+                  Engineering Scalable <br />
+                  Software Solutions for <br />
+                  Modern Businesses.
                 </h1>
               </FadeIn>
 
               <FadeIn direction="up" delay={0.2}>
                 <p className="text-sm text-slate-800/90 leading-relaxed max-w-lg">
-                  Every business is unique, and so are our solutions. Xcode's cutting-edge technology helps you scale efficiently and effectively.
+                  Xcode Tech helps businesses and startups design, build, and scale custom software, AI-powered systems, and high-performance digital platforms.
                 </p>
               </FadeIn>
 
               <FadeIn direction="up" delay={0.3}>
-                <div className="mt-1">
+                <div className="mt-1 flex flex-wrap gap-4 items-center">
                   <Magnetic>
                     <Link
                       href="/contact"
                       className="inline-flex items-center justify-center gap-2 bg-slate-950 hover:bg-slate-900 text-white font-semibold text-xs px-8 py-3.5 rounded-full shadow-xl shadow-slate-900/10 transition-all group"
                     >
-                      Get Started
+                      Build Your Project
+                    </Link>
+                  </Magnetic>
+                  <Magnetic>
+                    <Link
+                      href="/solutions"
+                      className="inline-flex items-center justify-center gap-2 bg-white/80 hover:bg-white text-dark font-semibold text-xs px-8 py-3.5 rounded-full shadow-lg border border-slate-200/50 hover:shadow-xl transition-all"
+                    >
+                      View Solutions
                     </Link>
                   </Magnetic>
                 </div>

@@ -2,58 +2,66 @@
 
 import React from "react";
 import Link from "next/link";
-import { Cpu, CloudLightning, LineChart, Shield, Terminal, ArrowRight, Check } from "lucide-react";
+import { Compass, ShoppingCart, Rocket, ClipboardList, Sparkles, Server, ArrowRight, Check } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "../../components/Animations";
+import SubpageContainer from "../../components/SubpageContainer";
 
 const solutions = [
   {
-    icon: Cpu,
-    title: "AI Automation Ecosystems",
-    tagline: "Automate complex logical operations with cognitive agents",
-    challenge: "Companies spend thousands of hours on repetitive data entry, email filtering, and customer support triage, leading to high operational costs and slow response cycles.",
-    approach: "We build custom LLM-powered pipelines that read pages, files, and incoming data streams, handling transactions autonomously with human-in-the-loop validation.",
-    benefits: ["98% efficiency gain in transactional tasks", "Sub-second response speeds", "Scale handling up to 1M+ requests daily"],
-    color: "from-blue-600 to-sky-400"
+    icon: Compass,
+    title: "Business Websites & Digital Presence",
+    tagline: "Highly credible online identities that load instantly",
+    challenge: "Local businesses and professional firms lose potential clients due to slow-loading, outdated websites that fail to establish trust or capture inquiries.",
+    approach: "We design lightweight, SEO-optimized static sites deployed on global edge servers with custom content management integrations.",
+    benefits: ["Sub-second page load times", "High Search Engine Visibility", "Built-in lead capture automation"],
+    color: "from-blue-600 to-sky-custom"
   },
   {
-    icon: CloudLightning,
-    title: "Edge E-commerce Storefronts",
-    tagline: "Ultra-fast headless architectures built to maximize conversion rates",
-    challenge: "Physical/SaaS stores suffer checkout drops due to high latency, sluggish dashboard updates, and server downtime during seasonal flash sales.",
-    approach: "We design decentralized headless frontend layers deployed on edge hosting structures, integrating serverless database caches and direct payments gates.",
-    benefits: [" checkout conversions increased by 140%", "Global load times under 200ms", "Zero host downtime during high traffic spikes"],
+    icon: ShoppingCart,
+    title: "Ecommerce Platforms",
+    tagline: "High-performance headless online storefronts",
+    challenge: "Standard store builders suffer checkout drops during flash sales due to database lag, and offer limited flexibility for custom integrations.",
+    approach: "We build modern, headless storefronts integrated with robust payment gateways, fast inventory APIs, and responsive management panels.",
+    benefits: ["Optimized checkout conversion rates", "Real-time inventory synchronization", "Highly responsive checkout flows"],
     color: "from-indigo-600 to-blue-500"
   },
   {
-    icon: Shield,
-    title: "Enterprise System Management",
-    tagline: "Highly secure HIPAA & ISO-compliant internal software frameworks",
-    challenge: "Corporate sectors face communication barriers, siloed database records, and data leakage risks from outdated legacy applications.",
-    approach: "We engineer multi-tenant secure dashboards utilizing advanced encryption layers, offering real-time queues, custom CRM ledgers, and secure role boundaries.",
-    benefits: ["Consolidated database synchronization", "Reduced patient/client onboarding times by 35%", "Total HIPAA compliance & encryption"],
+    icon: Rocket,
+    title: "Startup Development",
+    tagline: "Rapid MVP validation and scalable SaaS products",
+    challenge: "Founders waste valuable budget on agency delays or scaling blocks that fail to pivot when market demands change.",
+    approach: "We engineer flexible MVPs and modular SaaS frameworks that allow quick feature iterations and handle growth spikes seamlessly.",
+    benefits: ["Reduced time-to-market for MVPs", "Modular, scalable codebase architecture", "Secure multi-tenant database designs"],
     color: "from-blue-500 to-sky-500"
   },
   {
-    icon: Terminal,
-    title: "Multi-Cloud DevOps & Orchestration",
-    tagline: "Eliminate idle resources and automate serverless software pipelines",
-    challenge: "Inefficient cloud VM allocations lead to massive resource waste, manual rollbacks, and security vulnerabilities.",
-    approach: "We deploy automated CI/CD infrastructures, real-time alert modules, and server autoscaling configs using Kubernetes and terraform structures.",
-    benefits: ["Average cloud hosting cost reduction of 42%", "Fully automated pipeline rollbacks", "Unified security and cost monitors"],
+    icon: ClipboardList,
+    title: "Business Management Systems",
+    tagline: "Secure internal tools, dashboards, and automated workflows",
+    challenge: "Organizations lose hours to disconnected spreadsheets, manual data entry errors, and fragmented legacy systems.",
+    approach: "We create secure employee portals, custom CRMs, inventory tracking dashboards, and automated workflow systems.",
+    benefits: ["Unified operational data view", "Automated email/notification loops", "Role-based access security controls"],
     color: "from-sky-500 to-indigo-600"
   },
   {
-    icon: LineChart,
-    title: "AI-Powered Business Intelligence",
-    tagline: "Turn unstructured financial datasets into predictive cash forecasts",
-    challenge: "Finance executives struggle to aggregate disparate multi-subsidiary ledgers and generate reliable future projections.",
-    approach: "We integrate vector analytical databases and predictive machine learning models that generate automated cash flow forecasts in real-time.",
-    benefits: ["95% cash flow forecasting precision", "Reduced bookkeeping cycles from 10 days to 2 days", "Interactive real-time currency converters"],
+    icon: Sparkles,
+    title: "AI Business Automation",
+    tagline: "Cognitive workflows and LLM agent integrations",
+    challenge: "Teams spend hours filtering files, categorizing support tickets, and manually writing status updates.",
+    approach: "We implement custom LLM agents and data extraction pipelines that automate document parsing and routine customer triage.",
+    benefits: ["Significant reduction in manual data processing", "Autonomous support triage with human-in-the-loop validation", "Seamless custom API pipeline integrations"],
     color: "from-blue-600 to-indigo-600"
+  },
+  {
+    icon: Server,
+    title: "Enterprise Engineering",
+    tagline: "Secure cloud migrations and automated server operations",
+    challenge: "Growing companies face database latency, deployment bottlenecks, and server downtime from unoptimized infrastructure configurations.",
+    approach: "We deploy automated CI/CD pipelines, container orchestration, and real-time system monitoring structures.",
+    benefits: ["Automated scaling under high traffic", "Continuous uptime with rollback safety", "Security-focused cloud permission boundaries"],
+    color: "from-sky-600 to-blue-600"
   }
 ];
-
-import SubpageContainer from "../../components/SubpageContainer";
 
 export default function SolutionsPage() {
   return (

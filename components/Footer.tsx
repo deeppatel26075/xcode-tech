@@ -20,7 +20,7 @@ export default function Footer() {
                 Xcode Tech
               </span>
               <span className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider mt-1">
-                Cloud Intelligence Studio
+                Software Engineering Partner
               </span>
             </div>
           </div>
@@ -57,10 +57,10 @@ export default function Footer() {
           <ul className="flex flex-col gap-3.5">
             {[
               { label: "Software Engineering", href: "/services#software" },
-              { label: "AI & Workflow Automation", href: "/services#ai" },
-              { label: "Website Development", href: "/services#web" },
-              { label: "Mobile App Development", href: "/services#mobile" },
-              { label: "Cloud & DevOps Operations", href: "/services#cloud" }
+              { label: "Web & Commerce", href: "/services#web" },
+              { label: "Artificial Intelligence", href: "/services#ai" },
+              { label: "Cloud Engineering", href: "/services#cloud" },
+              { label: "Security-Focused Development", href: "/services#security" }
             ].map((link) => (
               <li key={link.label}>
                 <Link
@@ -82,12 +82,10 @@ export default function Footer() {
           </h4>
           <ul className="flex flex-col gap-3.5">
             {[
-              { label: "About Xcode Tech", href: "/about" },
-              { label: "Case Studies / Work", href: "/work" },
-              { label: "Our Tech Stack", href: "/technology" },
               { label: "Solutions Portfolio", href: "/solutions" },
-              { label: "Insights Blog", href: "/insights" },
-              { label: "Start a Project", href: "/contact" }
+              { label: "Case Studies / Work", href: "/work" },
+              { label: "About Xcode Tech", href: "/about" },
+              { label: "Request Consultation", href: "/contact" }
             ].map((link) => (
               <li key={link.label}>
                 <Link
