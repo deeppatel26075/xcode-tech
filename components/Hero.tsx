@@ -39,9 +39,14 @@ export default function Hero() {
               <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-primary to-sky-custom flex items-center justify-center shadow-lg shadow-blue-500/10">
                 <span className="font-display font-extrabold text-sm text-white tracking-tighter">XT</span>
               </div>
-              <span className="font-display font-semibold text-lg text-dark tracking-tight">
-                Xcode <span className="text-primary font-bold">Tech</span>
-              </span>
+              <div className="flex flex-col">
+                <span className="font-display font-semibold text-base sm:text-lg text-dark tracking-tight leading-none">
+                  Xcode <span className="text-primary font-bold">Tech</span>
+                </span>
+                <span className="text-[8px] sm:text-[9px] text-slate-400 font-semibold uppercase tracking-wider mt-0.5">
+                  Software Engineering Partner
+                </span>
+              </div>
             </Link>
 
             {/* Nav Links */}
@@ -108,49 +113,53 @@ export default function Hero() {
           </AnimatePresence>
 
           {/* 2. Middle Main Content Area */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center flex-grow pt-10 pb-4">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center flex-grow pt-8 pb-4 lg:pt-10">
             
             {/* Left Side: Headline & Copy */}
-            <div className="lg:col-span-6 flex flex-col items-start gap-6 relative z-10">
+            <div className="lg:col-span-6 flex flex-col items-start gap-4 sm:gap-6 relative z-10">
               <FadeIn direction="up" delay={0.1}>
-                <h1 className="font-display font-semibold text-[40px] lg:text-[52px] leading-[1.1] text-dark tracking-tight text-glow">
-                  Engineering Intelligent <br />
-                  Software for <br />
-                  Ambitious Businesses
+                <h1 className="font-display font-semibold text-[30px] sm:text-[40px] lg:text-[52px] leading-[1.15] lg:leading-[1.1] text-dark tracking-tight text-glow">
+                  Transforming Ambitious Ideas <br className="hidden sm:inline" />
+                  Into Intelligent Digital Solutions
                 </h1>
               </FadeIn>
 
-              <FadeIn direction="up" delay={0.2}>
-                <p className="text-sm text-slate-800/90 leading-relaxed max-w-lg">
-                  Xcode Tech partners with startups and businesses worldwide to design, build, and scale high-performance software, AI systems, and digital platforms.
+              <FadeIn direction="up" delay={0.15}>
+                <p className="text-xs sm:text-sm text-slate-800/90 leading-relaxed max-w-lg hidden sm:block">
+                  Xcode Tech partners with founders and businesses to design, engineer, and scale software systems that create measurable value.
                 </p>
               </FadeIn>
 
-              <FadeIn direction="up" delay={0.3}>
-                <div className="mt-1 flex flex-wrap gap-4 items-center">
-                  <Magnetic>
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center justify-center gap-2 bg-slate-950 hover:bg-slate-900 text-white font-semibold text-xs px-8 py-3.5 rounded-full shadow-xl shadow-slate-900/10 transition-all group"
-                    >
-                      Start Your Project &rarr;
-                    </Link>
-                  </Magnetic>
-                  <Magnetic>
-                    <Link
-                      href="/work"
-                      className="inline-flex items-center justify-center gap-2 bg-white/80 hover:bg-white text-dark font-semibold text-xs px-8 py-3.5 rounded-full shadow-lg border border-slate-200/50 hover:shadow-xl transition-all"
-                    >
-                      View Our Work
-                    </Link>
-                  </Magnetic>
+              <FadeIn direction="up" delay={0.2}>
+                <div className="w-full">
+                  <div className="block sm:hidden text-[10px] font-bold text-slate-500/90 uppercase tracking-widest mb-3">
+                    Software &bull; AI &bull; Cloud &bull; Products
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4 items-center w-full sm:w-auto">
+                    <Magnetic>
+                      <Link
+                        href="/contact"
+                        className="inline-flex items-center justify-center gap-2 bg-slate-950 hover:bg-slate-900 text-white font-semibold text-xs px-8 py-3.5 rounded-full shadow-xl shadow-slate-900/10 transition-all w-full sm:w-auto text-center min-h-[48px]"
+                      >
+                        Start Your Project &rarr;
+                      </Link>
+                    </Magnetic>
+                    <Magnetic>
+                      <Link
+                        href="/work"
+                        className="hidden sm:inline-flex items-center justify-center gap-2 bg-white/80 hover:bg-white text-dark font-semibold text-xs px-8 py-3.5 rounded-full shadow-lg border border-slate-200/50 hover:shadow-xl transition-all min-h-[48px]"
+                      >
+                        View Our Work
+                      </Link>
+                    </Magnetic>
+                  </div>
                 </div>
               </FadeIn>
 
               {/* Trust Tagline & Partners row */}
-              <FadeIn direction="up" delay={0.4} className="w-full mt-12">
+              <FadeIn direction="up" delay={0.25} className="w-full mt-6 lg:mt-12 hidden sm:block">
                 <p className="text-[10px] font-bold text-slate-500/80 uppercase tracking-widest mb-4">
-                  Software • AI • Cloud • Digital Products
+                  Software • AI • Cloud • Products
                 </p>
                 <div className="flex flex-wrap items-center gap-x-8 gap-y-3 opacity-70 text-slate-800 font-display font-bold text-[11px]">
                   <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-primary" /> Lightbox</span>
@@ -162,10 +171,10 @@ export default function Hero() {
             </div>
 
             {/* Right Side: Phone and overlapping modules */}
-            <div className="lg:col-span-6 flex justify-center items-center relative min-h-[460px] lg:min-h-[500px]">
+            <div className="hidden lg:flex lg:col-span-6 justify-center items-center relative min-h-[500px]">
               
               {/* Hand holding Smartphone Graphic */}
-              <div className="relative w-[320px] lg:w-[360px] h-auto flex justify-center items-center select-none">
+              <div className="relative w-[360px] h-auto flex justify-center items-center select-none">
                 <img
                   src="/phone-mockup.png"
                   alt="SaaS Platform on Phone"
@@ -174,7 +183,7 @@ export default function Hero() {
               </div>
 
               {/* Overlapping Glass Card 1: "Opportunity" (Left) */}
-              <div className="hidden lg:absolute lg:block left-[-20px] top-[45%] rounded-[1.2rem] border border-white/20 bg-[#D2C5FB]/95 backdrop-blur-md p-4 shadow-xl max-w-[190px] select-none hover:scale-105 transition-transform duration-300">
+              <div className="absolute left-[-20px] top-[45%] rounded-[1.2rem] border border-white/20 bg-[#D2C5FB]/95 backdrop-blur-md p-4 shadow-xl max-w-[190px] select-none hover:scale-105 transition-transform duration-300">
                 <div className="flex items-center justify-between gap-2">
                   <span className="text-[8px] font-extrabold text-slate-800 uppercase tracking-widest">Opportunity</span>
                   <span className="text-[7px] font-bold bg-white/50 border border-white/20 px-2 py-0.5 rounded-full text-slate-800 leading-none">10 Seat</span>
@@ -189,7 +198,7 @@ export default function Hero() {
               </div>
 
               {/* Overlapping Glass Card 2: "Total Income" (Right) */}
-              <div className="hidden lg:absolute lg:block right-[-25px] bottom-[15%] rounded-[1.2rem] border border-white/40 bg-white/85 backdrop-blur-md p-4 shadow-xl max-w-[200px] select-none hover:scale-105 transition-transform duration-300">
+              <div className="absolute right-[-25px] bottom-[15%] rounded-[1.2rem] border border-white/40 bg-white/85 backdrop-blur-md p-4 shadow-xl max-w-[200px] select-none hover:scale-105 transition-transform duration-300">
                 <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest leading-none">Total Income</p>
                 <div className="flex items-baseline gap-1 mt-1.5">
                   <span className="text-xl font-display font-extrabold text-slate-800">50.3 M</span>
@@ -213,7 +222,7 @@ export default function Hero() {
               </div>
 
               {/* Overlapping Glass Card 3: "Overview" (Top Right) */}
-              <div className="hidden lg:absolute lg:block right-[-10px] top-[15%] rounded-xl border border-white/40 bg-white/85 backdrop-blur-md p-3 shadow-lg max-w-[130px] select-none hover:scale-105 transition-transform duration-300">
+              <div className="absolute right-[-10px] top-[15%] rounded-xl border border-white/40 bg-white/85 backdrop-blur-md p-3 shadow-lg max-w-[130px] select-none hover:scale-105 transition-transform duration-300">
                 <span className="text-[8px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
                   <Activity className="w-3 h-3 text-sky-500" />
                   Overview
@@ -232,7 +241,7 @@ export default function Hero() {
         </div>
 
         {/* 3. Bottom Capability Grid (sitting directly on sky background image) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+        <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
           {[
             { title: "Modern Stack", desc: "Decoupled Next.js edge storefronts and high-performance serverless backends." },
             { title: "Global-Ready", desc: "Engineered to comply with international security benchmarks and server speed bounds." },

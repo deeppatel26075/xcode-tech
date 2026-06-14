@@ -11,6 +11,7 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "Solutions", href: "/solutions" },
   { label: "Work", href: "/work" },
+  { label: "Insights", href: "/insights" },
   { label: "Company", href: "/about" },
   { label: "Contact", href: "/contact" }
 ];
@@ -111,7 +112,7 @@ export default function Navbar() {
               href="/contact"
               className="inline-flex items-center gap-1.5 bg-primary hover:bg-blue-700 text-white text-xs font-semibold px-5 py-2.5 rounded-full shadow-lg shadow-blue-500/20 hover:shadow-blue-600/30 transition-all duration-300 group"
             >
-              Start Project
+              Start Your Project
               <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Link>
           </Magnetic>

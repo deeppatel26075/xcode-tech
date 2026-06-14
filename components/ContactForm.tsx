@@ -136,9 +136,9 @@ export default function ContactForm() {
                 />
               </div>
 
-              {/* Project Type */}
+              {/* What Are You Trying To Build */}
               <div className="flex flex-col gap-2">
-                <label className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Project Type *</label>
+                <label className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">What Are You Trying To Build? *</label>
                 <select
                   name="service"
                   required
@@ -146,12 +146,12 @@ export default function ContactForm() {
                   onChange={handleInputChange}
                   className="w-full text-sm bg-slate-50/50 border border-slate-200 focus:border-primary focus:bg-white px-4 py-3 rounded-xl outline-none transition-all appearance-none cursor-pointer"
                 >
-                  <option value="">Select Project Type...</option>
-                  <option value="startup_product">Startup Product</option>
-                  <option value="business_software">Business Software</option>
-                  <option value="ai_solution">AI Solution</option>
-                  <option value="ecommerce_platform">Ecommerce Platform</option>
-                  <option value="enterprise_system">Enterprise System</option>
+                  <option value="">Select an option...</option>
+                  <option value="launch_product">Launch a new product</option>
+                  <option value="modernize_business">Modernize my business</option>
+                  <option value="automate_operations">Automate operations</option>
+                  <option value="scale_software">Scale existing software</option>
+                  <option value="discuss_partnership">Discuss partnership</option>
                 </select>
               </div>
 

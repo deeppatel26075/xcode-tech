@@ -9,8 +9,8 @@ import SubpageContainer from "../../components/SubpageContainer";
 const solutions = [
   {
     icon: Rocket,
-    title: "Product Engineering",
-    tagline: "Custom software and mobile apps built to scale from day one",
+    title: "🚀 Scale Your Venture",
+    tagline: "Product engineering & custom SaaS built for market entry and user scale",
     challenge: "Startups and innovators face high developer costs, launch delays, and initial database scaling blocks when validating product-market fit.",
     approach: "We design modular architectures, rapid MVPs, and robust SaaS frameworks that allow quick iterations and secure multi-tenant usage.",
     benefits: ["Reduced time-to-market for MVP launch", "Modular, scalable codebase layouts", "Highly secure API and database designs"],
@@ -18,8 +18,8 @@ const solutions = [
   },
   {
     icon: Compass,
-    title: "Business Transformation",
-    tagline: "High-performance websites, commerce storefronts, and internal dashboards",
+    title: "🏢 Automate Operations",
+    tagline: "Business workflows & custom internal tools designed to accelerate efficiency",
     challenge: "Growing companies lose potential leads due to slow-loading sites, laggy inventory syncs, and manual operational spreadsheets.",
     approach: "We engineer fast static storefronts, headless commerce API panels, custom internal CRMs, and automated workflow triggers.",
     benefits: ["Edge-rendered global page loads under 200ms", "Synchronized real-time inventory management", "Centralized, secure dashboard metrics"],
@@ -27,8 +27,8 @@ const solutions = [
   },
   {
     icon: Sparkles,
-    title: "Intelligent Systems",
-    tagline: "AI systems and automated operational integrations",
+    title: "🤖 Integrate AI",
+    tagline: "Cognitive automation & agentic workflows eliminating repetitive administration",
     challenge: "Organizations waste hundreds of hours on repetitive data categorization, unstructured document parsing, and invoice routing loops.",
     approach: "We deploy cognitive processing pipelines combining customized machine learning, document parsers, and validation dashboards.",
     benefits: ["Automated document processing pipelines", "AI-driven customer support categorization", "Seamless legacy system API wiring"],
@@ -36,8 +36,8 @@ const solutions = [
   },
   {
     icon: Server,
-    title: "Digital Infrastructure",
-    tagline: "Secure cloud migrations and performance engineering",
+    title: "☁️ Scale Your Platform",
+    tagline: "Cloud engineering & infrastructure built for performance, security, and growth",
     challenge: "Growing digital systems face performance bottlenecks, database latency spikes, and cloud hosting cost leaks.",
     approach: "We deploy automated CI/CD pipelines, container configurations, and real-time cost-resource optimization maps.",
     benefits: ["Optimized server hosting expenses", "Automated pipelines with rollback safety", "Security-focused cloud permission gates"],
