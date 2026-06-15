@@ -18,7 +18,7 @@ export default function Hero() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <section className="relative min-h-screen py-8 bg-sky-portal flex flex-col justify-center overflow-hidden">
+    <section className="relative lg:min-h-screen py-4 sm:py-8 bg-sky-portal flex flex-col justify-center overflow-hidden">
       
       {/* Moving Sky Clouds */}
       <div className="absolute top-[8%] left-[-10%] w-[500px] h-[350px] bg-white/45 rounded-full blur-[110px] pointer-events-none animate-cloud-drift" />
@@ -28,7 +28,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full flex flex-col gap-6 z-10">
         
         {/* Giant Main Transparent Card (Frosted Layered Glass Container) */}
-        <div className="rounded-[2.2rem] border border-white/25 bg-white/[0.08] backdrop-blur-[24px] p-6 lg:p-10 shadow-2xl relative overflow-hidden flex flex-col justify-between min-h-[85vh]">
+        <div className="rounded-[2rem] sm:rounded-[2.2rem] border border-white/25 bg-white/[0.08] backdrop-blur-[24px] p-5 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden flex flex-col justify-between lg:min-h-[85vh] w-full">
           
           <div className="absolute inset-0 bg-dot-grid opacity-15 pointer-events-none" />
 
@@ -118,7 +118,7 @@ export default function Hero() {
             {/* Left Side: Headline & Copy */}
             <div className="lg:col-span-6 flex flex-col items-start gap-4 sm:gap-6 relative z-10">
               <FadeIn direction="up" delay={0.1}>
-                <h1 className="font-display font-semibold text-[30px] sm:text-[40px] lg:text-[52px] leading-[1.15] lg:leading-[1.1] text-dark tracking-tight text-glow">
+                <h1 className="font-display font-semibold text-[32px] sm:text-[42px] lg:text-[52px] leading-[1.05] sm:leading-[1.1] text-dark tracking-tight text-glow">
                   Engineering Digital Products <br className="hidden sm:inline" />
                   That Scale Businesses
                 </h1>
@@ -135,23 +135,19 @@ export default function Hero() {
                   <div className="block sm:hidden text-[10px] font-bold text-slate-500/90 uppercase tracking-widest mb-3">
                     Engineering reliable digital solutions for modern businesses
                   </div>
-                  <div className="flex flex-col sm:flex-row gap-4 items-center w-full sm:w-auto">
-                    <Magnetic>
-                      <Link
-                        href="/contact"
-                        className="inline-flex items-center justify-center gap-2 bg-slate-950 hover:bg-slate-900 text-white font-semibold text-xs px-8 py-3.5 rounded-full shadow-xl shadow-slate-900/10 transition-all w-full sm:w-auto text-center min-h-[48px]"
-                      >
-                        Start Your Project &rarr;
-                      </Link>
-                    </Magnetic>
-                    <Magnetic>
-                      <Link
-                        href="/work"
-                        className="hidden sm:inline-flex items-center justify-center gap-2 bg-white/80 hover:bg-white text-dark font-semibold text-xs px-8 py-3.5 rounded-full shadow-lg border border-slate-200/50 hover:shadow-xl transition-all min-h-[48px]"
-                      >
-                        View Our Work
-                      </Link>
-                    </Magnetic>
+                  <div className="flex flex-col sm:flex-row gap-3 items-center w-full sm:w-auto">
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center justify-center gap-2 bg-slate-950 hover:bg-slate-900 text-white font-semibold text-sm rounded-full shadow-xl shadow-slate-900/10 transition-all w-full sm:w-auto text-center h-[54px] sm:h-auto sm:px-8 sm:py-3.5 shrink-0"
+                    >
+                      Start Your Project &rarr;
+                    </Link>
+                    <Link
+                      href="/work"
+                      className="inline-flex items-center justify-center gap-2 bg-white/80 hover:bg-white text-dark font-semibold text-sm rounded-full shadow-lg border border-slate-200/50 hover:shadow-xl transition-all w-full sm:w-auto text-center h-[54px] sm:h-auto sm:px-8 sm:py-3.5 shrink-0"
+                    >
+                      View Our Work
+                    </Link>
                   </div>
                 </div>
               </FadeIn>

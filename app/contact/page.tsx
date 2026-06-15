@@ -24,7 +24,7 @@ export default function ContactPage() {
           </FadeIn>
           <FadeIn direction="up" delay={0.3}>
             <p className="text-slate-605 text-sm sm:text-base mt-6 max-w-xl mx-auto leading-relaxed">
-              Submit your project brief below, or pick a direct time slot on the calendar scheduler to book a strategy session with our engineering directors.
+              Submit your project brief below, or pick a direct time slot on the calendar scheduler to book a strategy session with Xcode Tech.
             </p>
           </FadeIn>
         </div>

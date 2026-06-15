@@ -49,7 +49,7 @@ export default function Home() {
       </section>
 
       {/* 3. About Xcode Tech + Founder */}
-      <section className="py-20 bg-white border-b border-slate-100 relative">
+      <section className="py-12 md:py-24 bg-white border-b border-slate-100 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* About text */}
@@ -108,7 +108,7 @@ export default function Home() {
       </section>
 
       {/* 4. Why Xcode Tech */}
-      <section className="py-20 bg-slate-50/50 border-b border-slate-100 relative">
+      <section className="py-12 md:py-24 bg-slate-50/50 border-b border-slate-100 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-xl mx-auto mb-16">
             <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
@@ -162,7 +162,7 @@ export default function Home() {
       <ServicesSection />
 
       {/* 6. Technology Stack */}
-      <section className="py-20 bg-slate-50/30 border-b border-slate-100 relative overflow-hidden">
+      <section className="py-12 md:py-24 bg-slate-50/30 border-b border-slate-100 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
@@ -202,7 +202,7 @@ export default function Home() {
       </section>
 
       {/* 7. Engineering Solutions Lab */}
-      <section className="py-20 bg-white border-b border-slate-100 relative">
+      <section className="py-12 md:py-24 bg-white border-b border-slate-100 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div className="max-w-xl">
@@ -234,7 +234,7 @@ export default function Home() {
       </section>
 
       {/* 8. Development Lifecycle */}
-      <section className="py-20 bg-slate-50/50 border-b border-slate-100 relative">
+      <section className="py-12 md:py-24 bg-slate-50/50 border-b border-slate-100 relative">
         <div className="absolute inset-0 bg-dot-grid opacity-20 -z-10" />
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-xl mx-auto mb-16">
@@ -278,7 +278,7 @@ export default function Home() {
       </section>
 
       {/* 9. Industries We Build For */}
-      <section className="py-20 bg-white border-b border-slate-100 relative">
+      <section className="py-12 md:py-24 bg-white border-b border-slate-100 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-xl mx-auto mb-16">
             <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
@@ -317,7 +317,7 @@ export default function Home() {
       </section>
 
       {/* 10. Engineering Standards */}
-      <section className="py-20 bg-slate-50/50 border-b border-slate-100 relative">
+      <section className="py-12 md:py-24 bg-slate-50/50 border-b border-slate-100 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-xl mx-auto mb-16">
             <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
@@ -360,7 +360,7 @@ export default function Home() {
       </section>
 
       {/* 11. Insights by Xcode Tech */}
-      <section className="py-20 bg-white border-b border-slate-100 relative">
+      <section className="py-12 md:py-24 bg-white border-b border-slate-100 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div className="max-w-xl">
@@ -392,7 +392,7 @@ export default function Home() {
       </section>
 
       {/* 12. Start Partnership CTA */}
-      <section id="contact" className="py-20 md:py-28 bg-slate-50/50 relative">
+      <section id="contact" className="py-12 md:py-24 bg-slate-50/50 relative">
         <div className="absolute inset-0 bg-dot-grid opacity-40 -z-10" />
         
         <div className="max-w-7xl mx-auto px-6">
@@ -404,7 +404,7 @@ export default function Home() {
               Start Partnership
             </h2>
             <p className="text-slate-655 text-sm mt-4 leading-relaxed">
-              Connect with our technology directors to outline your software objectives, select project scope levels, and design your product.
+              Connect with Xcode Tech to discuss your software goals and project requirements.
             </p>
           </div>
 

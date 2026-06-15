@@ -193,7 +193,7 @@ export default function AboutPage() {
             Partner with Xcode Tech today
           </h2>
           <p className="text-slate-500 text-sm max-w-lg leading-relaxed">
-            Connect with our technology directors to design custom software, business systems, and high-performance websites.
+            Connect with Xcode Tech to discuss your software goals and project requirements.
           </p>
           <Link
             href="/contact"

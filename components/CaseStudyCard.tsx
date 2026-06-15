@@ -212,7 +212,7 @@ export default function CaseStudyCard({ project }: CaseStudyCardProps) {
       </div>
 
       {/* Right: Premium Interactive Mini-Dashboard Mockup */}
-      <div className="flex-1 min-h-[220px] lg:min-h-auto rounded-xl bg-slate-50/60 border border-slate-100 p-5 flex flex-col justify-between relative overflow-hidden select-none">
+      <div className="hidden lg:flex flex-1 min-h-[220px] lg:min-h-auto rounded-xl bg-slate-50/60 border border-slate-100 p-5 flex flex-col justify-between relative overflow-hidden select-none">
         
         {/* Subtle glow background */}
         <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-500/5 rounded-full blur-2xl group-hover:bg-blue-500/10 transition-colors" />
