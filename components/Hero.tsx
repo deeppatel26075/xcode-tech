@@ -259,6 +259,18 @@ export default function Hero() {
         </div>
 
       </div>
+
+      {/* Scroll Pointer Indicator */}
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-60 hover:opacity-100 transition-opacity pointer-events-none">
+        <span className="text-[8px] font-bold text-slate-500 uppercase tracking-widest">Scroll Down</span>
+        <div className="w-5 h-8 rounded-full border border-slate-400 flex justify-center p-1">
+          <motion.div
+            className="w-1 h-2 bg-slate-500 rounded-full"
+            animate={{ y: [0, 6, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </div>
+      </div>
     </section>
   );
 }
