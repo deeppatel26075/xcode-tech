@@ -119,21 +119,21 @@ export default function Hero() {
             <div className="lg:col-span-6 flex flex-col items-start gap-4 sm:gap-6 relative z-10">
               <FadeIn direction="up" delay={0.1}>
                 <h1 className="font-display font-semibold text-[30px] sm:text-[40px] lg:text-[52px] leading-[1.15] lg:leading-[1.1] text-dark tracking-tight text-glow">
-                  Transforming Ambitious Ideas <br className="hidden sm:inline" />
-                  Into Intelligent Digital Solutions
+                  Engineering Digital Products <br className="hidden sm:inline" />
+                  That Scale Businesses
                 </h1>
               </FadeIn>
 
               <FadeIn direction="up" delay={0.15}>
                 <p className="text-xs sm:text-sm text-slate-800/90 leading-relaxed max-w-lg hidden sm:block">
-                  Xcode Tech partners with founders and businesses to design, engineer, and scale software systems that create measurable value.
+                  Xcode Tech builds high-performance websites, mobile applications, AI solutions, and automation systems for startups and growing businesses.
                 </p>
               </FadeIn>
 
               <FadeIn direction="up" delay={0.2}>
                 <div className="w-full">
                   <div className="block sm:hidden text-[10px] font-bold text-slate-500/90 uppercase tracking-widest mb-3">
-                    Software &bull; AI &bull; Cloud &bull; Products
+                    Engineering reliable digital solutions for modern businesses
                   </div>
                   <div className="flex flex-col sm:flex-row gap-4 items-center w-full sm:w-auto">
                     <Magnetic>
@@ -159,7 +159,7 @@ export default function Hero() {
               {/* Trust Tagline & Partners row */}
               <FadeIn direction="up" delay={0.25} className="w-full mt-6 lg:mt-12 hidden sm:block">
                 <p className="text-[10px] font-bold text-slate-500/80 uppercase tracking-widest mb-4">
-                  Software • AI • Cloud • Products
+                  Engineering reliable digital solutions for modern businesses
                 </p>
                 <div className="flex flex-wrap items-center gap-x-8 gap-y-3 opacity-70 text-slate-800 font-display font-bold text-[11px]">
                   <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-primary" /> Lightbox</span>

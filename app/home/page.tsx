@@ -10,621 +10,384 @@ import Hero from "../../components/Hero";
 import TechnologyOrbit from "../../components/TechnologyOrbit";
 import CaseStudyCard from "../../components/CaseStudyCard";
 import ContactForm from "../../components/ContactForm";
+import ServicesSection from "../../components/ServicesSection";
+import BlogCard from "../../components/BlogCard";
 import { projects } from "../../content/projects";
-import { FadeIn, StaggerContainer, StaggerItem } from "../../components/Animations";
+import { blogs } from "../../content/blogs";
+import { FadeIn } from "../../components/Animations";
 
 export default function Home() {
   const featuredProjects = projects.slice(0, 2);
-
-  const solutions = [
-    {
-      title: "🚀 Scale Your Venture",
-      subtitle: "Product engineering & SaaS",
-      desc: "We design and build custom software products, apps, and platforms optimized for market entry and user scale.",
-      items: ["MVP Development", "SaaS Platforms", "Mobile Apps", "Product Scaling"],
-      icon: Rocket,
-      color: "from-blue-600 to-sky-custom"
-    },
-    {
-      title: "🏢 Automate Operations",
-      subtitle: "Workflows & custom tools",
-      desc: "Streamlining processes, launching e-commerce platforms, and engineering internal tools that accelerate efficiency.",
-      items: ["Business Websites", "Ecommerce Platforms", "Internal Software", "Automation"],
-      icon: Compass,
-      color: "from-indigo-600 to-blue-500"
-    },
-    {
-      title: "🤖 Integrate AI",
-      subtitle: "Cognitive automation",
-      desc: "Integrating machine learning pipelines and custom AI models to automate manual triaging, indexing, and data mapping.",
-      items: ["AI Integration", "Smart Workflows", "Data Solutions"],
-      icon: Sparkles,
-      color: "from-blue-500 to-sky-500"
-    },
-    {
-      title: "☁️ Scale Your Platform",
-      subtitle: "Cloud engineering & infrastructure",
-      desc: "Architecting secure, high-availability server patterns and cloud setups that scale dynamically under traffic loads.",
-      items: ["Cloud Deployment", "Performance Engineering", "Secure Architecture"],
-      icon: Server,
-      color: "from-sky-500 to-indigo-600"
-    }
-  ];
-
-  const commitment = [
-    { title: "Architecture First", desc: "Every product begins with planning." },
-    { title: "Quality Engineering", desc: "Clean, maintainable systems." },
-    { title: "Transparent Delivery", desc: "Clear milestones and communication." },
-    { title: "Long-Term Thinking", desc: "Technology built for evolution." }
-  ];
-
-  const challenges = [
-    {
-      title: "Manual Operations",
-      solution: "Automation Platforms",
-      desc: "Replacing repetitive manual spreadsheets and admin triaging with fast automated backends.",
-      icon: Terminal
-    },
-    {
-      title: "Scaling Problems",
-      solution: "Cloud Systems",
-      desc: "Upgrading databases and cloud routing to prevent timeouts and peak capacity shutdowns.",
-      icon: Server
-    },
-    {
-      title: "Customer Experience",
-      solution: "Digital Products",
-      desc: "Designing responsive, intuitive UI/UX flows that boost retention and sales conversions.",
-      icon: Eye
-    },
-    {
-      title: "Data Complexity",
-      solution: "Intelligent Systems",
-      desc: "Integrating secure ML triages and search indexes to catalog messy multi-source datasets.",
-      icon: Cpu
-    }
-  ];
-
-  const engagementModels = [
-    {
-      title: "Build",
-      tagline: "End-to-end development",
-      desc: "We own the complete process: technical discovery, UI/UX design, custom database architectures, and release support."
-    },
-    {
-      title: "Extend",
-      tagline: "Dedicated engineering",
-      desc: "Direct integration of systems developers with your team to accelerate feature roadmap deployments and scaling cycles."
-    },
-    {
-      title: "Modernize",
-      tagline: "Upgrade legacy systems",
-      desc: "Refactoring obsolete codebases, migration to modern React frameworks, and upgrading legacy database schemes."
-    },
-    {
-      title: "Optimize",
-      tagline: "Speed & Cost Engineering",
-      desc: "Sub-second load tuning, optimizing cloud server architecture costs, and eliminating slow SQL query latency loops."
-    },
-    {
-      title: "Advise",
-      tagline: "Strategy & architecture",
-      desc: "System audits, technology selections, cloud scaling blueprints, and custom software strategy roadmaps."
-    }
-  ];
-
-  const philosophy = [
-    {
-      title: "Think Like Owners",
-      desc: "We don't just deliver coding tasks. We seek to understand the operational context and focus on business outcomes."
-    },
-    {
-      title: "Design Before Development",
-      desc: "Every database model and API schema is architected and stress-tested before writing a single line of code."
-    },
-    {
-      title: "Simple Systems Scale Better",
-      desc: "We prioritize clean, maintainable, and decoupled codebases over unnecessary architectural complexity."
-    },
-    {
-      title: "Technology With Purpose",
-      desc: "We choose technology stacks and system libraries based on actual product impact and stability, not trendy news."
-    }
-  ];
-
-  const labExperiments = [
-    {
-      title: "AI Automation",
-      desc: "Developing specialized cognitive LLM parsers and validation tools for workflow acceleration.",
-      tag: "Active Research"
-    },
-    {
-      title: "Scalable Software",
-      desc: "Testing high-concurrency edge database caches and sub-100ms API routers.",
-      tag: "Prototyping"
-    },
-    {
-      title: "Cloud Systems",
-      desc: "Configuring automated Kubernetes clusters and real-time cost-alert engines.",
-      tag: "Frameworks"
-    },
-    {
-      title: "Developer Tools",
-      desc: "Building internal CLI utilities to optimize compilation speeds and test automation.",
-      tag: "Tooling"
-    }
-  ];
 
   return (
     <div className="flex flex-col w-full bg-white">
       {/* 1. Hero Landing */}
       <Hero />
 
-      {/* 2. Our Engineering Commitment */}
+      {/* 2. Company Snapshot ("Xcode Tech at a Glance") */}
       <section className="py-12 bg-slate-50 border-b border-slate-100 relative">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-xl mx-auto mb-10">
-            <FadeIn direction="up" delay={0.1}>
-              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest bg-white border border-slate-200/50 px-3 py-1 rounded-full inline-block">
-                Trust &amp; Execution
-              </span>
-            </FadeIn>
-            <FadeIn direction="up" delay={0.15}>
-              <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-dark tracking-tight mt-3">
-                Our Engineering Commitment
-              </h2>
-            </FadeIn>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {commitment.map((item) => (
-              <div key={item.title} className="rounded-xl border border-slate-200/40 p-5 bg-white shadow-sm flex flex-col gap-2">
-                <span className="text-xs font-extrabold text-primary uppercase tracking-wide flex items-center gap-1.5">
-                  <Check className="w-4 h-4 text-primary shrink-0" />
-                  {item.title}
-                </span>
-                <p className="text-xs text-slate-500 leading-relaxed">{item.desc}</p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { label: "Founded", value: "2026", desc: "Established in India" },
+              { label: "Technology Areas", value: "7+", desc: "Full-stack expertise" },
+              { label: "Solutions Engineered", value: "10+", desc: "Simulated lab outcomes" },
+              { label: "Focus", value: "Modern Digital Engineering", desc: "Business-first solutions" }
+            ].map((stat) => (
+              <div key={stat.label} className="rounded-2xl border border-slate-200/40 p-6 bg-white shadow-sm flex flex-col justify-between min-h-[120px]">
+                <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider">{stat.label}</span>
+                <div className="mt-2">
+                  <span className="font-display font-extrabold text-xl sm:text-2xl text-dark tracking-tight block">
+                    {stat.value}
+                  </span>
+                  <span className="text-[10px] text-slate-500 font-semibold mt-1 block">{stat.desc}</span>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 3. Choose Your Journey */}
-      <section className="py-16 md:py-20 bg-white border-b border-slate-100">
+      {/* 3. About Xcode Tech + Founder */}
+      <section className="py-20 bg-white border-b border-slate-100 relative">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-xl mx-auto mb-12">
-            <FadeIn direction="up" delay={0.1}>
-              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
-                Choose Your Journey
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* About text */}
+            <div className="lg:col-span-7 flex flex-col gap-6">
+              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block w-fit">
+                About Xcode Tech
               </span>
-            </FadeIn>
-            <FadeIn direction="up" delay={0.2}>
-              <h2 className="font-display font-extrabold text-3xl text-dark tracking-tight leading-tight mt-4">
-                What Are You Building?
+              <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-dark tracking-tight leading-tight">
+                Emerging Software Engineering Partner
               </h2>
-            </FadeIn>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { title: "🚀 Launch a Product", desc: "Turn concepts into market-ready platforms.", action: "Build SaaS & Apps" },
-              { title: "🏢 Transform a Business", desc: "Modernize operations with digital systems.", action: "Automate Workflows" },
-              { title: "🤖 Automate With AI", desc: "Reduce repetitive work through intelligence.", action: "Deploy AI Agents" },
-              { title: "🌎 Scale Technology", desc: "Build reliable systems for growth.", action: "Tune Cloud & Speed" }
-            ].map((journey) => (
-              <Link
-                key={journey.title}
-                href="#contact"
-                className="rounded-2xl border border-slate-200/50 p-6 bg-slate-50/20 hover:bg-white hover:border-primary/20 hover:shadow-xl transition-all duration-350 flex flex-col justify-between group min-h-[160px]"
-              >
-                <div>
-                  <h3 className="font-display font-extrabold text-base text-dark group-hover:text-primary transition-colors">
-                    {journey.title}
-                  </h3>
-                  <p className="text-xs text-slate-505 mt-2.5 leading-relaxed">
-                    {journey.desc}
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Xcode Tech is a software engineering company based in Ahmedabad, India, founded in 2026. We build scalable digital products, automated workflows, and custom enterprise platforms that solve core operational bottlenecks. Our structures comply with global design standards and security protocols.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+                <div className="rounded-xl border border-slate-200/30 p-4 bg-slate-50/20">
+                  <span className="text-xs font-bold text-slate-700 block">Our Mission</span>
+                  <p className="text-[11px] text-slate-500 leading-relaxed mt-1">
+                    To construct robust, business-focused software systems that elevate corporate efficiency and user scaling boundaries.
                   </p>
                 </div>
-                <span className="text-[10px] font-bold text-primary uppercase tracking-wider mt-4 flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
-                  {journey.action} &rarr;
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Solutions We Engineer */}
-      <section className="py-20 md:py-28 bg-slate-50/50 border-b border-slate-100 relative">
-        <div className="absolute inset-0 bg-dot-grid opacity-30 -z-10" />
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
-            <FadeIn direction="up" delay={0.1}>
-              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
-                Core Divisions
-              </span>
-            </FadeIn>
-            <FadeIn direction="up" delay={0.2}>
-              <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-dark tracking-tight leading-tight mt-4">
-                Solutions We Engineer
-              </h2>
-            </FadeIn>
-            <FadeIn direction="up" delay={0.3}>
-              <p className="text-slate-500 text-sm mt-3 leading-relaxed">
-                We design, build, and scale software systems structured around your exact business challenges.
-              </p>
-            </FadeIn>
-          </div>
-
-          {/* Mobile View: Horizontal App-style Cards */}
-          <div className="flex flex-col gap-4 md:hidden">
-            {solutions.map((sol) => {
-              const Icon = sol.icon;
-              return (
-                <Link href="/solutions" key={sol.title} className="rounded-xl border border-slate-200/40 p-4 bg-white/50 backdrop-blur-md flex items-center justify-between hover:bg-white transition-all shadow-sm min-h-[48px]">
-                  <div className="flex items-center gap-4">
-                    <div className={`p-2.5 rounded-xl bg-gradient-to-tr ${sol.color} text-white shrink-0`}>
-                      <Icon className="w-5 h-5" />
-                    </div>
-                    <div className="text-left">
-                      <h3 className="font-display font-bold text-sm text-dark leading-tight">
-                        {sol.title}
-                      </h3>
-                      <span className="text-[10px] text-slate-450 block mt-0.5 leading-none font-semibold">
-                        {sol.subtitle}
-                      </span>
-                    </div>
-                  </div>
-                  <ArrowRight className="w-4 h-4 text-slate-455" />
-                </Link>
-              );
-            })}
-          </div>
-
-          {/* Desktop View: Grid Layout */}
-          <StaggerContainer className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {solutions.map((sol) => {
-              const Icon = sol.icon;
-              return (
-                <StaggerItem key={sol.title}>
-                  <div className="rounded-2xl border border-white/40 p-6 bg-white/40 backdrop-blur-md hover:bg-white hover:border-primary/20 hover:shadow-xl transition-all duration-300 h-full flex flex-col justify-between group">
-                    <div className="flex flex-col gap-4">
-                      <div className={`p-3.5 rounded-xl bg-gradient-to-tr ${sol.color} text-white w-fit shadow-md shadow-blue-500/5 group-hover:scale-105 transition-transform`}>
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <h3 className="font-display font-bold text-base text-dark leading-tight">
-                          {sol.title}
-                        </h3>
-                        <span className="text-[10px] text-primary font-semibold block mt-0.5">
-                          {sol.subtitle}
-                        </span>
-                        <p className="text-xs text-slate-505 leading-relaxed mt-2.5">
-                          {sol.desc}
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <ul className="flex flex-col gap-2 mt-5 pt-4 border-t border-slate-100 text-[11px] font-semibold text-slate-655">
-                      {sol.items.map((item) => (
-                        <li key={item} className="flex items-center gap-1.5">
-                          <Check className="w-3.5 h-3.5 text-green-500 shrink-0" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </StaggerItem>
-              );
-            })}
-          </StaggerContainer>
-        </div>
-      </section>
-
-      {/* 5. Business Challenges We Solve */}
-      <section className="py-20 md:py-28 bg-white border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
-            <FadeIn direction="up" delay={0.1}>
-              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
-                Problem Solver
-              </span>
-            </FadeIn>
-            <FadeIn direction="up" delay={0.2}>
-              <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-dark tracking-tight leading-tight mt-4">
-                Business Challenges We Solve
-              </h2>
-            </FadeIn>
-            <FadeIn direction="up" delay={0.3}>
-              <p className="text-slate-500 text-sm mt-3 leading-relaxed">
-                Elite engineering partners solve core business pain points. Here is how we engineer solutions to your problems.
-              </p>
-            </FadeIn>
-          </div>
-
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {challenges.map((item) => {
-              const Icon = item.icon;
-              return (
-                <StaggerItem key={item.title}>
-                  <div className="rounded-2xl border border-slate-200/45 p-6 bg-slate-50/30 hover:bg-white hover:shadow-lg hover:border-primary/10 transition-all duration-300 h-full flex flex-col justify-between">
-                    <div>
-                      <div className="p-2.5 w-fit rounded-xl bg-blue-50/60 text-primary border border-blue-100/30 mb-4">
-                        <Icon className="w-4 h-4" />
-                      </div>
-                      <span className="text-[9px] font-bold text-primary uppercase tracking-widest block mb-1">
-                        Pain Point
-                      </span>
-                      <h4 className="font-display font-extrabold text-base text-dark mb-1">
-                        {item.title}
-                      </h4>
-                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-3.5">
-                        Solution: {item.solution}
-                      </span>
-                      <p className="text-xs text-slate-505 leading-relaxed">
-                        {item.desc}
-                      </p>
-                    </div>
-                  </div>
-                </StaggerItem>
-              );
-            })}
-          </StaggerContainer>
-        </div>
-      </section>
-
-      {/* 6. Selected Engineering Work (Engineering Showcase) */}
-      <section className="py-20 md:py-28 bg-transparent border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 md:mb-20">
-            <div className="max-w-xl">
-              <FadeIn direction="up" delay={0.1}>
-                <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
-                  Showcase
-                </span>
-              </FadeIn>
-              <FadeIn direction="up" delay={0.2}>
-                <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-dark tracking-tight leading-tight mt-4">
-                  Engineering Showcase
-                </h2>
-                <p className="text-slate-505 text-sm mt-3 leading-relaxed">
-                  Systems designed around real-world business challenges.
-                </p>
-              </FadeIn>
+                <div className="rounded-xl border border-slate-200/30 p-4 bg-slate-50/20">
+                  <span className="text-xs font-bold text-slate-700 block">Our Vision</span>
+                  <p className="text-[11px] text-slate-500 leading-relaxed mt-1">
+                    To serve as a trusted international engineering partner where ambitious ideas seamlessly translate into functional, clean codebases.
+                  </p>
+                </div>
+              </div>
             </div>
-            <FadeIn direction="up" delay={0.3} className="shrink-0">
-              <Link
-                href="/work"
-                className="inline-flex items-center gap-1.5 bg-white/60 hover:bg-white border border-white/30 text-slate-700 font-semibold text-xs px-5 py-3.5 rounded-full transition-colors group backdrop-blur-md"
-              >
-                View All Work
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              </Link>
-            </FadeIn>
-          </div>
 
-          <StaggerContainer className="flex flex-col gap-10">
-            {featuredProjects.map((project) => (
-              <StaggerItem key={project.id}>
-                <CaseStudyCard project={project} />
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
-      </section>
-
-      {/* 7. Engagement Models */}
-      <section className="py-20 md:py-28 bg-slate-50/50 border-b border-slate-100 relative">
-        <div className="absolute inset-0 bg-dot-grid opacity-10 -z-10" />
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
-            <FadeIn direction="up" delay={0.1}>
-              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
-                Partnership
-              </span>
-            </FadeIn>
-            <FadeIn direction="up" delay={0.2}>
-              <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-dark tracking-tight leading-tight mt-4">
-                Work With Xcode Tech
-              </h2>
-            </FadeIn>
-            <FadeIn direction="up" delay={0.3}>
-              <p className="text-slate-500 text-sm mt-3 leading-relaxed">
-                We offer flexible collaboration tracks configured around your organizational requirements.
-              </p>
-            </FadeIn>
-          </div>
-
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {engagementModels.map((model) => (
-              <StaggerItem key={model.title}>
-                <div className="rounded-2xl border border-white/30 p-6 bg-white/40 backdrop-blur-md shadow-sm hover:shadow-md hover:border-primary/10 transition-all h-full flex flex-col justify-between">
-                  <div>
-                    <h3 className="font-display font-extrabold text-base text-dark">
-                      {model.title}
-                    </h3>
-                    <span className="text-[9px] text-primary font-bold uppercase tracking-wider block mt-1.5">
-                      {model.tagline}
-                    </span>
-                    <p className="text-[11px] text-slate-505 leading-relaxed mt-4">
-                      {model.desc}
-                    </p>
-                  </div>
+            {/* Founder Profile */}
+            <div className="lg:col-span-5 flex justify-center">
+              <div className="w-full max-w-sm bg-slate-50 border border-slate-200/50 p-6 md:p-8 rounded-3xl shadow-xl shadow-slate-100 flex flex-col items-center text-center">
+                <div className="w-24 h-24 rounded-2xl overflow-hidden border border-slate-100 shadow-md mb-6">
+                  <img
+                    src="/founder-portrait.png"
+                    alt="Deep Patel, Founder"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
-      </section>
+                <h3 className="font-display font-extrabold text-lg text-dark">Deep Patel</h3>
+                <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider mt-0.5">Founder &amp; Software Engineer</span>
+                
+                <p className="font-display font-medium text-xs md:text-sm text-slate-700 leading-relaxed mt-4 italic">
+                  "Building Xcode Tech with a vision to create business-focused, scalable digital solutions using modern software engineering."
+                </p>
 
-      {/* 8. Our Engineering Philosophy */}
-      <section className="py-20 md:py-28 bg-white border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
-            <FadeIn direction="up" delay={0.1}>
-              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
-                Our Beliefs
-              </span>
-            </FadeIn>
-            <FadeIn direction="up" delay={0.2}>
-              <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-dark tracking-tight leading-tight mt-4">
-                Our Engineering Philosophy
-              </h2>
-            </FadeIn>
-          </div>
-
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {philosophy.map((item) => (
-              <StaggerItem key={item.title}>
-                <div className="rounded-2xl border border-slate-200/40 p-6 bg-slate-50/10 hover:bg-white hover:border-primary/10 hover:shadow-lg transition-all duration-300 h-full flex flex-col justify-between">
-                  <div>
-                    <h4 className="font-display font-extrabold text-base text-dark mb-3">
-                      {item.title}
-                    </h4>
-                    <p className="text-xs text-slate-550 leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
+                <div className="mt-6 flex flex-wrap gap-1.5 justify-center text-[8px] font-bold text-slate-500 uppercase">
+                  <span className="bg-white px-2.5 py-1 rounded-full border border-slate-200/50">Engineering Vision</span>
+                  <span className="bg-white px-2.5 py-1 rounded-full border border-slate-200/50">Problem Solving</span>
+                  <span className="bg-white px-2.5 py-1 rounded-full border border-slate-200/50">Clean Code</span>
                 </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* 9. Xcode Tech Standards */}
-      <section className="py-20 md:py-28 bg-slate-50/50 border-b border-slate-100 relative">
-        <div className="absolute inset-0 bg-dot-grid opacity-30 -z-10" />
+      {/* 4. Why Xcode Tech */}
+      <section className="py-20 bg-slate-50/50 border-b border-slate-100 relative">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
-            <FadeIn direction="up" delay={0.1}>
-              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
-                Our Process
-              </span>
-            </FadeIn>
-            <FadeIn direction="up" delay={0.2}>
-              <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-dark tracking-tight leading-tight mt-4">
-                Xcode Tech Standards
-              </h2>
-            </FadeIn>
-            <FadeIn direction="up" delay={0.3}>
-              <p className="text-slate-500 text-sm mt-3 leading-relaxed">
-                Every project we engineer follows a disciplined, lifecycle-oriented execution roadmap:
-              </p>
-            </FadeIn>
+          <div className="text-center max-w-xl mx-auto mb-16">
+            <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
+              Why Choose Us
+            </span>
+            <h2 className="font-display font-extrabold text-3xl text-dark tracking-tight leading-tight mt-4">
+              Built for Scale &amp; Efficiency
+            </h2>
+            <p className="text-slate-500 text-sm mt-3 leading-relaxed">
+              We design and construct digital products with architectural discipline and business integrity.
+            </p>
           </div>
 
-          <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 relative">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { step: "01", name: "Discovery", desc: "Understanding the problem, defining business outcomes, and outlining scope parameters." },
-              { step: "02", name: "Technical Architecture", desc: "Designing database schemas, deciding tech stacks, and modeling API endpoints." },
-              { step: "03", name: "Experience Design", desc: "High-fidelity layouts and responsive, intuitive user journey flows." },
-              { step: "04", name: "Development", desc: "Clean backend coding, secure database setups, and frontend component building." },
-              { step: "05", name: "Quality Review", desc: "Dual-developer peer reviews, automated unit tests, and performance gate audits." },
-              { step: "06", name: "Deployment", desc: "Continuous integration pipelines, cloud multi-region staging, and validation tests." },
-              { step: "07", name: "Evolution", desc: "Database query tuning, serverless scale management, and continuous updates." }
-            ].map((step) => (
-              <StaggerItem key={step.name}>
-                <div className="rounded-xl border border-slate-200/30 p-4 bg-slate-50/30 shadow-sm flex flex-col justify-between min-h-[180px] h-full relative group hover:border-primary/20 hover:shadow-md transition-all duration-300">
-                  <span className="absolute top-4 right-4 text-[10px] font-extrabold text-slate-450">
-                    {step.step}
-                  </span>
-                  <div>
-                    <h4 className="font-display font-extrabold text-xs text-dark mb-1.5 mt-4">
-                      {step.name}
-                    </h4>
-                    <p className="text-[10px] text-slate-500 leading-relaxed">
-                      {step.desc}
-                    </p>
+              {
+                title: "Business Focused Development",
+                desc: "We align every line of code with your operational objectives and return-on-investment parameters. We don't just build features; we build assets.",
+                icon: Rocket,
+                color: "text-blue-600 bg-blue-50 border-blue-100"
+              },
+              {
+                title: "Modern Architecture",
+                desc: "Clean codebases, decoupled edge deployment paths, modular designs, and highly indexed databases ensure systems adapt as your traffic scale scales.",
+                icon: Cpu,
+                color: "text-indigo-600 bg-indigo-50 border-indigo-100"
+              },
+              {
+                title: "Transparent Partnership",
+                desc: "Real-time communication channels, dual-developer code reviews, step-by-step milestone delivery, and transparent simulation results from day one.",
+                icon: Handshake,
+                color: "text-sky-500 bg-sky-50 border-sky-100"
+              }
+            ].map((pillar) => {
+              const Icon = pillar.icon;
+              return (
+                <div key={pillar.title} className="rounded-2xl border border-slate-200/40 p-6 bg-white shadow-sm flex flex-col gap-4">
+                  <div className={`p-3 rounded-xl border w-fit ${pillar.color}`}>
+                    <Icon className="w-5 h-5" />
                   </div>
+                  <h3 className="font-display font-extrabold text-base text-dark">{pillar.title}</h3>
+                  <p className="text-xs text-slate-505 leading-relaxed">{pillar.desc}</p>
                 </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
+              );
+            })}
+          </div>
         </div>
       </section>
 
-      {/* 10. Xcode Tech Lab */}
-      <section className="py-20 md:py-28 bg-white border-b border-slate-100 relative">
-        <div className="absolute inset-0 bg-dot-grid opacity-10 -z-10" />
+      {/* 5. Services */}
+      <ServicesSection />
+
+      {/* 6. Technology Stack */}
+      <section className="py-20 bg-slate-50/30 border-b border-slate-100 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            <div className="lg:col-span-5 flex flex-col gap-6">
-              <FadeIn direction="up" delay={0.1}>
-                <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block w-fit">
-                  Innovation
-                </span>
-              </FadeIn>
-              <FadeIn direction="up" delay={0.2}>
-                <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-dark tracking-tight leading-tight">
-                  Xcode Tech Lab
-                </h2>
-              </FadeIn>
-              <FadeIn direction="up" delay={0.3}>
-                <p className="text-slate-500 text-sm leading-relaxed">
-                  We run a dedicated research environment exploring next-generation developer tooling, automation frameworks, and cloud optimizations. Our experiments help us build better production software.
-                </p>
-              </FadeIn>
+            <div className="lg:col-span-6 flex flex-col gap-6">
+              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block w-fit">
+                Technology Stack
+              </span>
+              <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-dark tracking-tight leading-tight">
+                Modern &amp; Resilient Stacks
+              </h2>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                We select programming frameworks, system libraries, and hosting architectures based on proven reliability, performance thresholds, and security compliance.
+              </p>
+              
+              <div className="space-y-4 mt-2">
+                {[
+                  { category: "Frontend", items: "React, Next.js (App Router), TypeScript, Tailwind CSS" },
+                  { category: "Backend & APIs", items: "Node.js, Express, Python (FastAPI), RESTful & GraphQL APIs" },
+                  { category: "Database & Cache", items: "PostgreSQL, MongoDB, Redis, Row-Level Security (RLS)" },
+                  { category: "Cloud & DevOps", items: "AWS (S3, EC2), Vercel, Docker, CI/CD GitHub Actions" },
+                  { category: "AI & Automation", items: "OpenAI API, LangChain pipelines, Cognitive parsers" }
+                ].map((stack) => (
+                  <div key={stack.category} className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 border-b border-slate-100 pb-3">
+                    <span className="text-xs font-extrabold text-dark w-32 shrink-0">{stack.category}</span>
+                    <span className="text-xs text-slate-550">{stack.items}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {labExperiments.map((lab, i) => (
-                <div key={lab.title} className="rounded-2xl border border-slate-200/40 p-6 bg-slate-50/25 hover:bg-white hover:shadow-lg hover:border-primary/10 transition-all duration-300">
-                  <div className="flex justify-between items-center mb-3">
-                    <h4 className="font-display font-extrabold text-sm text-dark">{lab.title}</h4>
-                    <span className="text-[8px] font-extrabold text-primary bg-blue-50 border border-blue-100 px-2 py-0.5 rounded-full uppercase tracking-wider">{lab.tag}</span>
-                  </div>
-                  <p className="text-[11px] text-slate-505 leading-relaxed">{lab.desc}</p>
-                </div>
-              ))}
+            <div className="lg:col-span-6 flex justify-center items-center relative">
+              <TechnologyOrbit />
             </div>
 
           </div>
         </div>
       </section>
 
-      {/* 11. Built With A Long-Term Vision */}
-      <section className="py-20 md:py-28 bg-slate-50/20 border-b border-slate-100">
-        <div className="max-w-4xl mx-auto px-6 flex flex-col items-center">
-          <FadeIn direction="up" delay={0.1}>
-            <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block mb-8">
-              Company Vision
+      {/* 7. Engineering Solutions Lab */}
+      <section className="py-20 bg-white border-b border-slate-100 relative">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+            <div className="max-w-xl">
+              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block mb-4">
+                Solutions Lab
+              </span>
+              <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-dark tracking-tight leading-tight">
+                Engineering Solutions Lab
+              </h2>
+              <p className="text-slate-500 text-sm mt-3 leading-relaxed">
+                Realistic prototypes designed around business challenges. Outcomes represent verified performance stats in simulated environments.
+              </p>
+            </div>
+            <Link
+              href="/work"
+              className="inline-flex items-center gap-1.5 bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-700 font-semibold text-xs px-5 py-3 rounded-full transition-colors group h-11"
+            >
+              View Solutions Lab
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+          </div>
+
+          <div className="flex flex-col gap-10">
+            {featuredProjects.map((project) => (
+              <CaseStudyCard key={project.id} project={project} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 8. Development Lifecycle */}
+      <section className="py-20 bg-slate-50/50 border-b border-slate-100 relative">
+        <div className="absolute inset-0 bg-dot-grid opacity-20 -z-10" />
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center max-w-xl mx-auto mb-16">
+            <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
+              Our Process
             </span>
-          </FadeIn>
-          
-          <FadeIn direction="up" delay={0.2} className="w-full">
-            <div className="flex flex-col md:flex-row items-center gap-8 bg-white border border-slate-200/50 p-6 md:p-8 rounded-3xl shadow-xl shadow-slate-100 max-w-3xl mx-auto">
-              <div className="w-24 h-24 rounded-2xl overflow-hidden border border-slate-100 shadow-md shrink-0">
-                <img
-                  src="/founder-portrait.png"
-                  alt="Deep Patel, Founder"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="flex flex-col text-center md:text-left">
-                <p className="font-display font-bold text-base md:text-lg text-dark italic leading-relaxed">
-                  "Xcode Tech was created with a simple belief: great software is not just written — it is engineered with purpose, clarity, and responsibility."
-                </p>
-                <div className="mt-4 flex flex-col">
-                  <span className="font-display font-extrabold text-sm text-dark">Deep Patel</span>
-                  <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider mt-0.5">Founder &amp; Technology Lead</span>
-                  <div className="mt-3 flex flex-wrap gap-2 justify-center md:justify-start text-[8px] font-bold text-slate-500 uppercase">
-                    <span className="bg-slate-100 px-2 py-1 rounded-full border border-slate-200/40">Engineering Vision</span>
-                    <span className="bg-slate-100 px-2 py-1 rounded-full border border-slate-200/40">Curiosity</span>
-                    <span className="bg-slate-100 px-2 py-1 rounded-full border border-slate-200/40">Problem Solving</span>
-                    <span className="bg-slate-100 px-2 py-1 rounded-full border border-slate-200/40">Technology Passion</span>
-                  </div>
+            <h2 className="font-display font-extrabold text-3xl text-dark tracking-tight leading-tight mt-4">
+              Disciplined Engineering Standards
+            </h2>
+            <p className="text-slate-500 text-sm mt-3 leading-relaxed">
+              Every system we build follows a structured lifecycle to ensure code robustness, security, and fast load speeds:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+            {[
+              { step: "01", name: "Discovery", desc: "Understanding the problem, defining business outcomes, and outlining scope parameters." },
+              { step: "02", name: "System Architecture", desc: "Designing database schemas, deciding tech stacks, and modeling API endpoints." },
+              { step: "03", name: "Experience Design", desc: "High-fidelity layouts and responsive, intuitive user journey flows." },
+              { step: "04", name: "Custom Development", desc: "Clean backend coding, secure database setups, and frontend component building." },
+              { step: "05", name: "Quality Assurance", desc: "Dual-developer peer reviews, automated unit tests, and performance gate audits." },
+              { step: "06", name: "Deployment", desc: "Continuous integration pipelines, cloud multi-region staging, and validation tests." },
+              { step: "07", name: "Evolution", desc: "Database query tuning, serverless scale management, and continuous updates." }
+            ].map((step) => (
+              <div key={step.name} className="rounded-xl border border-slate-200/30 p-4 bg-white shadow-sm flex flex-col justify-between min-h-[180px] h-full relative group hover:border-primary/20 hover:shadow-md transition-all duration-300">
+                <span className="absolute top-4 right-4 text-[10px] font-extrabold text-slate-400">
+                  {step.step}
+                </span>
+                <div>
+                  <h4 className="font-display font-extrabold text-xs text-dark mb-1.5 mt-4">
+                    {step.name}
+                  </h4>
+                  <p className="text-[10px] text-slate-500 leading-relaxed">
+                    {step.desc}
+                  </p>
                 </div>
               </div>
-            </div>
-          </FadeIn>
-          
-          <FadeIn direction="up" delay={0.3}>
-            <p className="text-[11px] text-slate-450 mt-8 text-center max-w-sm font-semibold uppercase tracking-wider">
-              Remote-first engineering partner working with businesses beyond borders.
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 9. Industries We Build For */}
+      <section className="py-20 bg-white border-b border-slate-100 relative">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center max-w-xl mx-auto mb-16">
+            <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
+              Market Expertise
+            </span>
+            <h2 className="font-display font-extrabold text-3xl text-dark tracking-tight leading-tight mt-4">
+              Industries We Build For
+            </h2>
+            <p className="text-slate-500 text-sm mt-3 leading-relaxed">
+              We engineer specialized digital platforms tailored to the operational models of diverse sectors.
             </p>
-          </FadeIn>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {[
+              { name: "Healthcare", focus: "Telehealth & HIPAA layouts", icon: ShieldCheck },
+              { name: "Education", focus: "LMS & student dashboards", icon: Cpu },
+              { name: "Real Estate", focus: "Property engines & maps", icon: Compass },
+              { name: "Finance", focus: "SaaS ledgers & billing API", icon: Zap },
+              { name: "E-commerce", focus: "Headless store backends", icon: Rocket },
+              { name: "Startups", focus: "MVP platforms & product code", icon: Sparkles }
+            ].map((ind) => {
+              const Icon = ind.icon;
+              return (
+                <div key={ind.name} className="rounded-2xl border border-slate-200/40 p-5 bg-slate-50/25 hover:bg-white hover:border-primary/10 hover:shadow-lg transition-all text-center flex flex-col items-center gap-3">
+                  <div className="p-2.5 rounded-xl bg-blue-50 text-primary border border-blue-100/30">
+                    <Icon className="w-4 h-4" />
+                  </div>
+                  <h4 className="font-display font-extrabold text-sm text-dark">{ind.name}</h4>
+                  <p className="text-[10px] text-slate-500 leading-normal">{ind.focus}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 10. Engineering Standards */}
+      <section className="py-20 bg-slate-50/50 border-b border-slate-100 relative">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center max-w-xl mx-auto mb-16">
+            <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
+              Trust &amp; Quality
+            </span>
+            <h2 className="font-display font-extrabold text-3xl text-dark tracking-tight leading-tight mt-4">
+              Engineering Standards
+            </h2>
+            <p className="text-slate-500 text-sm mt-3 leading-relaxed">
+              Our software development practices enforce system reliability, data protection, and product lifespan.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                title: "Secure Development Practices",
+                desc: "We enforce strict security checks, encryption standards, role-based access control (RBAC), and path-safety checks to protect critical datasets."
+              },
+              {
+                title: "Performance Optimized Systems",
+                desc: "Code rendering is tuned for sub-second speeds. We leverage edge networks, database query index optimizations, and cache layers."
+              },
+              {
+                title: "Scalable Architecture",
+                desc: "We build decoupled monolithic or microservices platforms that scale horizontally under peak traffic, avoiding server downtime."
+              },
+              {
+                title: "Clean Code Standards",
+                desc: "Strict type definitions, automated testing pipelines, and developer peer-review standards guarantee clean and maintainable files."
+              }
+            ].map((std) => (
+              <div key={std.title} className="rounded-2xl border border-slate-200/40 p-6 bg-white shadow-sm flex flex-col justify-between min-h-[160px]">
+                <h3 className="font-display font-extrabold text-sm text-dark leading-tight">{std.title}</h3>
+                <p className="text-xs text-slate-505 leading-relaxed mt-4">{std.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 11. Insights by Xcode Tech */}
+      <section className="py-20 bg-white border-b border-slate-100 relative">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+            <div className="max-w-xl">
+              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block mb-4">
+                Publications
+              </span>
+              <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-dark tracking-tight leading-tight">
+                Insights by Xcode Tech
+              </h2>
+              <p className="text-slate-500 text-sm mt-3 leading-relaxed">
+                Articles on software architecture, automation pipelines, and engineering economics written by Deep Patel.
+              </p>
+            </div>
+            <Link
+              href="/insights"
+              className="inline-flex items-center gap-1.5 bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-700 font-semibold text-xs px-5 py-3 rounded-full transition-colors group h-11"
+            >
+              Read All Insights
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {blogs.map((post) => (
+              <BlogCard key={post.slug} post={post} />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -634,26 +397,18 @@ export default function Home() {
         
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-xl mb-16">
-            <FadeIn direction="up" delay={0.1}>
-              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block mb-4">
-                Consultation Request
-              </span>
-            </FadeIn>
-            <FadeIn direction="up" delay={0.2}>
-              <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-dark tracking-tight leading-none">
-                Start Partnership
-              </h2>
-            </FadeIn>
-            <FadeIn direction="up" delay={0.3}>
-              <p className="text-slate-655 text-sm mt-4 leading-relaxed">
-                Connect with our technology directors to outline your software objectives, select project scope levels, and design your product.
-              </p>
-            </FadeIn>
+            <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block mb-4">
+              Consultation Request
+            </span>
+            <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-dark tracking-tight leading-none">
+              Start Partnership
+            </h2>
+            <p className="text-slate-655 text-sm mt-4 leading-relaxed">
+              Connect with our technology directors to outline your software objectives, select project scope levels, and design your product.
+            </p>
           </div>
 
-          <FadeIn direction="up" delay={0.4}>
-            <ContactForm />
-          </FadeIn>
+          <ContactForm />
         </div>
       </section>
     </div>

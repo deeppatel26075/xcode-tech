@@ -26,10 +26,17 @@ export default function Footer() {
           </div>
           
           <p className="text-sm text-slate-500 leading-relaxed max-w-sm">
-            Xcode Tech is a premium global technology studio engineering custom software, scalable cloud architectures, and cognitive AI solutions.
+            Xcode Tech is a premium software engineering partner building custom software, scalable cloud architectures, and cognitive AI solutions.
           </p>
 
-          <div className="flex items-center gap-3 mt-2">
+          <div className="flex flex-col gap-1 text-xs text-slate-400 font-mono mt-1">
+            <span className="font-sans font-bold text-dark text-xs">Xcode Tech</span>
+            <span>Software Engineering Company</span>
+            <span>India</span>
+            <span className="mt-0.5 text-primary">contact@xcodetech.in</span>
+          </div>
+
+          <div className="flex items-center gap-3 mt-1">
             <a
               href="https://wa.me/919825511650"
               target="_blank"
@@ -40,7 +47,7 @@ export default function Footer() {
               <MessageSquare className="w-4 h-4" />
             </a>
             <a
-              href="mailto:hello@xcodetech.in"
+              href="mailto:contact@xcodetech.in"
               className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:text-primary hover:border-blue-200 transition-colors shadow-sm"
               title="Email Us"
             >
@@ -56,16 +63,18 @@ export default function Footer() {
           </h4>
           <ul className="flex flex-col gap-3.5">
             {[
-              { label: "Software Engineering", href: "/services#software" },
-              { label: "Web & Commerce", href: "/services#web" },
-              { label: "Artificial Intelligence", href: "/services#ai" },
-              { label: "Cloud Engineering", href: "/services#cloud" },
-              { label: "Security-Focused Development", href: "/services#security" }
+              { label: "Custom Software Development", href: "/services#software" },
+              { label: "Web Application Development", href: "/services#web" },
+              { label: "Mobile App Development", href: "/services#mobile" },
+              { label: "AI & Business Automation", href: "/services#ai" },
+              { label: "Cloud & DevOps Solutions", href: "/services#cloud" },
+              { label: "UI/UX Engineering", href: "/services#uiux" },
+              { label: "Cybersecurity Solutions", href: "/services#security" }
             ].map((link) => (
               <li key={link.label}>
                 <Link
                   href={link.href}
-                  className="text-sm text-slate-500 hover:text-primary transition-colors flex items-center gap-1 group"
+                  className="text-xs text-slate-500 hover:text-primary transition-colors flex items-center gap-1 group"
                 >
                   <ArrowRight className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
                   {link.label}
@@ -125,11 +134,11 @@ export default function Footer() {
               <span>+91 98255 11650</span>
             </a>
             <a
-              href="mailto:hello@xcodetech.in"
+              href="mailto:contact@xcodetech.in"
               className="flex items-center gap-3 text-sm text-slate-500 hover:text-primary transition-colors"
             >
               <Mail className="w-4 h-4 text-primary shrink-0" />
-              <span>hello@xcodetech.in</span>
+              <span>contact@xcodetech.in</span>
             </a>
             <div className="flex items-center gap-3 text-sm text-slate-500">
               <Globe className="w-4 h-4 text-primary shrink-0" />

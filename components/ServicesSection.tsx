@@ -1,21 +1,21 @@
 "use client";
 
 import React from "react";
-import { Laptop, Cpu, Smartphone, Cloud, FileSpreadsheet, Palette, Layout, ArrowRight } from "lucide-react";
+import { Laptop, Cpu, Smartphone, Cloud, Shield, Palette, Layout, ArrowRight } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "./Animations";
 
 const services = [
   {
     icon: Laptop,
-    title: "Software Engineering",
+    title: "Custom Software Development",
     description: "Engineering tailored applications with exceptional performance, scalability, and robust security protocols.",
-    items: ["Custom Software", "SaaS Platforms", "CRM Systems", "Business Applications"],
+    items: ["Custom SaaS Platforms", "Business Dashboards", "API Design & Integrations", "Internal Workflow Systems"],
     color: "from-blue-500 to-indigo-600",
     id: "software"
   },
   {
     icon: Layout,
-    title: "Website Development",
+    title: "Web Application Development",
     description: "Designing fast, modern, and SEO-optimized web experiences utilizing the latest web technologies.",
     items: ["Corporate Websites", "E-commerce Ecosystems", "Web Applications", "Admin Dashboards"],
     color: "from-sky-400 to-blue-500",
@@ -31,7 +31,7 @@ const services = [
   },
   {
     icon: Cpu,
-    title: "AI Solutions",
+    title: "AI & Business Automation",
     description: "Integrating cognitive automation models and natural language solutions into business operations.",
     items: ["AI Chatbots & Agents", "AI Assistants", "API Integrations", "Workflow Automation"],
     color: "from-blue-600 to-sky-400",
@@ -39,27 +39,27 @@ const services = [
   },
   {
     icon: Cloud,
-    title: "Cloud & DevOps",
+    title: "Cloud & DevOps Solutions",
     description: "Automating server management and release workflows for high-availability production workloads.",
     items: ["Cloud Deployment (AWS/GCP)", "CI/CD Automations", "Cost Optimization", "Infrastructure Monitoring"],
     color: "from-sky-500 to-indigo-600",
     id: "cloud"
   },
   {
-    icon: FileSpreadsheet,
-    title: "Business Technology",
-    description: "Aligning software strategies with corporate goals to drive operational scale and digital growth.",
-    items: ["Business Analysis", "Online Operations", "Digital Transformation", "IT Consulting"],
-    color: "from-indigo-600 to-blue-500",
-    id: "business"
-  },
-  {
     icon: Palette,
-    title: "Brand Experience",
+    title: "UI/UX Engineering",
     description: "Creating highly refined layouts, modern brand guidelines, and delightful customer user flows.",
     items: ["UI/UX Interface Design", "Digital Product Design", "Brand Identity Systems", "Design Auditing"],
     color: "from-blue-500 to-sky-500",
-    id: "brand"
+    id: "uiux"
+  },
+  {
+    icon: Shield,
+    title: "Cybersecurity Solutions",
+    description: "Ensuring digital assets are protected through active threat auditing, secure protocols, and vulnerability patching.",
+    items: ["Secure Code Audits", "Vulnerability Scanning", "Identity & Access Management", "Data Encryption Standards"],
+    color: "from-indigo-600 to-blue-500",
+    id: "security"
   }
 ];
 

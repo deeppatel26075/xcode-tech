@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   keywords: [
     "Software company Ahmedabad",
     "AI automation company India",
-    "Website development company",
+    "Web application development company",
     "Mobile application development",
     "Custom software solutions",
     "Xcode Tech",

@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Laptop, Cpu, Cloud, Layout, ArrowRight, Zap, Shield } from "lucide-react";
+import { Laptop, Cpu, Cloud, Layout, ArrowRight, Zap, Shield, Smartphone, Palette } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "../../components/Animations";
 
 import SubpageContainer from "../../components/SubpageContainer";
@@ -10,36 +10,50 @@ import SubpageContainer from "../../components/SubpageContainer";
 const serviceDetails = [
   {
     icon: Laptop,
-    title: "Software Engineering",
+    title: "Custom Software Development",
     description: "Tailored digital products built from the ground up, optimized for reliability, scalability, and high performance.",
     items: ["Custom SaaS Platforms", "Business Dashboards", "API Design & Integrations", "Internal Workflow Systems"],
     color: "text-blue-600 bg-blue-50/40 border-blue-100/50"
   },
   {
     icon: Layout,
-    title: "Web & Commerce",
-    description: "Creating fast, edge-rendered corporate websites and commerce storefronts that capture customers and boost conversions.",
-    items: ["Corporate Websites", "Headless E-commerce Stores", "Integrated Booking Systems", "Custom Payment Integrations"],
+    title: "Web Application Development",
+    description: "Creating fast, edge-rendered corporate web applications and commerce storefronts that capture customers and boost conversions.",
+    items: ["Corporate Web Apps", "Headless E-commerce Stores", "Integrated Booking Systems", "Custom Payment Integrations"],
     color: "text-sky-500 bg-sky-50/40 border-sky-100/50"
   },
   {
+    icon: Smartphone,
+    title: "Mobile App Development",
+    description: "Engineering premium native and cross-platform mobile apps for iOS and Android, focusing on intuitive animations and offline functionality.",
+    items: ["iOS Native Apps", "Android Native Apps", "Cross-Platform Apps (Flutter/React Native)", "App Store Deployments"],
+    color: "text-indigo-500 bg-indigo-50/40 border-indigo-100/50"
+  },
+  {
     icon: Cpu,
-    title: "Artificial Intelligence",
+    title: "AI & Business Automation",
     description: "Integrating cognitive tools and automated workflows that eliminate manual processing and boost operational productivity.",
     items: ["AI Assistant Chatbots", "AI Automated Workflows", "Custom LLM Integrations", "Document Parsing Pipelines"],
-    color: "text-indigo-600 bg-indigo-50/40 border-indigo-100/50"
+    color: "text-blue-600 bg-blue-50/40 border-blue-100/50"
   },
   {
     icon: Cloud,
-    title: "Cloud Engineering",
+    title: "Cloud & DevOps Solutions",
     description: "Deploying robust, auto-scaling architectures designed to ensure 99.9% availability and optimize monthly resource costs.",
     items: ["Cloud Infrastructure Design", "Automated CI/CD Pipelines", "Containerization & Docker", "Resource Cost Optimization"],
     color: "text-sky-650 bg-sky-50/40 border-sky-100/50"
   },
   {
+    icon: Palette,
+    title: "UI/UX Engineering",
+    description: "Designing high-fidelity visual interfaces and user journeys that reduce user friction and elevate digital product experience.",
+    items: ["High-Fidelity UI Design", "Interactive Prototypes", "Design System Implementation", "Usability Audits"],
+    color: "text-indigo-600 bg-indigo-50/40 border-indigo-100/50"
+  },
+  {
     icon: Shield,
-    title: "Security-Focused Development",
-    description: "Ensuring your digital systems are secure from day one through modern security practices, data encryption, and robust access controls.",
+    title: "Cybersecurity Solutions",
+    description: "Ensuring your digital assets are protected through active threat auditing, secure protocols, and vulnerability patching.",
     items: ["Vulnerability Scanning", "Role-Based Access Control", "Data Encryption Standards", "Secure Code Audits"],
     color: "text-blue-600 bg-blue-50/40 border-blue-100/50"
   }
