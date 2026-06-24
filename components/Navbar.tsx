@@ -56,8 +56,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [pathname]);
 
-  const isHomePage = pathname === "/";
-  const showNavbar = !isHomePage || scrolled;
+  const showNavbar = true;
 
   return (
     <header

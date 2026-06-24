@@ -6,7 +6,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-50 border-t border-slate-200/60 pt-20 pb-10">
+    <footer className="bg-white/20 backdrop-blur-lg border-t border-white/20 pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
         {/* Company Intro & Full Logo */}
         <div className="flex flex-col gap-6">
@@ -32,6 +32,7 @@ export default function Footer() {
           <div className="flex flex-col gap-1 text-xs text-slate-400 font-mono mt-1">
             <span className="font-sans font-bold text-dark text-xs">Xcode Tech</span>
             <span>Software Engineering Company</span>
+            <span className="lowercase">founder &amp; ceo deep patel</span>
             <span>India</span>
             <span className="mt-0.5 text-primary">contact@xcodetech.in</span>
           </div>

@@ -58,16 +58,9 @@ export default async function BlogDetailPage({ params }: PageProps) {
           </h1>
 
           {/* Author Card */}
-          <div className="flex items-center gap-3 border-t border-white/30 pt-6">
-            <img
-              src={post.author.avatar}
-              alt={post.author.name}
-              className="w-10 h-10 rounded-full object-cover border border-white/40 shadow-sm"
-            />
-            <div className="flex flex-col text-xs">
-              <span className="font-bold text-slate-700">{post.author.name}</span>
-              <span className="text-[10px] text-slate-500 font-semibold mt-0.5">{post.author.role}</span>
-            </div>
+          <div className="flex flex-col text-xs border-t border-white/30 pt-6">
+            <span className="font-bold text-slate-700">{post.author.name}</span>
+            <span className="text-[10px] text-slate-500 font-semibold mt-0.5">{post.author.role}</span>
           </div>
 
         </div>

@@ -38,7 +38,11 @@
 }
 
 body {
-  background: #FFFFFF;
+  background-image: url('/sky-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: #0F172A;
   font-family: var(--font-sans);
   overflow-x: hidden;
@@ -83,10 +87,6 @@ body {
 
 /* Sky Portal Background with moving clouds */
 .bg-sky-portal {
-  background-image: url('/sky-bg.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   position: relative;
 }
 

@@ -18,8 +18,8 @@ export const blogs: BlogPost[] = [
     readTime: "5 min read",
     summary: "Moving beyond simple automated scripts to cognitive document parsers and validation loops that eliminate manual administrative drag.",
     author: {
-      name: "Deep Patel",
-      role: "Founder & Software Engineer",
+      name: "Heel Patel",
+      role: "Software Engineer",
       avatar: "/founder-portrait.png"
     },
     content: `
@@ -41,8 +41,8 @@ export const blogs: BlogPost[] = [
     readTime: "4 min read",
     summary: "Why generic website builders limit your capabilities, and how custom interactive web applications drive core operations and customer growth.",
     author: {
-      name: "Deep Patel",
-      role: "Founder & Software Engineer",
+      name: "Harsh Patel",
+      role: "Software Engineer",
       avatar: "/founder-portrait.png"
     },
     content: `
@@ -64,8 +64,8 @@ export const blogs: BlogPost[] = [
     readTime: "6 min read",
     summary: "Why off-the-shelf software licenses and spreadsheet workarounds end up costing more, and how custom solutions scale operations efficiently.",
     author: {
-      name: "Deep Patel",
-      role: "Founder & Software Engineer",
+      name: "Heel Patel",
+      role: "Software Engineer",
       avatar: "/founder-portrait.png"
     },
     content: `

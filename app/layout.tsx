@@ -62,7 +62,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${outfit.variable} h-full antialiasedScroll select-none`}
     >
-      <body className="min-h-full flex flex-col font-sans bg-white text-dark select-text antialiased">
+      <body className="min-h-full flex flex-col font-sans bg-transparent text-dark select-text antialiased">
         <Navbar />
         {/* Main Content Area */}
         <main className="flex-1 flex flex-col">

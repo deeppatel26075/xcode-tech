@@ -139,7 +139,7 @@ export default function CaseStudyCard({ project }: CaseStudyCardProps) {
               </div>
               <div className="flex flex-col gap-1.5 text-[8px] font-semibold text-slate-700">
                 <div className="flex justify-between items-center border-b border-slate-100 pb-1">
-                  <span className="text-slate-800">deep.patel@xcode.tech</span>
+                  <span className="text-slate-800">heel.patel@xcode.tech</span>
                   <span className="bg-blue-50 text-primary border border-blue-100 px-1.5 py-0.5 rounded text-[7px]">Admin</span>
                 </div>
                 <div className="flex justify-between items-center pb-1">

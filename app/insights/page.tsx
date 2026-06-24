@@ -75,16 +75,9 @@ export default function InsightsPage() {
                 </div>
 
                 <div className="flex items-center justify-between border-t border-white/30 pt-5 mt-4">
-                  <div className="flex items-center gap-2.5">
-                    <img
-                      src={latestPost.author.avatar}
-                      alt={latestPost.author.name}
-                      className="w-8 h-8 rounded-full object-cover border border-white/40 shadow-sm"
-                    />
-                    <div className="flex flex-col text-xs">
-                      <span className="font-bold text-slate-700 leading-none">{latestPost.author.name}</span>
-                      <span className="text-[10px] text-slate-500 font-semibold mt-0.5 leading-none">{latestPost.author.role}</span>
-                    </div>
+                  <div className="flex flex-col text-xs">
+                    <span className="font-bold text-slate-700 leading-none">{latestPost.author.name}</span>
+                    <span className="text-[10px] text-slate-500 font-semibold mt-0.5 leading-none">{latestPost.author.role}</span>
                   </div>
                   <Link
                     href={`/insights/${latestPost.slug}`}

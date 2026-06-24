@@ -20,12 +20,12 @@ export default function Home() {
   const featuredProjects = projects.slice(0, 2);
 
   return (
-    <div className="flex flex-col w-full bg-white">
+    <div className="flex flex-col w-full bg-transparent">
       {/* 1. Hero Landing */}
       <Hero />
 
       {/* 2. Company Snapshot ("Xcode Tech at a Glance") */}
-      <section className="py-12 bg-slate-50 border-b border-slate-100 relative">
+      <section className="py-12 bg-white/10 backdrop-blur-md border-b border-white/5 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -34,7 +34,7 @@ export default function Home() {
               { label: "Solutions Engineered", value: "10+", desc: "Simulated lab outcomes" },
               { label: "Focus", value: "Modern Digital Engineering", desc: "Business-first solutions" }
             ].map((stat) => (
-              <div key={stat.label} className="rounded-2xl border border-slate-200/40 p-6 bg-white shadow-sm flex flex-col justify-between min-h-[120px]">
+              <div key={stat.label} className="rounded-2xl border border-white/20 p-6 bg-white/40 backdrop-blur-md shadow-sm flex flex-col justify-between min-h-[120px]">
                 <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider">{stat.label}</span>
                 <div className="mt-2">
                   <span className="font-display font-extrabold text-xl sm:text-2xl text-dark tracking-tight block">
@@ -48,59 +48,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. About Xcode Tech + Founder */}
-      <section className="py-12 md:py-24 bg-white border-b border-slate-100 relative">
+      {/* 3. About Xcode Tech */}
+      <section className="py-12 md:py-24 bg-transparent border-b border-white/5 relative">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* About text */}
-            <div className="lg:col-span-7 flex flex-col gap-6">
-              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block w-fit">
-                About Xcode Tech
-              </span>
-              <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-dark tracking-tight leading-tight">
-                Emerging Software Engineering Partner
-              </h2>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Xcode Tech is a software engineering company based in Ahmedabad, India, founded in 2026. We build scalable digital products, automated workflows, and custom enterprise platforms that solve core operational bottlenecks. Our structures comply with global design standards and security protocols.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
-                <div className="rounded-xl border border-slate-200/30 p-4 bg-slate-50/20">
-                  <span className="text-xs font-bold text-slate-700 block">Our Mission</span>
-                  <p className="text-[11px] text-slate-500 leading-relaxed mt-1">
-                    To construct robust, business-focused software systems that elevate corporate efficiency and user scaling boundaries.
-                  </p>
-                </div>
-                <div className="rounded-xl border border-slate-200/30 p-4 bg-slate-50/20">
-                  <span className="text-xs font-bold text-slate-700 block">Our Vision</span>
-                  <p className="text-[11px] text-slate-500 leading-relaxed mt-1">
-                    To serve as a trusted international engineering partner where ambitious ideas seamlessly translate into functional, clean codebases.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Founder Profile */}
-            <div className="lg:col-span-5 flex justify-center">
-              <div className="w-full max-w-sm bg-slate-50 border border-slate-200/50 p-6 md:p-8 rounded-3xl shadow-xl shadow-slate-100 flex flex-col items-center text-center">
-                <div className="w-24 h-24 rounded-2xl overflow-hidden border border-slate-100 shadow-md mb-6">
-                  <img
-                    src="/founder-portrait.png"
-                    alt="Deep Patel, Founder"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="font-display font-extrabold text-lg text-dark">Deep Patel</h3>
-                <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider mt-0.5">Founder &amp; Software Engineer</span>
-                
-                <p className="font-display font-medium text-xs md:text-sm text-slate-700 leading-relaxed mt-4 italic">
-                  "Building Xcode Tech with a vision to create business-focused, scalable digital solutions using modern software engineering."
+          <div className="max-w-3xl mx-auto flex flex-col gap-6 text-center items-center">
+            <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block w-fit">
+              About Xcode Tech
+            </span>
+            <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-dark tracking-tight leading-tight">
+              Emerging Software Engineering Partner
+            </h2>
+            <p className="text-slate-600 text-sm leading-relaxed max-w-2xl text-center">
+              Xcode Tech is a software engineering company based in Ahmedabad, India, founded in 2026. We build scalable digital products, automated workflows, and custom enterprise platforms that solve core operational bottlenecks. Our structures comply with global design standards and security protocols.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4 w-full text-left">
+              <div className="rounded-2xl border border-white/30 p-6 bg-white/40 backdrop-blur-md shadow-sm">
+                <span className="text-sm font-bold text-slate-800 block">Our Mission</span>
+                <p className="text-xs text-slate-500 leading-relaxed mt-2">
+                  To construct robust, business-focused software systems that elevate corporate efficiency and user scaling boundaries.
                 </p>
-
-                <div className="mt-6 flex flex-wrap gap-1.5 justify-center text-[8px] font-bold text-slate-500 uppercase">
-                  <span className="bg-white px-2.5 py-1 rounded-full border border-slate-200/50">Engineering Vision</span>
-                  <span className="bg-white px-2.5 py-1 rounded-full border border-slate-200/50">Problem Solving</span>
-                  <span className="bg-white px-2.5 py-1 rounded-full border border-slate-200/50">Clean Code</span>
-                </div>
+              </div>
+              <div className="rounded-2xl border border-white/30 p-6 bg-white/40 backdrop-blur-md shadow-sm">
+                <span className="text-sm font-bold text-slate-800 block">Our Vision</span>
+                <p className="text-xs text-slate-500 leading-relaxed mt-2">
+                  To serve as a trusted international engineering partner where ambitious ideas seamlessly translate into functional, clean codebases.
+                </p>
               </div>
             </div>
           </div>
@@ -108,7 +80,7 @@ export default function Home() {
       </section>
 
       {/* 4. Why Xcode Tech */}
-      <section className="py-12 md:py-24 bg-slate-50/50 border-b border-slate-100 relative">
+      <section className="py-12 md:py-24 bg-white/5 backdrop-blur-sm border-b border-white/5 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-xl mx-auto mb-16">
             <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
@@ -145,7 +117,7 @@ export default function Home() {
             ].map((pillar) => {
               const Icon = pillar.icon;
               return (
-                <div key={pillar.title} className="rounded-2xl border border-slate-200/40 p-6 bg-white shadow-sm flex flex-col gap-4">
+                <div key={pillar.title} className="rounded-2xl border border-white/25 p-6 bg-white/50 backdrop-blur-md shadow-sm flex flex-col gap-4">
                   <div className={`p-3 rounded-xl border w-fit ${pillar.color}`}>
                     <Icon className="w-5 h-5" />
                   </div>
@@ -162,7 +134,7 @@ export default function Home() {
       <ServicesSection />
 
       {/* 6. Technology Stack */}
-      <section className="py-12 md:py-24 bg-slate-50/30 border-b border-slate-100 relative overflow-hidden">
+      <section className="py-12 md:py-24 bg-transparent border-b border-white/5 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
@@ -202,7 +174,7 @@ export default function Home() {
       </section>
 
       {/* 7. Engineering Solutions Lab */}
-      <section className="py-12 md:py-24 bg-white border-b border-slate-100 relative">
+      <section className="py-12 md:py-24 bg-transparent border-b border-white/5 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div className="max-w-xl">
@@ -218,7 +190,7 @@ export default function Home() {
             </div>
             <Link
               href="/work"
-              className="inline-flex items-center gap-1.5 bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-700 font-semibold text-xs px-5 py-3 rounded-full transition-colors group h-11"
+              className="hidden md:inline-flex items-center gap-1.5 bg-white/80 hover:bg-white border border-slate-200 text-slate-700 font-semibold text-xs px-5 py-3 rounded-full transition-colors group h-11"
             >
               View Solutions Lab
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
@@ -230,11 +202,22 @@ export default function Home() {
               <CaseStudyCard key={project.id} project={project} />
             ))}
           </div>
+
+          {/* Mobile View Solutions Lab button at the bottom */}
+          <div className="flex justify-center mt-8 md:hidden">
+            <Link
+              href="/work"
+              className="inline-flex items-center justify-center gap-1.5 bg-white/80 hover:bg-white text-slate-700 font-semibold text-sm px-6 py-3.5 rounded-full border border-slate-200 shadow-sm transition-colors group w-full"
+            >
+              View Solutions Lab
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* 8. Development Lifecycle */}
-      <section className="py-12 md:py-24 bg-slate-50/50 border-b border-slate-100 relative">
+      <section className="py-12 md:py-24 bg-white/5 backdrop-blur-sm border-b border-white/5 relative">
         <div className="absolute inset-0 bg-dot-grid opacity-20 -z-10" />
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-xl mx-auto mb-16">
@@ -259,7 +242,7 @@ export default function Home() {
               { step: "06", name: "Deployment", desc: "Continuous integration pipelines, cloud multi-region staging, and validation tests." },
               { step: "07", name: "Evolution", desc: "Database query tuning, serverless scale management, and continuous updates." }
             ].map((step) => (
-              <div key={step.name} className="rounded-xl border border-slate-200/30 p-4 bg-white shadow-sm flex flex-col justify-between min-h-[180px] h-full relative group hover:border-primary/20 hover:shadow-md transition-all duration-300">
+              <div key={step.name} className="rounded-xl border border-white/20 p-4 bg-white/50 backdrop-blur-md shadow-sm flex flex-col justify-between min-h-[180px] h-full relative group hover:border-primary/20 hover:shadow-md transition-all duration-300">
                 <span className="absolute top-4 right-4 text-[10px] font-extrabold text-slate-400">
                   {step.step}
                 </span>
@@ -278,7 +261,7 @@ export default function Home() {
       </section>
 
       {/* 9. Industries We Build For */}
-      <section className="py-12 md:py-24 bg-white border-b border-slate-100 relative">
+      <section className="py-12 md:py-24 bg-transparent border-b border-white/5 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-xl mx-auto mb-16">
             <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
@@ -303,7 +286,7 @@ export default function Home() {
             ].map((ind) => {
               const Icon = ind.icon;
               return (
-                <div key={ind.name} className="rounded-2xl border border-slate-200/40 p-5 bg-slate-50/25 hover:bg-white hover:border-primary/10 hover:shadow-lg transition-all text-center flex flex-col items-center gap-3">
+                <div key={ind.name} className="rounded-2xl border border-white/20 p-5 bg-white/40 backdrop-blur-md hover:bg-white/60 hover:border-primary/10 hover:shadow-lg transition-all text-center flex flex-col items-center gap-3">
                   <div className="p-2.5 rounded-xl bg-blue-50 text-primary border border-blue-100/30">
                     <Icon className="w-4 h-4" />
                   </div>
@@ -317,7 +300,7 @@ export default function Home() {
       </section>
 
       {/* 10. Engineering Standards */}
-      <section className="py-12 md:py-24 bg-slate-50/50 border-b border-slate-100 relative">
+      <section className="py-12 md:py-24 bg-white/5 backdrop-blur-sm border-b border-white/5 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-xl mx-auto mb-16">
             <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
@@ -350,7 +333,7 @@ export default function Home() {
                 desc: "Strict type definitions, automated testing pipelines, and developer peer-review standards guarantee clean and maintainable files."
               }
             ].map((std) => (
-              <div key={std.title} className="rounded-2xl border border-slate-200/40 p-6 bg-white shadow-sm flex flex-col justify-between min-h-[160px]">
+              <div key={std.title} className="rounded-2xl border border-white/20 p-6 bg-white/55 backdrop-blur-md shadow-sm flex flex-col justify-between min-h-[160px]">
                 <h3 className="font-display font-extrabold text-sm text-dark leading-tight">{std.title}</h3>
                 <p className="text-xs text-slate-505 leading-relaxed mt-4">{std.desc}</p>
               </div>
@@ -360,7 +343,7 @@ export default function Home() {
       </section>
 
       {/* 11. Insights by Xcode Tech */}
-      <section className="py-12 md:py-24 bg-white border-b border-slate-100 relative">
+      <section className="py-12 md:py-24 bg-transparent border-b border-white/5 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div className="max-w-xl">
@@ -371,12 +354,12 @@ export default function Home() {
                 Insights by Xcode Tech
               </h2>
               <p className="text-slate-500 text-sm mt-3 leading-relaxed">
-                Articles on software architecture, automation pipelines, and engineering economics written by Deep Patel.
+                Articles on software architecture, automation pipelines, and engineering economics written by our engineering team.
               </p>
             </div>
             <Link
               href="/insights"
-              className="inline-flex items-center gap-1.5 bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-700 font-semibold text-xs px-5 py-3 rounded-full transition-colors group h-11"
+              className="hidden md:inline-flex items-center gap-1.5 bg-white/80 hover:bg-white border border-slate-200 text-slate-700 font-semibold text-xs px-5 py-3 rounded-full transition-colors group h-11"
             >
               Read All Insights
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
@@ -388,11 +371,22 @@ export default function Home() {
               <BlogCard key={post.slug} post={post} />
             ))}
           </div>
+
+          {/* Mobile Read All Insights button at the bottom */}
+          <div className="flex justify-center mt-8 md:hidden">
+            <Link
+              href="/insights"
+              className="inline-flex items-center justify-center gap-1.5 bg-white/80 hover:bg-white text-slate-700 font-semibold text-sm px-6 py-3.5 rounded-full border border-slate-200 shadow-sm transition-colors group w-full"
+            >
+              Read All Insights
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* 12. Start Partnership CTA */}
-      <section id="contact" className="py-12 md:py-24 bg-slate-50/50 relative">
+      <section id="contact" className="py-12 md:py-24 bg-white/10 backdrop-blur-md relative">
         <div className="absolute inset-0 bg-dot-grid opacity-40 -z-10" />
         
         <div className="max-w-7xl mx-auto px-6">

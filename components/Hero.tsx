@@ -1,24 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
-import { ArrowRight, Sparkles, TrendingUp, Activity, Menu, X } from "lucide-react";
-import { FadeIn, Magnetic } from "./Animations";
-import { AnimatePresence, motion } from "framer-motion";
-
-const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Solutions", href: "/solutions" },
-  { label: "Work", href: "/work" },
-  { label: "Company", href: "/about" },
-  { label: "Contact", href: "/contact" }
-];
+import { TrendingUp, Activity } from "lucide-react";
+import { FadeIn } from "./Animations";
+import { motion } from "framer-motion";
 
 export default function Hero() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
-    <section className="relative lg:min-h-screen py-4 sm:py-8 bg-sky-portal flex flex-col justify-center overflow-hidden">
+    <section className="relative lg:min-h-screen pt-24 pb-8 sm:pt-28 sm:pb-12 bg-sky-portal flex flex-col justify-center overflow-hidden">
       
       {/* Moving Sky Clouds */}
       <div className="absolute top-[8%] left-[-10%] w-[500px] h-[350px] bg-white/45 rounded-full blur-[110px] pointer-events-none animate-cloud-drift" />
@@ -28,92 +18,12 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full flex flex-col gap-6 z-10">
         
         {/* Giant Main Transparent Card (Frosted Layered Glass Container) */}
-        <div className="rounded-[2rem] sm:rounded-[2.2rem] border border-white/25 bg-white/[0.08] backdrop-blur-[24px] p-5 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden flex flex-col justify-between lg:min-h-[85vh] w-full">
+        <div className="rounded-[2rem] sm:rounded-[2.2rem] border border-white/25 bg-white/[0.08] backdrop-blur-[24px] p-5 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden flex flex-col justify-between lg:min-h-[80vh] w-full">
           
           <div className="absolute inset-0 bg-dot-grid opacity-15 pointer-events-none" />
 
-          {/* 1. Integrated Header inside the transparent box */}
-          <div className="flex items-center justify-between relative z-20 pb-6 border-b border-white/10">
-            {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-primary to-sky-custom flex items-center justify-center shadow-lg shadow-blue-500/10">
-                <span className="font-display font-extrabold text-sm text-white tracking-tighter">XT</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-display font-semibold text-base sm:text-lg text-dark tracking-tight leading-none">
-                  Xcode <span className="text-primary font-bold">Tech</span>
-                </span>
-                <span className="text-[8px] sm:text-[9px] text-slate-400 font-semibold uppercase tracking-wider mt-0.5">
-                  Software Engineering Partner
-                </span>
-              </div>
-            </Link>
-
-            {/* Nav Links */}
-            <nav className="hidden md:flex items-center gap-1">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className="px-4 py-2 text-xs font-semibold text-slate-700 hover:text-primary transition-colors rounded-full hover:bg-white/20"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-
-            {/* CTA Button */}
-            <div className="hidden md:block">
-              <Link
-                href="/contact"
-                className="bg-white/95 hover:bg-white text-dark text-xs font-bold px-5 py-2.5 rounded-full shadow-md border border-slate-200/50 hover:shadow-lg transition-all"
-              >
-                Consultation
-              </Link>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 text-dark hover:text-primary transition-colors focus:outline-none"
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
-          </div>
-
-          {/* Mobile Overlay Menu */}
-          <AnimatePresence>
-            {mobileMenuOpen && (
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                className="absolute top-20 left-6 right-6 bg-white/90 backdrop-blur-xl border border-slate-200/60 p-6 rounded-2xl shadow-xl z-50 flex flex-col gap-4 md:hidden"
-              >
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.label}
-                    href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="text-sm font-semibold text-slate-700 hover:text-primary py-1 border-b border-slate-100"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-                <Link
-                  href="/contact"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="w-full text-center bg-primary text-white text-xs font-bold py-3 rounded-full mt-2"
-                >
-                  Consultation
-                </Link>
-              </motion.div>
-            )}
-          </AnimatePresence>
-
           {/* 2. Middle Main Content Area */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center flex-grow pt-8 pb-4 lg:pt-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center flex-grow pt-4 pb-4 lg:pt-6">
             
             {/* Left Side: Headline & Copy */}
             <div className="lg:col-span-6 flex flex-col items-start gap-4 sm:gap-6 relative z-10">

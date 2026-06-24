@@ -43,17 +43,9 @@ export default function BlogCard({ post }: BlogCardProps) {
 
       {/* Author and Read More Action */}
       <div className="flex items-center justify-between border-t border-slate-100 pt-5 mt-4">
-        <div className="flex items-center gap-2.5">
-          {/* Fallback image handle */}
-          <img
-            src={post.author.avatar}
-            alt={post.author.name}
-            className="w-7 h-7 rounded-full object-cover border border-slate-200 shadow-sm"
-          />
-          <div className="flex flex-col">
-            <span className="text-xs font-bold text-slate-700 leading-none">{post.author.name}</span>
-            <span className="text-[9px] text-slate-400 font-semibold leading-none mt-0.5">{post.author.role}</span>
-          </div>
+        <div className="flex flex-col">
+          <span className="text-xs font-bold text-slate-700 leading-none">{post.author.name}</span>
+          <span className="text-[9px] text-slate-400 font-semibold leading-none mt-0.5">{post.author.role}</span>
         </div>
 
         <Link

@@ -65,7 +65,7 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="py-24 bg-slate-50/50 relative">
+    <section className="py-24 bg-white/5 backdrop-blur-sm relative">
       {/* Background visual aid grids */}
       <div className="absolute inset-0 bg-dot-grid opacity-60 -z-10" />
 
