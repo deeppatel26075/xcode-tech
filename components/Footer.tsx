@@ -120,9 +120,9 @@ export default function Footer() {
             <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
             <div>
               <p className="font-semibold text-slate-700">Xcode Tech HQ</p>
-              <p>501, 5th Floor, Shapath 1,</p>
-              <p>SG Highway, Bodakdev,</p>
-              <p>Ahmedabad, Gujarat 380054, India</p>
+              <p>B Wing, 601, Mondeal Heights,</p>
+              <p>Near Novotel Hotel, S.G. Highway,</p>
+              <p>Ahmedabad, Gujarat – 380015, India</p>
             </div>
           </div>
 

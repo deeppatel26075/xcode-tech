@@ -141,10 +141,9 @@ export default function AboutPage() {
                   <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">Ahmedabad HQ (India)</span>
                 </div>
                 <div className="text-xs text-slate-600 leading-relaxed space-y-1 pl-7">
-                  <p className="font-bold text-slate-800">501, 5th Floor, Shapath 1,</p>
-                  <p>Sarkhej - Gandhinagar Highway,</p>
-                  <p>Bodakdev, Ahmedabad,</p>
-                  <p>Gujarat 380054, India</p>
+                  <p className="font-bold text-slate-800">B Wing, 601, Mondeal Heights,</p>
+                  <p>Near Novotel Hotel, S.G. Highway,</p>
+                  <p>Ahmedabad, Gujarat – 380015, India</p>
                 </div>
               </div>
               
