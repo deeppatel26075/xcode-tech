@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Send, CheckCircle2, MessageSquare, Calendar as CalendarIcon, X, Mail, Phone, Globe, MapPin, ArrowRight } from "lucide-react";
+import { Send, CheckCircle2, MessageSquare, Calendar as CalendarIcon, X, Mail, Phone, Globe, MapPin, ArrowRight, ShieldCheck, Lock, Clock, CreditCard, Map } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function ContactForm() {
@@ -125,6 +125,20 @@ export default function ContactForm() {
                   />
                 </div>
 
+                {/* Country */}
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Country *</label>
+                  <input
+                    type="text"
+                    name="country"
+                    required
+                    value={formData.country}
+                    onChange={handleInputChange}
+                    placeholder="e.g., United States"
+                    className="w-full text-sm bg-slate-50/50 border border-slate-200 focus:border-primary focus:bg-white px-4 py-2.5 rounded-xl outline-none transition-all font-medium"
+                  />
+                </div>
+
                 {/* What Are You Trying To Build */}
                 <div className="flex flex-col gap-1.5">
                   <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Service Type *</label>
@@ -145,7 +159,7 @@ export default function ContactForm() {
                 </div>
 
                 {/* Budget (User-Filled) */}
-                <div className="col-span-1 sm:col-span-2 flex flex-col gap-1.5">
+                <div className="flex flex-col gap-1.5">
                   <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Estimated Budget *</label>
                   <input
                     type="text"
@@ -153,7 +167,7 @@ export default function ContactForm() {
                     required
                     value={formData.budget}
                     onChange={handleInputChange}
-                    placeholder="Enter your budget (e.g., $1,200 or ₹1 Lakh)"
+                    placeholder="Enter budget (e.g., $5,000)"
                     className="w-full text-sm bg-slate-50/50 border border-slate-200 focus:border-primary focus:bg-white px-4 py-2.5 rounded-xl outline-none transition-all font-medium"
                   />
                 </div>
@@ -170,6 +184,27 @@ export default function ContactForm() {
                     placeholder="Tell us about your project goals..."
                     className="w-full text-sm bg-slate-50/50 border border-slate-200 focus:border-primary focus:bg-white px-4 py-2.5 rounded-xl outline-none transition-all resize-none font-medium"
                   />
+                </div>
+
+                {/* Global Trust Badges Strip */}
+                <div className="col-span-1 sm:col-span-2 grid grid-cols-2 sm:grid-cols-4 gap-4 bg-slate-50/50 border border-slate-200/50 p-4 rounded-2xl mt-2 mb-1">
+                  {[
+                    { label: "GDPR & HIPAA Compliant", desc: "Data protection & privacy rules", icon: ShieldCheck },
+                    { label: "Secure NDA Guaranteed", desc: "100% intellectual property escrow", icon: Lock },
+                    { label: "Timezone Synced", desc: "Synchronized daily sprints", icon: Clock },
+                    { label: "Multi-Currency Billing", desc: "USD, EUR, GBP, AUD, AED, INR", icon: CreditCard }
+                  ].map((badge) => {
+                    const IconComp = badge.icon;
+                    return (
+                      <div key={badge.label} className="flex flex-col gap-1 text-left">
+                        <span className="text-[10px] font-extrabold text-slate-800 flex items-center gap-1.5 leading-none">
+                          <IconComp className="w-3.5 h-3.5 text-primary shrink-0" />
+                          <span>{badge.label}</span>
+                        </span>
+                        <span className="text-[9px] text-slate-400 font-semibold leading-normal pl-5">{badge.desc}</span>
+                      </div>
+                    );
+                  })}
                 </div>
 
                 {/* Submit button */}
@@ -303,6 +338,17 @@ export default function ContactForm() {
                 <span className="text-xs sm:text-sm font-semibold text-slate-700 block mt-1.5 leading-none">www.xcodetech.in</span>
               </div>
             </a>
+
+            {/* Global Coverage */}
+            <div className="flex items-center gap-4">
+              <div className="w-9 h-9 rounded-xl bg-slate-50 border border-slate-200/60 flex items-center justify-center text-slate-500">
+                <Map className="w-4 h-4 text-slate-500" />
+              </div>
+              <div className="text-left">
+                <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest block leading-none">Global Coverage</span>
+                <span className="text-xs sm:text-sm font-semibold text-slate-700 block mt-1.5 leading-none">USA, UK, Europe, UAE, Canada, AU, NZ</span>
+              </div>
+            </div>
 
             {/* Address */}
             <div className="flex items-center gap-4">

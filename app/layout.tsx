@@ -62,6 +62,9 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${outfit.variable} h-full antialiasedScroll select-none`}
     >
+      <head>
+        <link rel="preload" href="/sky-bg.png" as="image" />
+      </head>
       <body className="min-h-full flex flex-col font-sans bg-transparent text-dark select-text antialiased">
         <Navbar />
         {/* Main Content Area */}

@@ -38,6 +38,49 @@ export default function ContactPage() {
           </FadeIn>
         </div>
       </section>
+
+      {/* Global Reliability & Alignment Section */}
+      <section className="py-12 border-t border-slate-200/50 mt-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center max-w-xl mx-auto mb-10">
+            <span className="text-[10px] font-extrabold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block">
+              Global Alignment
+            </span>
+            <h2 className="font-display font-extrabold text-2xl text-dark tracking-tight leading-tight mt-3">
+              Reliable Engineering, Globally Aligned
+            </h2>
+            <p className="text-slate-500 text-xs mt-2 leading-relaxed">
+              We sync our operations with major international timezones to ensure clear, uninterrupted collaboration.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
+            {[
+              {
+                title: "Timezone Coverage",
+                desc: "Full support for EST/PST (US & Canada), GMT/BST (UK & Europe), and AEST/NZST (Australia & New Zealand) with flexible overlap standups.",
+                icon: "🕒"
+              },
+              {
+                title: "International Invoicing",
+                desc: "Simple, transparent invoicing in your local currency (USD, GBP, EUR, AUD, AED). Secure payments supported via Wise and international wire transfer.",
+                icon: "💳"
+              },
+              {
+                title: "Legal & IP Covenants",
+                desc: "Intellectual property is protected via US/UK/EU-compliant contracts and NDAs, featuring clean code audits and standard escrow options.",
+                icon: "🛡️"
+              }
+            ].map((feature, i) => (
+              <FadeIn key={feature.title} direction="up" delay={0.1 * i} className="rounded-2xl border border-slate-200/50 p-5 bg-white/40 backdrop-blur-md shadow-sm">
+                <span className="text-xl mb-3 block">{feature.icon}</span>
+                <h4 className="font-display font-extrabold text-sm text-dark">{feature.title}</h4>
+                <p className="text-[11px] text-slate-500 leading-relaxed mt-2">{feature.desc}</p>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
     </SubpageContainer>
   );
 }

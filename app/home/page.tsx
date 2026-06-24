@@ -16,6 +16,54 @@ import { projects } from "../../content/projects";
 import { blogs } from "../../content/blogs";
 import { FadeIn } from "../../components/Animations";
 
+// Coordinates outlining a clean, stylized, global dot-matrix world map
+const LAND_DOTS = [
+  // Greenland
+  { x: 370, y: 70 }, { x: 390, y: 80 }, { x: 360, y: 85 },
+  // North America
+  { x: 120, y: 110 }, { x: 150, y: 115 }, { x: 180, y: 110 }, { x: 210, y: 120 }, { x: 240, y: 125 },
+  { x: 110, y: 140 }, { x: 140, y: 145 }, { x: 170, y: 140 }, { x: 200, y: 150 }, { x: 230, y: 155 }, { x: 260, y: 160 },
+  { x: 130, y: 175 }, { x: 160, y: 170 }, { x: 190, y: 180 }, { x: 220, y: 185 }, { x: 250, y: 190 }, { x: 280, y: 180 },
+  { x: 150, y: 205 }, { x: 180, y: 210 }, { x: 210, y: 215 }, { x: 240, y: 220 }, { x: 270, y: 225 },
+  { x: 200, y: 240 }, { x: 230, y: 245 }, { x: 260, y: 250 },
+  // South America
+  { x: 280, y: 280 }, { x: 300, y: 290 }, { x: 320, y: 300 },
+  { x: 290, y: 320 }, { x: 310, y: 330 }, { x: 330, y: 340 }, { x: 350, y: 335 },
+  { x: 300, y: 360 }, { x: 320, y: 370 }, { x: 340, y: 380 },
+  { x: 310, y: 400 }, { x: 330, y: 410 },
+  { x: 320, y: 440 },
+  // Europe (including UK/Iceland)
+  { x: 445, y: 120 }, { x: 450, y: 125 }, // UK
+  { x: 470, y: 110 }, { x: 500, y: 105 }, { x: 530, y: 115 }, { x: 560, y: 120 },
+  { x: 460, y: 135 }, { x: 490, y: 130 }, { x: 520, y: 140 }, { x: 550, y: 145 }, { x: 580, y: 135 },
+  { x: 480, y: 165 }, { x: 510, y: 160 }, { x: 540, y: 170 }, { x: 570, y: 175 },
+  // Africa
+  { x: 480, y: 220 }, { x: 510, y: 225 }, { x: 540, y: 215 }, { x: 570, y: 230 },
+  { x: 470, y: 250 }, { x: 500, y: 260 }, { x: 530, y: 255 }, { x: 560, y: 265 }, { x: 590, y: 260 },
+  { x: 490, y: 290 }, { x: 520, y: 300 }, { x: 550, y: 295 }, { x: 580, y: 305 },
+  { x: 510, y: 330 }, { x: 540, y: 340 }, { x: 570, y: 335 },
+  { x: 520, y: 370 }, { x: 550, y: 375 },
+  { x: 530, y: 410 },
+  // Middle East & India
+  { x: 610, y: 210 }, { x: 640, y: 215 }, { x: 670, y: 205 },
+  { x: 600, y: 240 }, { x: 630, y: 245 }, { x: 660, y: 250 }, { x: 690, y: 240 },
+  { x: 620, y: 275 }, { x: 650, y: 280 }, { x: 680, y: 270 }, { x: 710, y: 285 },
+  // Asia (including Japan)
+  { x: 905, y: 155 }, { x: 915, y: 165 }, // Japan
+  { x: 600, y: 120 }, { x: 630, y: 110 }, { x: 660, y: 115 }, { x: 690, y: 105 }, { x: 720, y: 120 }, { x: 750, y: 110 }, { x: 780, y: 115 }, { x: 810, y: 105 }, { x: 840, y: 120 }, { x: 870, y: 110 }, { x: 900, y: 115 },
+  { x: 610, y: 150 }, { x: 640, y: 140 }, { x: 670, y: 145 }, { x: 700, y: 135 }, { x: 730, y: 150 }, { x: 760, y: 140 }, { x: 790, y: 145 }, { x: 820, y: 135 }, { x: 850, y: 150 }, { x: 880, y: 140 }, { x: 910, y: 145 },
+  { x: 680, y: 175 }, { x: 710, y: 170 }, { x: 740, y: 180 }, { x: 770, y: 175 }, { x: 800, y: 170 }, { x: 830, y: 185 }, { x: 860, y: 175 }, { x: 890, y: 170 }, { x: 920, y: 180 },
+  { x: 730, y: 210 }, { x: 760, y: 205 }, { x: 790, y: 215 }, { x: 820, y: 210 }, { x: 850, y: 200 }, { x: 880, y: 215 }, { x: 910, y: 210 },
+  { x: 750, y: 245 }, { x: 780, y: 240 }, { x: 810, y: 250 }, { x: 840, y: 245 }, { x: 870, y: 235 },
+  { x: 760, y: 280 }, { x: 790, y: 275 }, { x: 820, y: 285 }, { x: 850, y: 270 },
+  // Australia
+  { x: 810, y: 370 }, { x: 840, y: 360 }, { x: 870, y: 365 }, { x: 900, y: 375 },
+  { x: 800, y: 400 }, { x: 830, y: 395 }, { x: 860, y: 405 }, { x: 890, y: 410 },
+  { x: 820, y: 430 }, { x: 850, y: 435 }, { x: 880, y: 440 },
+  // New Zealand
+  { x: 930, y: 440 }, { x: 940, y: 460 }, { x: 950, y: 480 }
+];
+
 export default function Home() {
   const featuredProjects = projects.slice(0, 2);
 
@@ -75,6 +123,161 @@ export default function Home() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3.5 Global Operations & Trust Map */}
+      <section className="py-12 md:py-24 bg-white/5 backdrop-blur-sm border-b border-white/5 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left: Global presence copy */}
+            <div className="lg:col-span-5 flex flex-col gap-6 relative z-10">
+              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50/60 border border-blue-100/40 px-3.5 py-1.5 rounded-full inline-block w-fit">
+                Global Operations
+              </span>
+              <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-dark tracking-tight leading-tight">
+                Engineering for <br />
+                <span className="bg-gradient-to-r from-primary to-sky-custom bg-clip-text text-transparent">
+                  International Partnerships
+                </span>
+              </h2>
+              <p className="text-slate-650 text-sm leading-relaxed">
+                Xcode Tech acts as a trusted global engineering hub. We align our development sprints to support startups and growing enterprises across the **USA, Canada, UK, Europe, UAE (Dubai), Australia, and New Zealand**.
+              </p>
+              
+              <div className="grid grid-cols-2 gap-4 mt-2">
+                {[
+                  { title: "EST / PST Alignment", desc: "US & Canada coverage" },
+                  { title: "GMT / BST Compliance", desc: "UK & European workflows" },
+                  { title: "AEST / NZST Synchronized", desc: "Australia & New Zealand logs" },
+                  { title: "GST Timezone Support", desc: "UAE & Dubai operations" }
+                ].map((tz) => (
+                  <div key={tz.title} className="rounded-xl border border-white/30 p-4 bg-white/40 backdrop-blur-md shadow-sm">
+                    <span className="text-[10px] font-extrabold text-primary uppercase tracking-wider block">{tz.title}</span>
+                    <span className="text-[10px] text-slate-500 font-semibold mt-1 block">{tz.desc}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-col gap-3 mt-2 border-t border-slate-200/40 pt-6 text-xs text-slate-500 font-medium">
+                <div className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 shrink-0" />
+                  <span>GDPR, HIPAA, and custom data isolation protocols enabled.</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 shrink-0" />
+                  <span>100% intellectual property (IP) escrow and security covenants.</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Premium Abstract Animated World Map (7 columns) */}
+            <div className="lg:col-span-7 w-full flex justify-center items-center relative">
+              <div className="w-full aspect-[2/1] max-w-[680px] rounded-3xl border border-white/40 bg-white/50 backdrop-blur-md p-4 sm:p-6 shadow-xl relative overflow-hidden select-none">
+                
+                {/* Embedded Animated SVG World Map */}
+                <svg className="w-full h-full text-slate-350" viewBox="0 0 1000 500" fill="none">
+                  {/* Background dot grid representing land mass */}
+                  <g opacity="0.25">
+                    {LAND_DOTS.map((dot, idx) => (
+                      <circle key={idx} cx={dot.x} cy={dot.y} r="2" fill="currentColor" />
+                    ))}
+                  </g>
+
+                  {/* Animated Bezier data paths from India HQ (680, 260) */}
+                  {[
+                    { target: "Toronto, Canada", tx: 250, ty: 135 },
+                    { target: "New York, USA", tx: 280, ty: 180 },
+                    { target: "London, UK", tx: 490, ty: 130 },
+                    { target: "Frankfurt, Germany", tx: 520, ty: 140 },
+                    { target: "Dubai, UAE", tx: 620, ty: 230 },
+                    { target: "Sydney, Australia", tx: 890, ty: 410 },
+                    { target: "Auckland, New Zealand", tx: 940, ty: 460 }
+                  ].map((path, i) => {
+                    const midX = (680 + path.tx) / 2;
+                    const midY = (260 + path.ty) / 2 - 80;
+                    return (
+                      <g key={path.target}>
+                        {/* Static connection path line */}
+                        <path
+                          d={`M680 260 Q${midX} ${midY} ${path.tx} ${path.ty}`}
+                          fill="none"
+                          stroke="url(#pathGrad)"
+                          strokeWidth="1.5"
+                          opacity="0.2"
+                          strokeDasharray="4,4"
+                        />
+                        {/* Animated flowing data particles */}
+                        <path
+                          d={`M680 260 Q${midX} ${midY} ${path.tx} ${path.ty}`}
+                          fill="none"
+                          stroke="#2563eb"
+                          strokeWidth="2.5"
+                          strokeDasharray="15, 120"
+                          opacity="0.85"
+                        >
+                          <animate
+                            attributeName="stroke-dashoffset"
+                            values="135;0"
+                            dur={`${3.5 + i * 0.4}s`}
+                            repeatCount="Infinity"
+                          />
+                        </path>
+                      </g>
+                    );
+                  })}
+
+                  {/* Gradients Definition */}
+                  <defs>
+                    <linearGradient id="pathGrad" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stopColor="#2563eb" stopOpacity="0.8"/>
+                      <stop offset="100%" stopColor="#38bdf8" stopOpacity="0.2"/>
+                    </linearGradient>
+                  </defs>
+
+                  {/* HQ Node (Ahmedabad, India) */}
+                  <g>
+                    <circle cx="680" cy="270" r="10" fill="#2563eb" opacity="0.2" className="animate-ping" style={{ animationDuration: '3s' }} />
+                    <circle cx="680" cy="270" r="6" fill="#2563eb" opacity="0.4" className="animate-ping" style={{ animationDuration: '2s' }} />
+                    <circle cx="680" cy="270" r="4.5" fill="#2563eb" />
+                    <circle cx="680" cy="270" r="2" fill="#fff" />
+                  </g>
+
+                  {/* Global Client Hotspot Nodes */}
+                  {[
+                    { label: "Canada", x: 250, y: 135 },
+                    { label: "USA", x: 280, y: 180 },
+                    { label: "UK", x: 490, y: 130 },
+                    { label: "Germany", x: 520, y: 140 },
+                    { label: "Dubai", x: 620, y: 230 },
+                    { label: "Sydney", x: 890, y: 410 },
+                    { label: "Auckland", x: 940, y: 460 }
+                  ].map((node) => (
+                    <g key={node.label}>
+                      <circle cx={node.x} cy={node.y} r="8" fill="#38bdf8" opacity="0.25" className="animate-ping" style={{ animationDuration: '4.5s' }} />
+                      <circle cx={node.x} cy={node.y} r="3" fill="#38bdf8" />
+                    </g>
+                  ))}
+
+                  {/* Text Labels for key global regions */}
+                  <text x="210" y="200" fill="#64748b" fontSize="8" fontWeight="bold" fontFamily="sans-serif">USA / CAN</text>
+                  <text x="475" y="115" fill="#64748b" fontSize="8" fontWeight="bold" fontFamily="sans-serif">UK / EU</text>
+                  <text x="575" y="248" fill="#64748b" fontSize="8" fontWeight="bold" fontFamily="sans-serif">UAE (Dubai)</text>
+                  <text x="692" y="265" fill="#2563eb" fontSize="9" fontWeight="extrabold" fontFamily="sans-serif">HQ (India)</text>
+                  <text x="895" y="400" fill="#64748b" fontSize="8" fontWeight="bold" fontFamily="sans-serif">AU</text>
+                  <text x="915" y="475" fill="#64748b" fontSize="8" fontWeight="bold" fontFamily="sans-serif">NZ</text>
+                </svg>
+
+                {/* Floating timezone status badge overlay inside map */}
+                <div className="absolute bottom-4 left-4 sm:left-6 flex items-center gap-2 bg-white/95 border border-slate-200/50 px-3 py-1.5 rounded-full shadow-md backdrop-blur-sm">
+                  <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                  <span className="text-[9px] font-bold text-slate-700 uppercase tracking-wider">Timezones aligned: active delivery</span>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
