@@ -144,22 +144,18 @@ export default function ContactForm() {
                   </select>
                 </div>
 
-                {/* Budget Range (INR & USD Display) */}
+                {/* Budget (User-Filled) */}
                 <div className="col-span-1 sm:col-span-2 flex flex-col gap-1.5">
-                  <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Budget Range *</label>
-                  <select
+                  <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Estimated Budget *</label>
+                  <input
+                    type="text"
                     name="budget"
                     required
                     value={formData.budget}
                     onChange={handleInputChange}
-                    className="w-full text-sm bg-slate-50/50 border border-slate-200 focus:border-primary focus:bg-white px-4 py-2.5 rounded-xl outline-none transition-all appearance-none cursor-pointer font-medium"
-                  >
-                    <option value="">Select budget range...</option>
-                    <option value="starter">Under $1,000 / ₹80,000 (Starter)</option>
-                    <option value="growth">$1,000 – $5,000 / ₹80,000 – ₹4 Lakhs (Growth)</option>
-                    <option value="professional">$5,000 – $15,000 / ₹4 Lakhs – ₹12 Lakhs (Professional)</option>
-                    <option value="enterprise">$15,000+ / ₹12 Lakhs+ (Enterprise)</option>
-                  </select>
+                    placeholder="Enter your budget (e.g., $1,200 or ₹1 Lakh)"
+                    className="w-full text-sm bg-slate-50/50 border border-slate-200 focus:border-primary focus:bg-white px-4 py-2.5 rounded-xl outline-none transition-all font-medium"
+                  />
                 </div>
 
                 {/* Message */}
