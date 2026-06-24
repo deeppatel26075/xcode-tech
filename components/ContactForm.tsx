@@ -31,12 +31,32 @@ export default function ContactForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormStatus("sending");
-    setTimeout(() => {
-      setFormStatus("success");
-    }, 1500);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setFormStatus("success");
+      } else {
+        alert(data.error || "Failed to submit project brief. Please try again.");
+        setFormStatus("idle");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("An unexpected error occurred. Please check your connection and try again.");
+      setFormStatus("idle");
+    }
   };
 
   const handleBookMeeting = () => {
