@@ -61,8 +61,10 @@ export default function Navbar() {
   return (
     <>
       <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        showNavbar
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isOpen
+          ? "bg-transparent py-3 border-none shadow-none opacity-100 translate-y-0"
+          : showNavbar
           ? scrolled
             ? "glass-navbar py-3 shadow-[0_4px_30px_rgba(0,0,0,0.02)] opacity-100 translate-y-0"
             : "bg-transparent py-5 opacity-100 translate-y-0"
@@ -77,8 +79,10 @@ export default function Navbar() {
             {/* Minimal XT Bracket Design */}
             <span className="font-display font-bold text-sm text-white tracking-tighter">XT</span>
           </div>
-          <span className="font-display font-semibold text-lg text-dark tracking-tight">
-            Xcode <span className="text-primary font-bold">Tech</span>
+          <span className={`font-display font-semibold text-lg tracking-tight transition-colors duration-300 ${
+            isOpen ? "text-white" : "text-dark"
+          }`}>
+            Xcode <span className={isOpen ? "text-sky-300 font-bold" : "text-primary font-bold"}>Tech</span>
           </span>
         </Link>
 
@@ -143,13 +147,6 @@ export default function Navbar() {
         >
           {/* Navigation links */}
           <div className="flex flex-col gap-8">
-            {/* Menu Branding Header */}
-            <div className="border-b border-white/10 pb-6">
-              <span className="font-display font-bold text-xl text-white tracking-tight">Xcode Tech</span>
-              <span className="text-[10px] text-sky-400 font-bold uppercase tracking-wider block mt-1">
-                Software Engineering Partner
-              </span>
-            </div>
 
             <nav className="flex flex-col gap-6">
               {navLinks.map((link, idx) => {
