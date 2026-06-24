@@ -59,7 +59,8 @@ export default function Navbar() {
   const showNavbar = true;
 
   return (
-    <header
+    <>
+      <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         showNavbar
           ? scrolled
@@ -193,18 +194,19 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Sticky Mobile CTA (Glassmorphic conversion upgrade) */}
-      {scrolled && pathname !== "/contact" && !isOpen && !hideSticky && (
-        <div className="lg:hidden fixed bottom-6 left-6 right-6 z-30">
-          <Link
-            href="/contact"
-            className="w-full bg-primary/95 hover:bg-primary text-white text-xs font-bold py-3.5 px-6 rounded-xl shadow-xl shadow-blue-500/20 flex items-center justify-center gap-2 border border-white/20 backdrop-blur-md min-h-[48px] transition-all"
-          >
-            Start Your Project &rarr;
-          </Link>
-        </div>
-      )}
     </header>
-  );
+
+    {/* Sticky Mobile CTA (Glassmorphic conversion upgrade) */}
+    {scrolled && pathname !== "/contact" && !isOpen && !hideSticky && (
+      <div className="lg:hidden fixed bottom-6 left-6 right-6 z-30">
+        <Link
+          href="/contact"
+          className="w-full bg-primary/95 hover:bg-primary text-white text-xs font-bold py-3.5 px-6 rounded-xl shadow-xl shadow-blue-500/20 flex items-center justify-center gap-2 border border-white/20 backdrop-blur-md min-h-[48px] transition-all"
+        >
+          Start Your Project &rarr;
+        </Link>
+      </div>
+    )}
+  </>
+);
 }
