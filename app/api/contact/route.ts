@@ -69,7 +69,7 @@ export async function POST(request: Request) {
     // Setup email mail options
     const mailOptions = {
       from: `"${name} via Xcode Tech" <${user}>`,
-      to: "contact@xcodetech.in",
+      to: process.env.SMTP_TO || "admin@xcodetech.in",
       replyTo: email,
       subject: `New Project Brief: ${name} (${company || "Individual"})`,
       text: `
