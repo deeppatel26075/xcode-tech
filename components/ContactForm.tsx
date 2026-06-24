@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Send, CheckCircle2, MessageSquare, Calendar as CalendarIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -15,6 +15,18 @@ export default function ContactForm() {
     message: ""
   });
   const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success">("idle");
+
+  // Pre-fill service from URL query param if present
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const serviceParam = params.get("service");
+      const validServices = ["launch_product", "modernize_business", "automate_operations", "scale_software", "discuss_partnership"];
+      if (serviceParam && validServices.includes(serviceParam)) {
+        setFormData((prev) => ({ ...prev, service: serviceParam }));
+      }
+    }
+  }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;

@@ -2,62 +2,20 @@
 
 import React from "react";
 import Link from "next/link";
-import { Laptop, Cpu, Cloud, Layout, ArrowRight, Zap, Shield, Smartphone, Palette } from "lucide-react";
+import { Laptop, Layout, Smartphone, Cpu, Cloud, Palette, Shield, ArrowRight, Zap } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "../../components/Animations";
-
 import SubpageContainer from "../../components/SubpageContainer";
+import { servicesData } from "../../content/services";
 
-const serviceDetails = [
-  {
-    icon: Laptop,
-    title: "Custom Software Development",
-    description: "Tailored digital products built from the ground up, optimized for reliability, scalability, and high performance.",
-    items: ["Custom SaaS Platforms", "Business Dashboards", "API Design & Integrations", "Internal Workflow Systems"],
-    color: "text-blue-600 bg-blue-50/40 border-blue-100/50"
-  },
-  {
-    icon: Layout,
-    title: "Web Application Development",
-    description: "Creating fast, edge-rendered corporate web applications and commerce storefronts that capture customers and boost conversions.",
-    items: ["Corporate Web Apps", "Headless E-commerce Stores", "Integrated Booking Systems", "Custom Payment Integrations"],
-    color: "text-sky-500 bg-sky-50/40 border-sky-100/50"
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile App Development",
-    description: "Engineering premium native and cross-platform mobile apps for iOS and Android, focusing on intuitive animations and offline functionality.",
-    items: ["iOS Native Apps", "Android Native Apps", "Cross-Platform Apps (Flutter/React Native)", "App Store Deployments"],
-    color: "text-indigo-500 bg-indigo-50/40 border-indigo-100/50"
-  },
-  {
-    icon: Cpu,
-    title: "AI & Business Automation",
-    description: "Integrating cognitive tools and automated workflows that eliminate manual processing and boost operational productivity.",
-    items: ["AI Assistant Chatbots", "AI Automated Workflows", "Custom LLM Integrations", "Document Parsing Pipelines"],
-    color: "text-blue-600 bg-blue-50/40 border-blue-100/50"
-  },
-  {
-    icon: Cloud,
-    title: "Cloud & DevOps Solutions",
-    description: "Deploying robust, auto-scaling architectures designed to ensure 99.9% availability and optimize monthly resource costs.",
-    items: ["Cloud Infrastructure Design", "Automated CI/CD Pipelines", "Containerization & Docker", "Resource Cost Optimization"],
-    color: "text-sky-650 bg-sky-50/40 border-sky-100/50"
-  },
-  {
-    icon: Palette,
-    title: "UI/UX Engineering",
-    description: "Designing high-fidelity visual interfaces and user journeys that reduce user friction and elevate digital product experience.",
-    items: ["High-Fidelity UI Design", "Interactive Prototypes", "Design System Implementation", "Usability Audits"],
-    color: "text-indigo-600 bg-indigo-50/40 border-indigo-100/50"
-  },
-  {
-    icon: Shield,
-    title: "Cybersecurity Solutions",
-    description: "Ensuring your digital assets are protected through active threat auditing, secure protocols, and vulnerability patching.",
-    items: ["Vulnerability Scanning", "Role-Based Access Control", "Data Encryption Standards", "Secure Code Audits"],
-    color: "text-blue-600 bg-blue-50/40 border-blue-100/50"
-  }
-];
+const iconMap = {
+  Laptop,
+  Layout,
+  Smartphone,
+  Cpu,
+  Cloud,
+  Palette,
+  Shield
+};
 
 export default function ServicesPage() {
   return (
@@ -90,8 +48,8 @@ export default function ServicesPage() {
       <section className="py-16">
         <div className="w-full">
           <StaggerContainer className="flex flex-col gap-16">
-            {serviceDetails.map((service, index) => {
-              const Icon = service.icon;
+            {servicesData.map((service, index) => {
+              const Icon = iconMap[service.iconName];
               const isEven = index % 2 === 0;
               return (
                 <StaggerItem key={service.title}>
@@ -100,18 +58,20 @@ export default function ServicesPage() {
                     {/* Left: Description */}
                     <div className="flex-1 flex flex-col gap-5">
                       <div className="flex items-center gap-3">
-                        <div className={`p-2.5 rounded-xl border ${service.color}`}>
+                        <Link href={`/services/${service.slug}`} className={`p-2.5 rounded-xl border hover:scale-105 transition-transform ${service.color}`}>
                           <Icon className="w-5 h-5" />
-                        </div>
+                        </Link>
                         <span className="text-xs font-bold text-slate-400">SERVICE COLUMN 0{index + 1}</span>
                       </div>
                       
-                      <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-dark">
-                        {service.title}
+                      <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-dark hover:text-primary transition-colors">
+                        <Link href={`/services/${service.slug}`}>
+                          {service.title}
+                        </Link>
                       </h2>
                       
                       <p className="text-slate-500 text-sm leading-relaxed">
-                        {service.description}
+                        {service.shortDescription}
                       </p>
 
                       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mt-2">
@@ -122,10 +82,22 @@ export default function ServicesPage() {
                           </li>
                         ))}
                       </ul>
+
+                      <div className="mt-2 pt-2">
+                        <Link
+                          href={`/services/${service.slug}`}
+                          className="inline-flex items-center gap-1 text-xs font-bold text-primary hover:text-blue-700 transition-colors group/link"
+                        >
+                          Explore details &rarr;
+                        </Link>
+                      </div>
                     </div>
 
                     {/* Right: Premium Tech-Visual Grid Mockup */}
-                    <div className="flex-1 w-full rounded-2xl bg-white/40 border border-white/30 backdrop-blur-md p-8 shadow-sm flex flex-col gap-4 relative overflow-hidden select-none">
+                    <Link
+                      href={`/services/${service.slug}`}
+                      className="flex-1 w-full rounded-2xl bg-white/40 border border-white/30 hover:border-primary/20 backdrop-blur-md p-8 shadow-sm flex flex-col gap-4 relative overflow-hidden select-none hover:shadow-md transition-all group"
+                    >
                       <div className="absolute -top-10 -left-10 w-40 h-40 bg-blue-500/5 rounded-full blur-2xl" />
                       
                       <div className="flex justify-between items-center border-b border-white/30 pb-3 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
@@ -137,7 +109,7 @@ export default function ServicesPage() {
 
                       <div className="space-y-2.5 text-[11px] font-mono text-slate-600">
                         <p className="flex items-center gap-2"><span className="text-primary font-bold">&gt;</span> Initializing pipeline configuration...</p>
-                        <p className="flex items-center gap-2"><span className="text-primary font-bold">&gt;</span> Loading module: <span className="text-slate-800 font-semibold">{service.title.replace(/\s+/g, "")}Service</span></p>
+                        <p className="flex items-center gap-2"><span className="text-primary font-bold">&gt;</span> Loading module: <span className="text-slate-800 font-semibold group-hover:text-primary transition-colors">{service.title.replace(/\s+/g, "")}Service</span></p>
                         <p className="flex items-center gap-2"><span className="text-primary font-bold">&gt;</span> Security certificate check: Pass</p>
                         <p className="flex items-center gap-2"><span className="text-primary font-bold">&gt;</span> Cloud sync active. Load balancer optimized.</p>
                       </div>
@@ -146,7 +118,7 @@ export default function ServicesPage() {
                         <Zap className="w-4 h-4 text-primary shrink-0" />
                         <span>High responsiveness &amp; 99.9% uptime guaranteed</span>
                       </div>
-                    </div>
+                    </Link>
 
                   </div>
                 </StaggerItem>
