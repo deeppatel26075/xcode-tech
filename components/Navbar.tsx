@@ -79,10 +79,8 @@ export default function Navbar() {
             {/* Minimal XT Bracket Design */}
             <span className="font-display font-bold text-sm text-white tracking-tighter">XT</span>
           </div>
-          <span className={`font-display font-semibold text-lg tracking-tight transition-colors duration-300 ${
-            isOpen ? "text-white" : "text-dark"
-          }`}>
-            Xcode <span className={isOpen ? "text-sky-300 font-bold" : "text-primary font-bold"}>Tech</span>
+          <span className="font-display font-semibold text-lg text-dark tracking-tight">
+            Xcode <span className="text-primary font-bold">Tech</span>
           </span>
         </Link>
 
@@ -125,9 +123,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`lg:hidden p-2 transition-colors focus:outline-none relative z-50 ${
-            isOpen ? "text-white hover:text-sky-400" : "text-dark hover:text-primary"
-          }`}
+          className="lg:hidden p-2 text-dark hover:text-primary transition-colors focus:outline-none relative z-50"
           aria-label="Toggle menu"
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -143,11 +139,23 @@ export default function Navbar() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="lg:hidden fixed inset-0 z-40 bg-slate-950/95 backdrop-blur-2xl flex flex-col justify-between p-8 pt-28"
+          className="lg:hidden fixed inset-0 z-40 flex flex-col justify-between p-8 pt-28 overflow-hidden"
         >
+          {/* Sliding blurred background image layer */}
+          <div className="absolute inset-0 -z-10 overflow-hidden">
+            {/* The actual background image copy */}
+            <motion.div
+              initial={{ y: "-10%", scale: 1.15 }}
+              animate={{ y: "0%", scale: 1.05 }}
+              exit={{ y: "-10%", scale: 1.15 }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              className="absolute inset-0 bg-[url('/sky-bg.png')] bg-cover bg-center blur-2xl origin-top"
+            />
+            {/* White overlay to maintain readability and match glassmorphism */}
+            <div className="absolute inset-0 bg-white/30 backdrop-blur-2xl" />
+          </div>
           {/* Navigation links */}
           <div className="flex flex-col gap-8">
-
             <nav className="flex flex-col gap-6">
               {navLinks.map((link, idx) => {
                 const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
@@ -162,7 +170,7 @@ export default function Navbar() {
                       href={link.href}
                       onClick={() => setIsOpen(false)}
                       className={`text-3xl font-display font-extrabold transition-colors block ${
-                        isActive ? "text-sky-400" : "text-white hover:text-sky-400"
+                        isActive ? "text-primary" : "text-slate-800 hover:text-primary"
                       }`}
                     >
                       {link.label}
@@ -177,7 +185,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35 }}
-            className="flex flex-col gap-6 border-t border-white/10 pt-6"
+            className="flex flex-col gap-6 border-t border-slate-200/40 pt-6"
           >
             <Link
               href="/contact"
@@ -186,7 +194,7 @@ export default function Navbar() {
             >
               Start Your Project &rarr;
             </Link>
-            <div className="flex justify-between text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+            <div className="flex justify-between text-[10px] font-bold text-slate-500 uppercase tracking-wider">
               <span>Software • AI • Cloud</span>
               <span>Ahmedabad, India</span>
             </div>
