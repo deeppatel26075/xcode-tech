@@ -1,7 +1,5 @@
-"use client";
-
 import React, { useState } from "react";
-import { Send, CheckCircle2, MessageSquare, Calendar as CalendarIcon, Clock, Check } from "lucide-react";
+import { Send, CheckCircle2, MessageSquare, Calendar as CalendarIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function ContactForm() {
@@ -17,14 +15,6 @@ export default function ContactForm() {
     message: ""
   });
   const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success">("idle");
-
-  // Cal.com Mock Scheduler States
-  const [selectedDate, setSelectedDate] = useState<number | null>(15); // Default June 15
-  const [selectedTime, setSelectedTime] = useState<string | null>(null);
-  const [meetingBooked, setMeetingBooked] = useState(false);
-
-  const availableTimes = ["10:30 AM", "1:00 PM", "3:30 PM", "5:00 PM"];
-  const daysInMonth = Array.from({ length: 30 }, (_, i) => i + 1);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -56,12 +46,6 @@ export default function ContactForm() {
       console.error("Submission error:", error);
       alert("An unexpected error occurred. Please check your connection and try again.");
       setFormStatus("idle");
-    }
-  };
-
-  const handleBookMeeting = () => {
-    if (selectedDate && selectedTime) {
-      setMeetingBooked(true);
     }
   };
 
@@ -236,7 +220,7 @@ export default function ContactForm() {
                 Inquiry Received Successfully!
               </h4>
               <p className="text-sm text-slate-500 max-w-sm leading-relaxed">
-                Thank you for reaching out, <strong className="text-slate-800">{formData.name}</strong>. An Xcode tech director will follow up with you at <strong className="text-slate-800">{formData.email}</strong> within 12 hours.
+                Thank you for reaching out, <strong className="text-slate-800">{formData.name}</strong>. An Xcode tech engineer will follow up with you at <strong className="text-slate-800">{formData.email}</strong> within 12 hours.
               </p>
               <button
                 onClick={() => setFormStatus("idle")}
@@ -249,13 +233,13 @@ export default function ContactForm() {
         </AnimatePresence>
       </div>
 
-      {/* Right Column: Dynamic Meeting Scheduler + WhatsApp (5 columns) */}
+      {/* Right Column: Live Calendly Meeting Scheduler + WhatsApp (5 columns) */}
       <div className="lg:col-span-5 flex flex-col gap-8">
         
-        {/* Cal.com Style Mockup Scheduler */}
-        <div className="rounded-2xl glass-panel border border-slate-200/50 p-6 shadow-xl flex flex-col justify-between relative overflow-hidden">
+        {/* Real Calendly Inline Scheduler */}
+        <div className="rounded-2xl glass-panel border border-slate-200/50 p-4 shadow-xl flex flex-col justify-between relative overflow-hidden h-[600px] w-full">
           
-          <div className="flex items-center justify-between border-b border-slate-200/40 pb-4 mb-4">
+          <div className="flex items-center justify-between border-b border-slate-200/40 pb-3 mb-3">
             <div className="flex items-center gap-2">
               <span className="p-1.5 rounded-lg bg-blue-50 text-primary">
                 <CalendarIcon className="w-4 h-4" />
@@ -263,114 +247,20 @@ export default function ContactForm() {
               <span className="text-xs font-bold text-slate-800">Book Discovery Call</span>
             </div>
             <span className="text-[8px] font-bold bg-slate-100 border border-slate-200 px-2 py-0.5 rounded-full text-slate-500">
-              30 MINUTE CONSULTATION
+              GOOGLE MEET ENABLED
             </span>
           </div>
 
-          <AnimatePresence mode="wait">
-            {!meetingBooked ? (
-              <motion.div key="scheduler" className="flex flex-col gap-4">
-                <p className="text-xs text-slate-500 leading-relaxed mb-1">
-                  Schedule a direct 1-on-1 strategy sync with our engineering lead. Pick a date & time.
-                </p>
-
-                {/* Calendar Days grid */}
-                <div>
-                  <div className="flex justify-between items-center text-[10px] font-bold text-slate-400 mb-2 uppercase tracking-wider">
-                    <span>June 2026</span>
-                    <span>Mon - Fri Slots Only</span>
-                  </div>
-                  <div className="grid grid-cols-7 gap-1.5 text-center text-xs">
-                    {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((d) => (
-                      <span key={d} className="font-semibold text-slate-400 py-1 text-[10px] uppercase">
-                        {d}
-                      </span>
-                    ))}
-                    {/* Placeholder pads for Sunday offsets */}
-                    <span className="text-slate-200 py-1.5 font-light">31</span>
-                    {daysInMonth.map((day) => {
-                      // Simple mock block weekends (assume Sun is 31, 7, 14, 21, 28)
-                      const isWeekend = day % 7 === 6 || day % 7 === 0;
-                      return (
-                        <button
-                          key={day}
-                          onClick={() => !isWeekend && setSelectedDate(day)}
-                          disabled={isWeekend}
-                          className={`py-1.5 rounded-lg font-semibold transition-colors flex items-center justify-center ${
-                            isWeekend
-                              ? "text-slate-300 cursor-not-allowed"
-                              : selectedDate === day
-                              ? "bg-primary text-white shadow-md shadow-blue-500/15"
-                              : "bg-slate-50 hover:bg-blue-50/50 text-slate-700"
-                          }`}
-                        >
-                          {day}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Time Slots */}
-                <div>
-                  <p className="text-[10px] font-bold text-slate-400 mb-2 uppercase tracking-wider flex items-center gap-1">
-                    <Clock className="w-3.5 h-3.5 text-slate-400" />
-                    Available Times (Asia/Kolkata)
-                  </p>
-                  <div className="grid grid-cols-2 gap-2">
-                    {availableTimes.map((time) => (
-                      <button
-                        key={time}
-                        onClick={() => setSelectedTime(time)}
-                        className={`py-2 px-3 border rounded-xl text-xs font-semibold text-center transition-colors ${
-                          selectedTime === time
-                            ? "bg-primary text-white border-primary shadow-sm"
-                            : "border-slate-200 bg-white text-slate-600 hover:border-primary/50"
-                        }`}
-                      >
-                        {time}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Confirm Button */}
-                <button
-                  disabled={!selectedDate || !selectedTime}
-                  onClick={handleBookMeeting}
-                  className="w-full mt-2 bg-slate-900 hover:bg-slate-800 disabled:bg-slate-100 disabled:text-slate-300 text-white text-xs font-bold py-3 rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2 shadow-md shadow-slate-900/10"
-                >
-                  Confirm Booking
-                </button>
-              </motion.div>
-            ) : (
-              <motion.div
-                key="booked"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="py-12 text-center flex flex-col items-center gap-4"
-              >
-                <div className="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center text-green-500 border border-green-100 shadow-sm">
-                  <Check className="w-6 h-6" />
-                </div>
-                <h4 className="font-display font-extrabold text-base text-dark">
-                  Meeting Confirmed!
-                </h4>
-                <p className="text-xs text-slate-500 leading-relaxed max-w-xs">
-                  Your 30-min discovery call is scheduled for <strong className="text-slate-700">June {selectedDate}, 2026 at {selectedTime}</strong> (Asia/Kolkata timezone). Calendar invite has been sent.
-                </p>
-                <button
-                  onClick={() => {
-                    setMeetingBooked(false);
-                    setSelectedTime(null);
-                  }}
-                  className="mt-2 text-xs font-bold text-primary hover:text-blue-700 underline"
-                >
-                  Reschedule meeting
-                </button>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          <div className="w-full flex-grow overflow-hidden rounded-xl bg-white/40">
+            <iframe
+              src="https://calendly.com/deeppatel26075/30min?hide_event_details=1&background_color=ffffff&text_color=0f172a&primary_color=2563eb"
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              className="w-full h-full min-h-[480px]"
+              title="Select a Date & Time - Calendly"
+            />
+          </div>
         </div>
 
         {/* WhatsApp Direct contact card */}
@@ -378,7 +268,7 @@ export default function ContactForm() {
           <div>
             <h4 className="font-display font-bold text-slate-800 text-sm">Need immediate support?</h4>
             <p className="text-xs text-slate-500 mt-1 max-w-[200px] leading-relaxed">
-              Chat directly with our director on WhatsApp for instant project estimates.
+              Chat directly with our team on WhatsApp for instant project estimates.
             </p>
           </div>
           <a
