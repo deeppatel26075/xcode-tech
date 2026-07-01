@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import QuickLeadPopup from "../components/QuickLeadPopup";
 import "./globals.css";
 
 const inter = Inter({
@@ -72,6 +73,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <QuickLeadPopup />
       </body>
     </html>
   );
