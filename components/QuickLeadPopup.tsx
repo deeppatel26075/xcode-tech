@@ -15,11 +15,7 @@ export default function QuickLeadPopup() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
 
   useEffect(() => {
-    // Check if user has already interacted with the popup permanently
-    const hasSeen = localStorage.getItem("xcode_quick_lead_seen");
-    if (hasSeen === "true") return;
-
-    // Show popup after a 5-second delay
+    // Show popup after a 5-second delay on every page load
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 5000);
@@ -39,7 +35,6 @@ export default function QuickLeadPopup() {
   const handlePermanentClose = (e: React.MouseEvent) => {
     e.stopPropagation(); // Prevent expanding the form when clicking close
     setIsVisible(false);
-    localStorage.setItem("xcode_quick_lead_seen", "true");
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -67,7 +62,6 @@ export default function QuickLeadPopup() {
         // Auto-close after 3 seconds on success
         setTimeout(() => {
           setIsVisible(false);
-          localStorage.setItem("xcode_quick_lead_seen", "true");
         }, 3000);
       } else {
         alert("Failed to submit request. Please try again.");
