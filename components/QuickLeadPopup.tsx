@@ -79,7 +79,7 @@ export default function QuickLeadPopup() {
   return (
     <AnimatePresence mode="wait">
       {isMinimized ? (
-        // Minimized State: Beautiful floating call icon (FAB)
+        // Minimized State: Beautiful glassmorphic floating call bubble (FAB)
         <motion.div
           key="minimized-fab"
           initial={{ scale: 0, opacity: 0, y: 20 }}
@@ -87,12 +87,17 @@ export default function QuickLeadPopup() {
           exit={{ scale: 0, opacity: 0, y: 20 }}
           transition={{ type: "spring", stiffness: 400, damping: 25 }}
           onClick={() => setIsMinimized(false)}
-          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-2xl border border-white/20 cursor-pointer select-none group"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-12 h-12 rounded-full glass-panel flex items-center justify-center shadow-2xl border border-white/40 cursor-pointer select-none group text-primary"
+          style={{
+            background: "rgba(255, 255, 255, 0.55)",
+            backdropFilter: "blur(12px)",
+            WebkitBackdropFilter: "blur(12px)",
+          }}
         >
-          {/* Pulsing ring animation */}
-          <span className="absolute inset-0 w-full h-full rounded-full bg-primary/30 animate-ping" style={{ animationDuration: '3s' }} />
+          {/* Pulsing sky-blue ring animation */}
+          <span className="absolute inset-0 w-full h-full rounded-full bg-primary/20 animate-ping" style={{ animationDuration: '3s' }} />
           
-          <PhoneCall className="w-5 h-5 relative z-10 group-hover:scale-110 transition-transform duration-300" />
+          <PhoneCall className="w-5 h-5 relative z-10 group-hover:scale-115 transition-transform duration-300" />
           
           {/* Close button to dismiss permanently */}
           <button
@@ -104,41 +109,47 @@ export default function QuickLeadPopup() {
           </button>
         </motion.div>
       ) : (
-        // Expanded State: Symmetrical Glassmorphic form
+        // Expanded State: Translucent Frosted Glass Card with Cloud Color Blobs
         <motion.div
           key="expanded-form"
           initial={{ opacity: 0, y: 50, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 20, scale: 0.95 }}
           transition={{ type: "spring", stiffness: 350, damping: 26 }}
-          className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:bottom-6 z-50 w-auto sm:w-[340px] max-w-[calc(100vw-32px)] sm:max-w-[340px] rounded-3xl glass-panel border border-slate-200/50 p-4 sm:p-5 shadow-2xl backdrop-blur-md select-none text-slate-800"
+          className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:bottom-6 z-50 w-auto sm:w-[340px] max-w-[calc(100vw-32px)] sm:max-w-[340px] rounded-3xl glass-panel border border-white/50 p-4 sm:p-5 shadow-2xl select-none text-slate-800 overflow-hidden"
           style={{
-            background: "rgba(255, 255, 255, 0.9)",
+            background: "rgba(255, 255, 255, 0.45)",
+            backdropFilter: "blur(24px)",
+            WebkitBackdropFilter: "blur(24px)",
           }}
         >
+          {/* Internal blurred sky-cloud blobs for backdrop depth */}
+          <div className="absolute -top-10 -left-10 w-32 h-32 bg-sky-300/35 rounded-full blur-[35px] pointer-events-none -z-10" />
+          <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-blue-500/15 rounded-full blur-[35px] pointer-events-none -z-10" />
+
           {/* Top accent glow strip */}
           <div className="absolute top-0 left-1/4 right-1/4 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent" />
 
           {/* Minimize button (X) */}
           <button
             onClick={handleMinimize}
-            className="absolute top-3.5 right-3.5 p-1.5 rounded-xl bg-slate-100/50 hover:bg-slate-100 border border-slate-200/30 text-slate-400 hover:text-slate-700 transition-all cursor-pointer"
+            className="absolute top-3.5 right-3.5 p-1.5 rounded-xl bg-white/40 hover:bg-white/80 border border-white/30 text-slate-500 hover:text-slate-800 transition-all cursor-pointer"
             aria-label="Minimize form"
           >
             <X className="w-3.5 h-3.5" />
           </button>
 
           {status !== "success" ? (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-3 text-left">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-3 text-left relative z-10">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-xl bg-blue-50 border border-blue-100/40 text-primary flex items-center justify-center shadow-sm">
+                <div className="w-8 h-8 rounded-xl bg-white/60 border border-white/40 text-primary flex items-center justify-center shadow-sm">
                   <PhoneCall className="w-4 h-4 animate-bounce" style={{ animationDuration: '4s' }} />
                 </div>
                 <div>
                   <h4 className="font-display font-extrabold text-xs sm:text-sm text-dark tracking-tight leading-none">
                     Request a Callback
                   </h4>
-                  <p className="text-[9px] text-slate-450 font-bold uppercase tracking-wider mt-1.5">
+                  <p className="text-[9px] text-slate-500 font-bold uppercase tracking-wider mt-1.5">
                     Have a query? We will call you
                   </p>
                 </div>
@@ -154,7 +165,7 @@ export default function QuickLeadPopup() {
                     value={formData.name}
                     onChange={handleInputChange}
                     placeholder="Your Name *"
-                    className="w-full text-base sm:text-xs bg-slate-50/50 border border-slate-200/60 focus:border-primary focus:bg-white px-3 py-2 rounded-xl outline-none transition-all font-medium"
+                    className="w-full text-base sm:text-xs bg-white/30 border border-white/40 placeholder-slate-500 focus:border-primary focus:bg-white/80 px-3 py-2 rounded-xl outline-none transition-all font-medium shadow-sm"
                   />
                 </div>
 
@@ -167,7 +178,7 @@ export default function QuickLeadPopup() {
                     value={formData.phone}
                     onChange={handleInputChange}
                     placeholder="Mobile Number *"
-                    className="w-full text-base sm:text-xs bg-slate-50/50 border border-slate-200/60 focus:border-primary focus:bg-white px-3 py-2 rounded-xl outline-none transition-all font-medium"
+                    className="w-full text-base sm:text-xs bg-white/30 border border-white/40 placeholder-slate-500 focus:border-primary focus:bg-white/80 px-3 py-2 rounded-xl outline-none transition-all font-medium shadow-sm"
                   />
                 </div>
 
@@ -179,17 +190,17 @@ export default function QuickLeadPopup() {
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="Email Address (Optional)"
-                    className="w-full text-base sm:text-xs bg-slate-50/50 border border-slate-200/60 focus:border-primary focus:bg-white px-3 py-2 rounded-xl outline-none transition-all font-medium"
+                    className="w-full text-base sm:text-xs bg-white/30 border border-white/40 placeholder-slate-500 focus:border-primary focus:bg-white/80 px-3 py-2 rounded-xl outline-none transition-all font-medium shadow-sm"
                   />
                 </div>
               </div>
 
               {/* Action Buttons */}
-              <div className="flex items-center justify-between gap-3 mt-1 pt-1 border-t border-slate-100/50">
+              <div className="flex items-center justify-between gap-3 mt-1 pt-1 border-t border-white/20">
                 <button
                   type="button"
                   onClick={handleMinimize}
-                  className="text-[10px] font-bold text-slate-400 hover:text-slate-600 transition-colors uppercase tracking-wider cursor-pointer"
+                  className="text-[10px] font-bold text-slate-500 hover:text-slate-800 transition-colors uppercase tracking-wider cursor-pointer"
                 >
                   Skip
                 </button>
@@ -210,14 +221,14 @@ export default function QuickLeadPopup() {
               </div>
             </form>
           ) : (
-            <div className="py-5 text-center flex flex-col items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center text-green-500 border border-green-100 shadow-sm">
+            <div className="py-5 text-center flex flex-col items-center gap-3 relative z-10">
+              <div className="w-10 h-10 rounded-full bg-green-50/70 backdrop-blur-sm flex items-center justify-center text-green-500 border border-green-150 shadow-sm">
                 <CheckCircle2 className="w-5 h-5 animate-pulse" />
               </div>
               <h4 className="font-display font-extrabold text-sm text-dark leading-none">
                 Callback Requested!
               </h4>
-              <p className="text-[10px] text-slate-500 max-w-[220px] leading-relaxed">
+              <p className="text-[10px] text-slate-600 max-w-[220px] leading-relaxed">
                 Thank you! An Xcode Tech engineer will call you back shortly.
               </p>
             </div>
