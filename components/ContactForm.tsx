@@ -236,7 +236,7 @@ export default function ContactForm() {
                   Inquiry Received Successfully!
                 </h4>
                 <p className="text-sm text-slate-500 max-w-sm leading-relaxed">
-                  Thank you for reaching out, <strong className="text-slate-800">{formData.name}</strong>. An Xcode Tech engineer will follow up with you from <strong className="text-primary font-bold">admin@xcodetech.in</strong> at <strong className="text-slate-800">{formData.email}</strong> within 12 hours.
+                  Thank you for reaching out. An Xcode Tech engineer will connect with you shortly.
                 </p>
                 <button
                   onClick={() => setFormStatus("idle")}
