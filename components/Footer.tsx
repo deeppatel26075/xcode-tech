@@ -12,8 +12,8 @@ export default function Footer() {
         <div className="flex flex-col gap-6">
           <div className="flex items-center gap-3">
             {/* Full Logo Presentation */}
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-sky-custom flex items-center justify-center shadow-lg shadow-blue-500/10">
-              <span className="font-display font-extrabold text-base text-white tracking-tighter">XT</span>
+            <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shadow-md border border-slate-200/50 overflow-hidden">
+              <img src="/logo.jpg" alt="Xcode Tech Logo" className="w-full h-full object-cover" />
             </div>
             <div className="flex flex-col">
               <span className="font-display font-bold text-xl text-dark tracking-tight leading-none">

@@ -75,10 +75,9 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Sleek Minimal Logo Version */}
         <Link href="/" className="flex items-center gap-2.5 group">
-          <div className="relative w-8 h-8 rounded-lg bg-gradient-to-tr from-primary to-sky-custom flex items-center justify-center shadow-lg shadow-blue-500/10 overflow-hidden">
-            <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-            {/* Minimal XT Bracket Design */}
-            <span className="font-display font-bold text-sm text-white tracking-tighter">XT</span>
+          <div className="relative w-8 h-8 rounded-lg bg-white flex items-center justify-center shadow-md border border-slate-200/50 overflow-hidden">
+            <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <img src="/logo.jpg" alt="Xcode Tech Logo" className="w-full h-full object-cover" />
           </div>
           <span className="font-display font-semibold text-lg text-dark tracking-tight">
             Xcode <span className="text-primary font-bold">Tech</span>
